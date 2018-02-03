@@ -1,0 +1,4 @@
+*.cpp linguist-language=python
+*.h linguist-language=python
+*.pxd linguist-language=cython
+*.pxy linguist-language=cython

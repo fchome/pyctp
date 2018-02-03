@@ -1,7 +1,2 @@
-*.dll linguist-language=python
-*.lib linguist-language=python
-*.so linguist-language=python
 *.cpp linguist-language=python
 *.h linguist-language=python
-*.pxd linguist-language=cython
-*.pxy linguist-language=cython

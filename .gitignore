@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+._.DS_Store
+.DS_Store
+.vscode/launch.json
+data/DialogRsp.con
+data/QueryRsp.con
+data/TradingDay.con

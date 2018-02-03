@@ -1,0 +1,1 @@
+python setupMdApi.py build_ext --inplace

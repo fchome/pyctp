@@ -105,3 +105,12 @@ ENV/
 data/DialogRsp.con
 data/QueryRsp.con
 data/TradingDay.con
+pyctp/makeup.py
+mytest.py
+pyctp/pyMdApi.cpp
+pyctp/pyTdApi.cpp
+tddata/TradingDay.con
+tddata/QueryRsp.con
+tddata/Public.con
+tddata/DialogRsp.con
+tddata/Private.con

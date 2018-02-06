@@ -6,7 +6,7 @@
 ###@file ThostFtdcUserApiStruct.h
 ###@brief 定义了客户端接口使用的业务数据结构
 ###@history 
-###20060106	赵鸿昊		创建该文件
+###20060106 赵鸿昊  创建该文件
 #########################################################################
 
 cimport ctpCDataType
@@ -17,7558 +17,7600 @@ cdef extern from "ThostFtdcUserApiStruct.h":
     ###信息分发
     cdef struct CThostFtdcDisseminationField:
         ###序列系列号
-        TThostFtdcSequenceSeriesType	SequenceSeries
+        TThostFtdcSequenceSeriesType SequenceSeries
         ###序列号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
     
     ###用户登录请求
     cdef struct CThostFtdcReqUserLoginField:
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###接口端产品信息
-        TThostFtdcProductInfoType	InterfaceProductInfo
+        TThostFtdcProductInfoType InterfaceProductInfo
         ###协议信息
-        TThostFtdcProtocolInfoType	ProtocolInfo
+        TThostFtdcProtocolInfoType ProtocolInfo
         ###Mac地址
-        TThostFtdcMacAddressType	MacAddress
+        TThostFtdcMacAddressType MacAddress
         ###动态密码
-        TThostFtdcPasswordType	OneTimePassword
+        TThostFtdcPasswordType OneTimePassword
         ###终端IP地址
-        TThostFtdcIPAddressType	ClientIPAddress
+        TThostFtdcIPAddressType ClientIPAddress
     
     ###用户登录应答
     cdef struct CThostFtdcRspUserLoginField:
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###登录成功时间
-        TThostFtdcTimeType	LoginTime
+        TThostFtdcTimeType LoginTime
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###交易系统名称
-        TThostFtdcSystemNameType	SystemName
+        TThostFtdcSystemNameType SystemName
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###最大报单引用
-        TThostFtdcOrderRefType	MaxOrderRef
+        TThostFtdcOrderRefType MaxOrderRef
         ###上期所时间
-        TThostFtdcTimeType	SHFETime
+        TThostFtdcTimeType SHFETime
         ###大商所时间
-        TThostFtdcTimeType	DCETime
+        TThostFtdcTimeType DCETime
         ###郑商所时间
-        TThostFtdcTimeType	CZCETime
+        TThostFtdcTimeType CZCETime
         ###中金所时间
-        TThostFtdcTimeType	FFEXTime
+        TThostFtdcTimeType FFEXTime
         ###能源中心时间
-        TThostFtdcTimeType	INETime
+        TThostFtdcTimeType INETime
     
     ###用户登出请求
     cdef struct CThostFtdcUserLogoutField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
     ###强制交易员退出
     cdef struct CThostFtdcForceUserLogoutField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
     ###客户端认证请求
     cdef struct CThostFtdcReqAuthenticateField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###认证码
-        TThostFtdcAuthCodeType	AuthCode
+        TThostFtdcAuthCodeType AuthCode
     
     ###客户端认证响应
     cdef struct CThostFtdcRspAuthenticateField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
     
     ###客户端认证信息
     cdef struct CThostFtdcAuthenticationInfoField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###认证信息
-        TThostFtdcAuthInfoType	AuthInfo
+        TThostFtdcAuthInfoType AuthInfo
         ###是否为认证结果
-        TThostFtdcBoolType	IsResult
+        TThostFtdcBoolType IsResult
     
     ###银期转帐报文头
     cdef struct CThostFtdcTransferHeaderField:
         ###版本号，常量，1.0
-        TThostFtdcVersionType	Version
+        TThostFtdcVersionType Version
         ###交易代码，必填
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###交易日期，必填，格式：yyyymmdd
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间，必填，格式：hhmmss
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###发起方流水号，N#A
-        TThostFtdcTradeSerialType	TradeSerial
+        TThostFtdcTradeSerialType TradeSerial
         ###期货公司代码，必填
-        TThostFtdcFutureIDType	FutureID
+        TThostFtdcFutureIDType FutureID
         ###银行代码，根据查询银行得到，必填
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分中心代码，根据查询银行得到，必填
-        TThostFtdcBankBrchIDType	BankBrchID
+        TThostFtdcBankBrchIDType BankBrchID
         ###操作员，N#A
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###交易设备类型，N#A
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###记录数，N#A
-        TThostFtdcRecordNumType	RecordNum
+        TThostFtdcRecordNumType RecordNum
         ###会话编号，N#A
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###请求编号，N#A
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
     
     ###银行资金转期货请求，TradeCode=202001
     cdef struct CThostFtdcTransferBankToFutureReqField:
         ###期货资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
         ###密码标志
-        TThostFtdcFuturePwdFlagType	FuturePwdFlag
+        TThostFtdcFuturePwdFlagType FuturePwdFlag
         ###密码
-        TThostFtdcFutureAccPwdType	FutureAccPwd
+        TThostFtdcFutureAccPwdType FutureAccPwd
         ###转账金额
-        TThostFtdcMoneyType	TradeAmt
+        TThostFtdcMoneyType TradeAmt
         ###客户手续费
-        TThostFtdcMoneyType	CustFee
+        TThostFtdcMoneyType CustFee
         ###币种：RMB-人民币 USD-美圆 HKD-港元
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
     
     ###银行资金转期货请求响应
     cdef struct CThostFtdcTransferBankToFutureRspField:
         ###响应代码
-        TThostFtdcRetCodeType	RetCode
+        TThostFtdcRetCodeType RetCode
         ###响应信息
-        TThostFtdcRetInfoType	RetInfo
+        TThostFtdcRetInfoType RetInfo
         ###资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
         ###转帐金额
-        TThostFtdcMoneyType	TradeAmt
+        TThostFtdcMoneyType TradeAmt
         ###应收客户手续费
-        TThostFtdcMoneyType	CustFee
+        TThostFtdcMoneyType CustFee
         ###币种
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
     
     ###期货资金转银行请求，TradeCode=202002
     cdef struct CThostFtdcTransferFutureToBankReqField:
         ###期货资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
         ###密码标志
-        TThostFtdcFuturePwdFlagType	FuturePwdFlag
+        TThostFtdcFuturePwdFlagType FuturePwdFlag
         ###密码
-        TThostFtdcFutureAccPwdType	FutureAccPwd
+        TThostFtdcFutureAccPwdType FutureAccPwd
         ###转账金额
-        TThostFtdcMoneyType	TradeAmt
+        TThostFtdcMoneyType TradeAmt
         ###客户手续费
-        TThostFtdcMoneyType	CustFee
+        TThostFtdcMoneyType CustFee
         ###币种：RMB-人民币 USD-美圆 HKD-港元
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
     
     ###期货资金转银行请求响应
     cdef struct CThostFtdcTransferFutureToBankRspField:
         ###响应代码
-        TThostFtdcRetCodeType	RetCode
+        TThostFtdcRetCodeType RetCode
         ###响应信息
-        TThostFtdcRetInfoType	RetInfo
+        TThostFtdcRetInfoType RetInfo
         ###资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
         ###转帐金额
-        TThostFtdcMoneyType	TradeAmt
+        TThostFtdcMoneyType TradeAmt
         ###应收客户手续费
-        TThostFtdcMoneyType	CustFee
+        TThostFtdcMoneyType CustFee
         ###币种
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
     
     ###查询银行资金请求，TradeCode=204002
     cdef struct CThostFtdcTransferQryBankReqField:
         ###期货资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
         ###密码标志
-        TThostFtdcFuturePwdFlagType	FuturePwdFlag
+        TThostFtdcFuturePwdFlagType FuturePwdFlag
         ###密码
-        TThostFtdcFutureAccPwdType	FutureAccPwd
+        TThostFtdcFutureAccPwdType FutureAccPwd
         ###币种：RMB-人民币 USD-美圆 HKD-港元
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
     
     ###查询银行资金请求响应
     cdef struct CThostFtdcTransferQryBankRspField:
         ###响应代码
-        TThostFtdcRetCodeType	RetCode
+        TThostFtdcRetCodeType RetCode
         ###响应信息
-        TThostFtdcRetInfoType	RetInfo
+        TThostFtdcRetInfoType RetInfo
         ###资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
         ###银行余额
-        TThostFtdcMoneyType	TradeAmt
+        TThostFtdcMoneyType TradeAmt
         ###银行可用余额
-        TThostFtdcMoneyType	UseAmt
+        TThostFtdcMoneyType UseAmt
         ###银行可取余额
-        TThostFtdcMoneyType	FetchAmt
+        TThostFtdcMoneyType FetchAmt
         ###币种
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
     
     ###查询银行交易明细请求，TradeCode=204999
     cdef struct CThostFtdcTransferQryDetailReqField:
         ###期货资金账户
-        TThostFtdcAccountIDType	FutureAccount
+        TThostFtdcAccountIDType FutureAccount
     
     ###查询银行交易明细请求响应
     cdef struct CThostFtdcTransferQryDetailRspField:
         ###交易日期
-        TThostFtdcDateType	TradeDate
+        TThostFtdcDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###交易代码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###期货流水号
-        TThostFtdcTradeSerialNoType	FutureSerial
+        TThostFtdcTradeSerialNoType FutureSerial
         ###期货公司代码
-        TThostFtdcFutureIDType	FutureID
+        TThostFtdcFutureIDType FutureID
         ###资金帐号
-        TThostFtdcFutureAccountType	FutureAccount
+        TThostFtdcFutureAccountType FutureAccount
         ###银行流水号
-        TThostFtdcTradeSerialNoType	BankSerial
+        TThostFtdcTradeSerialNoType BankSerial
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分中心代码
-        TThostFtdcBankBrchIDType	BankBrchID
+        TThostFtdcBankBrchIDType BankBrchID
         ###银行账号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###证件号码
-        TThostFtdcCertCodeType	CertCode
+        TThostFtdcCertCodeType CertCode
         ###货币代码
-        TThostFtdcCurrencyCodeType	CurrencyCode
+        TThostFtdcCurrencyCodeType CurrencyCode
         ###发生金额
-        TThostFtdcMoneyType	TxAmount
+        TThostFtdcMoneyType TxAmount
         ###有效标志
-        TThostFtdcTransferValidFlagType	Flag
+        TThostFtdcTransferValidFlagType Flag
     
     ###响应信息
     cdef struct CThostFtdcRspInfoField:
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
     ###交易所
     cdef struct CThostFtdcExchangeField:
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所名称
-        TThostFtdcExchangeNameType	ExchangeName
+        TThostFtdcExchangeNameType ExchangeName
         ###交易所属性
-        TThostFtdcExchangePropertyType	ExchangeProperty
+        TThostFtdcExchangePropertyType ExchangeProperty
     
     ###产品
     cdef struct CThostFtdcProductField:
         ###产品代码
-        TThostFtdcInstrumentIDType	ProductID
+        TThostFtdcInstrumentIDType ProductID
         ###产品名称
-        TThostFtdcProductNameType	ProductName
+        TThostFtdcProductNameType ProductName
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###产品类型
-        TThostFtdcProductClassType	ProductClass
+        TThostFtdcProductClassType ProductClass
         ###合约数量乘数
-        TThostFtdcVolumeMultipleType	VolumeMultiple
+        TThostFtdcVolumeMultipleType VolumeMultiple
         ###最小变动价位
-        TThostFtdcPriceType	PriceTick
+        TThostFtdcPriceType PriceTick
         ###市价单最大下单量
-        TThostFtdcVolumeType	MaxMarketOrderVolume
+        TThostFtdcVolumeType MaxMarketOrderVolume
         ###市价单最小下单量
-        TThostFtdcVolumeType	MinMarketOrderVolume
+        TThostFtdcVolumeType MinMarketOrderVolume
         ###限价单最大下单量
-        TThostFtdcVolumeType	MaxLimitOrderVolume
+        TThostFtdcVolumeType MaxLimitOrderVolume
         ###限价单最小下单量
-        TThostFtdcVolumeType	MinLimitOrderVolume
+        TThostFtdcVolumeType MinLimitOrderVolume
         ###持仓类型
-        TThostFtdcPositionTypeType	PositionType
+        TThostFtdcPositionTypeType PositionType
         ###持仓日期类型
-        TThostFtdcPositionDateTypeType	PositionDateType
+        TThostFtdcPositionDateTypeType PositionDateType
         ###平仓处理类型
-        TThostFtdcCloseDealTypeType	CloseDealType
+        TThostFtdcCloseDealTypeType CloseDealType
         ###交易币种类型
-        TThostFtdcCurrencyIDType	TradeCurrencyID
+        TThostFtdcCurrencyIDType TradeCurrencyID
         ###质押资金可用范围
-        TThostFtdcMortgageFundUseRangeType	MortgageFundUseRange
+        TThostFtdcMortgageFundUseRangeType MortgageFundUseRange
         ###交易所产品代码
-        TThostFtdcInstrumentIDType	ExchangeProductID
+        TThostFtdcInstrumentIDType ExchangeProductID
         ###合约基础商品乘数
-        TThostFtdcUnderlyingMultipleType	UnderlyingMultiple
+        TThostFtdcUnderlyingMultipleType UnderlyingMultiple
     
     ###合约
     cdef struct CThostFtdcInstrumentField:
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约名称
-        TThostFtdcInstrumentNameType	InstrumentName
+        TThostFtdcInstrumentNameType InstrumentName
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###产品代码
-        TThostFtdcInstrumentIDType	ProductID
+        TThostFtdcInstrumentIDType ProductID
         ###产品类型
-        TThostFtdcProductClassType	ProductClass
+        TThostFtdcProductClassType ProductClass
         ###交割年份
-        TThostFtdcYearType	DeliveryYear
+        TThostFtdcYearType DeliveryYear
         ###交割月
-        TThostFtdcMonthType	DeliveryMonth
+        TThostFtdcMonthType DeliveryMonth
         ###市价单最大下单量
-        TThostFtdcVolumeType	MaxMarketOrderVolume
+        TThostFtdcVolumeType MaxMarketOrderVolume
         ###市价单最小下单量
-        TThostFtdcVolumeType	MinMarketOrderVolume
+        TThostFtdcVolumeType MinMarketOrderVolume
         ###限价单最大下单量
-        TThostFtdcVolumeType	MaxLimitOrderVolume
+        TThostFtdcVolumeType MaxLimitOrderVolume
         ###限价单最小下单量
-        TThostFtdcVolumeType	MinLimitOrderVolume
+        TThostFtdcVolumeType MinLimitOrderVolume
         ###合约数量乘数
-        TThostFtdcVolumeMultipleType	VolumeMultiple
+        TThostFtdcVolumeMultipleType VolumeMultiple
         ###最小变动价位
-        TThostFtdcPriceType	PriceTick
+        TThostFtdcPriceType PriceTick
         ###创建日
-        TThostFtdcDateType	CreateDate
+        TThostFtdcDateType CreateDate
         ###上市日
-        TThostFtdcDateType	OpenDate
+        TThostFtdcDateType OpenDate
         ###到期日
-        TThostFtdcDateType	ExpireDate
+        TThostFtdcDateType ExpireDate
         ###开始交割日
-        TThostFtdcDateType	StartDelivDate
+        TThostFtdcDateType StartDelivDate
         ###结束交割日
-        TThostFtdcDateType	EndDelivDate
+        TThostFtdcDateType EndDelivDate
         ###合约生命周期状态
-        TThostFtdcInstLifePhaseType	InstLifePhase
+        TThostFtdcInstLifePhaseType InstLifePhase
         ###当前是否交易
-        TThostFtdcBoolType	IsTrading
+        TThostFtdcBoolType IsTrading
         ###持仓类型
-        TThostFtdcPositionTypeType	PositionType
+        TThostFtdcPositionTypeType PositionType
         ###持仓日期类型
-        TThostFtdcPositionDateTypeType	PositionDateType
+        TThostFtdcPositionDateTypeType PositionDateType
         ###多头保证金率
-        TThostFtdcRatioType	LongMarginRatio
+        TThostFtdcRatioType LongMarginRatio
         ###空头保证金率
-        TThostFtdcRatioType	ShortMarginRatio
+        TThostFtdcRatioType ShortMarginRatio
         ###是否使用大额单边保证金算法
-        TThostFtdcMaxMarginSideAlgorithmType	MaxMarginSideAlgorithm
+        TThostFtdcMaxMarginSideAlgorithmType MaxMarginSideAlgorithm
         ###基础商品代码
-        TThostFtdcInstrumentIDType	UnderlyingInstrID
+        TThostFtdcInstrumentIDType UnderlyingInstrID
         ###执行价
-        TThostFtdcPriceType	StrikePrice
+        TThostFtdcPriceType StrikePrice
         ###期权类型
-        TThostFtdcOptionsTypeType	OptionsType
+        TThostFtdcOptionsTypeType OptionsType
         ###合约基础商品乘数
-        TThostFtdcUnderlyingMultipleType	UnderlyingMultiple
+        TThostFtdcUnderlyingMultipleType UnderlyingMultiple
         ###组合类型
-        TThostFtdcCombinationTypeType	CombinationType
+        TThostFtdcCombinationTypeType CombinationType
     
     ###经纪公司
     cdef struct CThostFtdcBrokerField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###经纪公司简称
-        TThostFtdcBrokerAbbrType	BrokerAbbr
+        TThostFtdcBrokerAbbrType BrokerAbbr
         ###经纪公司名称
-        TThostFtdcBrokerNameType	BrokerName
+        TThostFtdcBrokerNameType BrokerName
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
     
     ###交易所交易员
     cdef struct CThostFtdcTraderField:
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装数量
-        TThostFtdcInstallCountType	InstallCount
+        TThostFtdcInstallCountType InstallCount
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
     ###投资者
     cdef struct CThostFtdcInvestorField:
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者分组代码
-        TThostFtdcInvestorIDType	InvestorGroupID
+        TThostFtdcInvestorIDType InvestorGroupID
         ###投资者名称
-        TThostFtdcPartyNameType	InvestorName
+        TThostFtdcPartyNameType InvestorName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdentifiedCardType
+        TThostFtdcIdCardTypeType IdentifiedCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
         ###联系电话
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###通讯地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###开户日期
-        TThostFtdcDateType	OpenDate
+        TThostFtdcDateType OpenDate
         ###手机
-        TThostFtdcMobileType	Mobile
+        TThostFtdcMobileType Mobile
         ###手续费率模板代码
-        TThostFtdcInvestorIDType	CommModelID
+        TThostFtdcInvestorIDType CommModelID
         ###保证金率模板代码
-        TThostFtdcInvestorIDType	MarginModelID
+        TThostFtdcInvestorIDType MarginModelID
     
     ###交易编码
     cdef struct CThostFtdcTradingCodeField:
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
         ###交易编码类型
-        TThostFtdcClientIDTypeType	ClientIDType
+        TThostFtdcClientIDTypeType ClientIDType
     
     ###会员编码和经纪公司编码对照表
     cdef struct CThostFtdcPartBrokerField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
     
     ###管理用户
     cdef struct CThostFtdcSuperUserField:
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户名称
-        TThostFtdcUserNameType	UserName
+        TThostFtdcUserNameType UserName
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
     
     ###管理用户功能权限
     cdef struct CThostFtdcSuperUserFunctionField:
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###功能代码
-        TThostFtdcFunctionCodeType	FunctionCode
+        TThostFtdcFunctionCodeType FunctionCode
     
 
     ###投资者组
     cdef struct CThostFtdcInvestorGroupField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者分组代码
-        TThostFtdcInvestorIDType	InvestorGroupID
+        TThostFtdcInvestorIDType InvestorGroupID
         ###投资者分组名称
-        TThostFtdcInvestorGroupNameType	InvestorGroupName
+        TThostFtdcInvestorGroupNameType InvestorGroupName
     
     ###资金账户
     cdef struct CThostFtdcTradingAccountField:
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###上次质押金额
-        TThostFtdcMoneyType	PreMortgage
+        TThostFtdcMoneyType PreMortgage
         ###上次信用额度
-        TThostFtdcMoneyType	PreCredit
+        TThostFtdcMoneyType PreCredit
         ###上次存款额
-        TThostFtdcMoneyType	PreDeposit
+        TThostFtdcMoneyType PreDeposit
         ###上次结算准备金
-        TThostFtdcMoneyType	PreBalance
+        TThostFtdcMoneyType PreBalance
         ###上次占用的保证金
-        TThostFtdcMoneyType	PreMargin
+        TThostFtdcMoneyType PreMargin
         ###利息基数
-        TThostFtdcMoneyType	InterestBase
+        TThostFtdcMoneyType InterestBase
         ###利息收入
-        TThostFtdcMoneyType	Interest
+        TThostFtdcMoneyType Interest
         ###入金金额
-        TThostFtdcMoneyType	Deposit
+        TThostFtdcMoneyType Deposit
         ###出金金额
-        TThostFtdcMoneyType	Withdraw
+        TThostFtdcMoneyType Withdraw
         ###冻结的保证金
-        TThostFtdcMoneyType	FrozenMargin
+        TThostFtdcMoneyType FrozenMargin
         ###冻结的资金
-        TThostFtdcMoneyType	FrozenCash
+        TThostFtdcMoneyType FrozenCash
         ###冻结的手续费
-        TThostFtdcMoneyType	FrozenCommission
+        TThostFtdcMoneyType FrozenCommission
         ###当前保证金总额
-        TThostFtdcMoneyType	CurrMargin
+        TThostFtdcMoneyType CurrMargin
         ###资金差额
-        TThostFtdcMoneyType	CashIn
+        TThostFtdcMoneyType CashIn
         ###手续费
-        TThostFtdcMoneyType	Commission
+        TThostFtdcMoneyType Commission
         ###平仓盈亏
-        TThostFtdcMoneyType	CloseProfit
+        TThostFtdcMoneyType CloseProfit
         ###持仓盈亏
-        TThostFtdcMoneyType	PositionProfit
+        TThostFtdcMoneyType PositionProfit
         ###期货结算准备金
-        TThostFtdcMoneyType	Balance
+        TThostFtdcMoneyType Balance
         ###可用资金
-        TThostFtdcMoneyType	Available
+        TThostFtdcMoneyType Available
         ###可取资金
-        TThostFtdcMoneyType	WithdrawQuota
+        TThostFtdcMoneyType WithdrawQuota
         ###基本准备金
-        TThostFtdcMoneyType	Reserve
+        TThostFtdcMoneyType Reserve
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###信用额度
-        TThostFtdcMoneyType	Credit
+        TThostFtdcMoneyType Credit
         ###质押金额
-        TThostFtdcMoneyType	Mortgage
+        TThostFtdcMoneyType Mortgage
         ###交易所保证金
-        TThostFtdcMoneyType	ExchangeMargin
+        TThostFtdcMoneyType ExchangeMargin
         ###投资者交割保证金
-        TThostFtdcMoneyType	DeliveryMargin
+        TThostFtdcMoneyType DeliveryMargin
         ###交易所交割保证金
-        TThostFtdcMoneyType	ExchangeDeliveryMargin
+        TThostFtdcMoneyType ExchangeDeliveryMargin
         ###保底期货结算准备金
-        TThostFtdcMoneyType	ReserveBalance
+        TThostFtdcMoneyType ReserveBalance
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###上次货币质入金额
-        TThostFtdcMoneyType	PreFundMortgageIn
+        TThostFtdcMoneyType PreFundMortgageIn
         ###上次货币质出金额
-        TThostFtdcMoneyType	PreFundMortgageOut
+        TThostFtdcMoneyType PreFundMortgageOut
         ###货币质入金额
-        TThostFtdcMoneyType	FundMortgageIn
+        TThostFtdcMoneyType FundMortgageIn
         ###货币质出金额
-        TThostFtdcMoneyType	FundMortgageOut
+        TThostFtdcMoneyType FundMortgageOut
         ###货币质押余额
-        TThostFtdcMoneyType	FundMortgageAvailable
+        TThostFtdcMoneyType FundMortgageAvailable
         ###可质押货币金额
-        TThostFtdcMoneyType	MortgageableFund
+        TThostFtdcMoneyType MortgageableFund
         ###特殊产品占用保证金
-        TThostFtdcMoneyType	SpecProductMargin
+        TThostFtdcMoneyType SpecProductMargin
         ###特殊产品冻结保证金
-        TThostFtdcMoneyType	SpecProductFrozenMargin
+        TThostFtdcMoneyType SpecProductFrozenMargin
         ###特殊产品手续费
-        TThostFtdcMoneyType	SpecProductCommission
+        TThostFtdcMoneyType SpecProductCommission
         ###特殊产品冻结手续费
-        TThostFtdcMoneyType	SpecProductFrozenCommission
+        TThostFtdcMoneyType SpecProductFrozenCommission
         ###特殊产品持仓盈亏
-        TThostFtdcMoneyType	SpecProductPositionProfit
+        TThostFtdcMoneyType SpecProductPositionProfit
         ###特殊产品平仓盈亏
-        TThostFtdcMoneyType	SpecProductCloseProfit
+        TThostFtdcMoneyType SpecProductCloseProfit
         ###根据持仓盈亏算法计算的特殊产品持仓盈亏
-        TThostFtdcMoneyType	SpecProductPositionProfitByAlg
+        TThostFtdcMoneyType SpecProductPositionProfitByAlg
         ###特殊产品交易所保证金
-        TThostFtdcMoneyType	SpecProductExchangeMargin
+        TThostFtdcMoneyType SpecProductExchangeMargin
     
 
     ###投资者持仓
     cdef struct CThostFtdcInvestorPositionField:
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###持仓多空方向
-        TThostFtdcPosiDirectionType	PosiDirection
+        TThostFtdcPosiDirectionType PosiDirection
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###持仓日期
-        TThostFtdcPositionDateType	PositionDate
+        TThostFtdcPositionDateType PositionDate
         ###上日持仓
-        TThostFtdcVolumeType	YdPosition
+        TThostFtdcVolumeType YdPosition
         ###今日持仓
-        TThostFtdcVolumeType	Position
+        TThostFtdcVolumeType Position
         ###多头冻结
-        TThostFtdcVolumeType	LongFrozen
+        TThostFtdcVolumeType LongFrozen
         ###空头冻结
-        TThostFtdcVolumeType	ShortFrozen
+        TThostFtdcVolumeType ShortFrozen
         ###开仓冻结金额
-        TThostFtdcMoneyType	LongFrozenAmount
+        TThostFtdcMoneyType LongFrozenAmount
         ###开仓冻结金额
-        TThostFtdcMoneyType	ShortFrozenAmount
+        TThostFtdcMoneyType ShortFrozenAmount
         ###开仓量
-        TThostFtdcVolumeType	OpenVolume
+        TThostFtdcVolumeType OpenVolume
         ###平仓量
-        TThostFtdcVolumeType	CloseVolume
+        TThostFtdcVolumeType CloseVolume
         ###开仓金额
-        TThostFtdcMoneyType	OpenAmount
+        TThostFtdcMoneyType OpenAmount
         ###平仓金额
-        TThostFtdcMoneyType	CloseAmount
+        TThostFtdcMoneyType CloseAmount
         ###持仓成本
-        TThostFtdcMoneyType	PositionCost
+        TThostFtdcMoneyType PositionCost
         ###上次占用的保证金
-        TThostFtdcMoneyType	PreMargin
+        TThostFtdcMoneyType PreMargin
         ###占用的保证金
-        TThostFtdcMoneyType	UseMargin
+        TThostFtdcMoneyType UseMargin
         ###冻结的保证金
-        TThostFtdcMoneyType	FrozenMargin
+        TThostFtdcMoneyType FrozenMargin
         ###冻结的资金
-        TThostFtdcMoneyType	FrozenCash
+        TThostFtdcMoneyType FrozenCash
         ###冻结的手续费
-        TThostFtdcMoneyType	FrozenCommission
+        TThostFtdcMoneyType FrozenCommission
         ###资金差额
-        TThostFtdcMoneyType	CashIn
+        TThostFtdcMoneyType CashIn
         ###手续费
-        TThostFtdcMoneyType	Commission
+        TThostFtdcMoneyType Commission
         ###平仓盈亏
-        TThostFtdcMoneyType	CloseProfit
+        TThostFtdcMoneyType CloseProfit
         ###持仓盈亏
-        TThostFtdcMoneyType	PositionProfit
+        TThostFtdcMoneyType PositionProfit
         ###上次结算价
-        TThostFtdcPriceType	PreSettlementPrice
+        TThostFtdcPriceType PreSettlementPrice
         ###本次结算价
-        TThostFtdcPriceType	SettlementPrice
+        TThostFtdcPriceType SettlementPrice
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###开仓成本
-        TThostFtdcMoneyType	OpenCost
+        TThostFtdcMoneyType OpenCost
         ###交易所保证金
-        TThostFtdcMoneyType	ExchangeMargin
+        TThostFtdcMoneyType ExchangeMargin
         ###组合成交形成的持仓
-        TThostFtdcVolumeType	CombPosition
+        TThostFtdcVolumeType CombPosition
         ###组合多头冻结
-        TThostFtdcVolumeType	CombLongFrozen
+        TThostFtdcVolumeType CombLongFrozen
         ###组合空头冻结
-        TThostFtdcVolumeType	CombShortFrozen
+        TThostFtdcVolumeType CombShortFrozen
         ###逐日盯市平仓盈亏
-        TThostFtdcMoneyType	CloseProfitByDate
+        TThostFtdcMoneyType CloseProfitByDate
         ###逐笔对冲平仓盈亏
-        TThostFtdcMoneyType	CloseProfitByTrade
+        TThostFtdcMoneyType CloseProfitByTrade
         ###今日持仓
-        TThostFtdcVolumeType	TodayPosition
+        TThostFtdcVolumeType TodayPosition
         ###保证金率
-        TThostFtdcRatioType	MarginRateByMoney
+        TThostFtdcRatioType MarginRateByMoney
         ###保证金率(按手数)
-        TThostFtdcRatioType	MarginRateByVolume
+        TThostFtdcRatioType MarginRateByVolume
         ###执行冻结
-        TThostFtdcVolumeType	StrikeFrozen
+        TThostFtdcVolumeType StrikeFrozen
         ###执行冻结金额
-        TThostFtdcMoneyType	StrikeFrozenAmount
+        TThostFtdcMoneyType StrikeFrozenAmount
         ###放弃执行冻结
-        TThostFtdcVolumeType	AbandonFrozen
+        TThostFtdcVolumeType AbandonFrozen
     
 
     ###合约保证金率
     cdef struct CThostFtdcInstrumentMarginRateField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###多头保证金率
-        TThostFtdcRatioType	LongMarginRatioByMoney
+        TThostFtdcRatioType LongMarginRatioByMoney
         ###多头保证金费
-        TThostFtdcMoneyType	LongMarginRatioByVolume
+        TThostFtdcMoneyType LongMarginRatioByVolume
         ###空头保证金率
-        TThostFtdcRatioType	ShortMarginRatioByMoney
+        TThostFtdcRatioType ShortMarginRatioByMoney
         ###空头保证金费
-        TThostFtdcMoneyType	ShortMarginRatioByVolume
+        TThostFtdcMoneyType ShortMarginRatioByVolume
         ###是否相对交易所收取
-        TThostFtdcBoolType	IsRelative
+        TThostFtdcBoolType IsRelative
     
 
     ###合约手续费率
     cdef struct CThostFtdcInstrumentCommissionRateField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###开仓手续费率
-        TThostFtdcRatioType	OpenRatioByMoney
+        TThostFtdcRatioType OpenRatioByMoney
         ###开仓手续费
-        TThostFtdcRatioType	OpenRatioByVolume
+        TThostFtdcRatioType OpenRatioByVolume
         ###平仓手续费率
-        TThostFtdcRatioType	CloseRatioByMoney
+        TThostFtdcRatioType CloseRatioByMoney
         ###平仓手续费
-        TThostFtdcRatioType	CloseRatioByVolume
+        TThostFtdcRatioType CloseRatioByVolume
         ###平今手续费率
-        TThostFtdcRatioType	CloseTodayRatioByMoney
+        TThostFtdcRatioType CloseTodayRatioByMoney
         ###平今手续费
-        TThostFtdcRatioType	CloseTodayRatioByVolume
+        TThostFtdcRatioType CloseTodayRatioByVolume
     
 
     ###深度行情
     cdef struct CThostFtdcDepthMarketDataField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###最新价
-        TThostFtdcPriceType	LastPrice
+        TThostFtdcPriceType LastPrice
         ###上次结算价
-        TThostFtdcPriceType	PreSettlementPrice
+        TThostFtdcPriceType PreSettlementPrice
         ###昨收盘
-        TThostFtdcPriceType	PreClosePrice
+        TThostFtdcPriceType PreClosePrice
         ###昨持仓量
-        TThostFtdcLargeVolumeType	PreOpenInterest
+        TThostFtdcLargeVolumeType PreOpenInterest
         ###今开盘
-        TThostFtdcPriceType	OpenPrice
+        TThostFtdcPriceType OpenPrice
         ###最高价
-        TThostFtdcPriceType	HighestPrice
+        TThostFtdcPriceType HighestPrice
         ###最低价
-        TThostFtdcPriceType	LowestPrice
+        TThostFtdcPriceType LowestPrice
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###成交金额
-        TThostFtdcMoneyType	Turnover
+        TThostFtdcMoneyType Turnover
         ###持仓量
-        TThostFtdcLargeVolumeType	OpenInterest
+        TThostFtdcLargeVolumeType OpenInterest
         ###今收盘
-        TThostFtdcPriceType	ClosePrice
+        TThostFtdcPriceType ClosePrice
         ###本次结算价
-        TThostFtdcPriceType	SettlementPrice
+        TThostFtdcPriceType SettlementPrice
         ###涨停板价
-        TThostFtdcPriceType	UpperLimitPrice
+        TThostFtdcPriceType UpperLimitPrice
         ###跌停板价
-        TThostFtdcPriceType	LowerLimitPrice
+        TThostFtdcPriceType LowerLimitPrice
         ###昨虚实度
-        TThostFtdcRatioType	PreDelta
+        TThostFtdcRatioType PreDelta
         ###今虚实度
-        TThostFtdcRatioType	CurrDelta
+        TThostFtdcRatioType CurrDelta
         ###最后修改时间
-        TThostFtdcTimeType	UpdateTime
+        TThostFtdcTimeType UpdateTime
         ###最后修改毫秒
-        TThostFtdcMillisecType	UpdateMillisec
+        TThostFtdcMillisecType UpdateMillisec
         ###申买价一
-        TThostFtdcPriceType	BidPrice1
+        TThostFtdcPriceType BidPrice1
         ###申买量一
-        TThostFtdcVolumeType	BidVolume1
+        TThostFtdcVolumeType BidVolume1
         ###申卖价一
-        TThostFtdcPriceType	AskPrice1
+        TThostFtdcPriceType AskPrice1
         ###申卖量一
-        TThostFtdcVolumeType	AskVolume1
+        TThostFtdcVolumeType AskVolume1
         ###申买价二
-        TThostFtdcPriceType	BidPrice2
+        TThostFtdcPriceType BidPrice2
         ###申买量二
-        TThostFtdcVolumeType	BidVolume2
+        TThostFtdcVolumeType BidVolume2
         ###申卖价二
-        TThostFtdcPriceType	AskPrice2
+        TThostFtdcPriceType AskPrice2
         ###申卖量二
-        TThostFtdcVolumeType	AskVolume2
+        TThostFtdcVolumeType AskVolume2
         ###申买价三
-        TThostFtdcPriceType	BidPrice3
+        TThostFtdcPriceType BidPrice3
         ###申买量三
-        TThostFtdcVolumeType	BidVolume3
+        TThostFtdcVolumeType BidVolume3
         ###申卖价三
-        TThostFtdcPriceType	AskPrice3
+        TThostFtdcPriceType AskPrice3
         ###申卖量三
-        TThostFtdcVolumeType	AskVolume3
+        TThostFtdcVolumeType AskVolume3
         ###申买价四
-        TThostFtdcPriceType	BidPrice4
+        TThostFtdcPriceType BidPrice4
         ###申买量四
-        TThostFtdcVolumeType	BidVolume4
+        TThostFtdcVolumeType BidVolume4
         ###申卖价四
-        TThostFtdcPriceType	AskPrice4
+        TThostFtdcPriceType AskPrice4
         ###申卖量四
-        TThostFtdcVolumeType	AskVolume4
+        TThostFtdcVolumeType AskVolume4
         ###申买价五
-        TThostFtdcPriceType	BidPrice5
+        TThostFtdcPriceType BidPrice5
         ###申买量五
-        TThostFtdcVolumeType	BidVolume5
+        TThostFtdcVolumeType BidVolume5
         ###申卖价五
-        TThostFtdcPriceType	AskPrice5
+        TThostFtdcPriceType AskPrice5
         ###申卖量五
-        TThostFtdcVolumeType	AskVolume5
+        TThostFtdcVolumeType AskVolume5
         ###当日均价
-        TThostFtdcPriceType	AveragePrice
+        TThostFtdcPriceType AveragePrice
         ###业务日期
-        TThostFtdcDateType	ActionDay
+        TThostFtdcDateType ActionDay
     
 
     ###投资者合约交易权限
     cdef struct CThostFtdcInstrumentTradingRightField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易权限
-        TThostFtdcTradingRightType	TradingRight
+        TThostFtdcTradingRightType TradingRight
     
 
     ###经纪公司用户
     cdef struct CThostFtdcBrokerUserField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户名称
-        TThostFtdcUserNameType	UserName
+        TThostFtdcUserNameType UserName
         ###用户类型
-        TThostFtdcUserTypeType	UserType
+        TThostFtdcUserTypeType UserType
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
         ###是否使用令牌
-        TThostFtdcBoolType	IsUsingOTP
+        TThostFtdcBoolType IsUsingOTP
     
 
     ###经纪公司用户口令
     cdef struct CThostFtdcBrokerUserPasswordField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
     
 
     ###经纪公司用户功能权限
     cdef struct CThostFtdcBrokerUserFunctionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###经纪公司功能代码
-        TThostFtdcBrokerFunctionCodeType	BrokerFunctionCode
+        TThostFtdcBrokerFunctionCodeType BrokerFunctionCode
     
 
     ###交易所交易员报盘机
     cdef struct CThostFtdcTraderOfferField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###交易所交易员连接状态
-        TThostFtdcTraderConnectStatusType	TraderConnectStatus
+        TThostFtdcTraderConnectStatusType TraderConnectStatus
         ###发出连接请求的日期
-        TThostFtdcDateType	ConnectRequestDate
+        TThostFtdcDateType ConnectRequestDate
         ###发出连接请求的时间
-        TThostFtdcTimeType	ConnectRequestTime
+        TThostFtdcTimeType ConnectRequestTime
         ###上次报告日期
-        TThostFtdcDateType	LastReportDate
+        TThostFtdcDateType LastReportDate
         ###上次报告时间
-        TThostFtdcTimeType	LastReportTime
+        TThostFtdcTimeType LastReportTime
         ###完成连接日期
-        TThostFtdcDateType	ConnectDate
+        TThostFtdcDateType ConnectDate
         ###完成连接时间
-        TThostFtdcTimeType	ConnectTime
+        TThostFtdcTimeType ConnectTime
         ###启动日期
-        TThostFtdcDateType	StartDate
+        TThostFtdcDateType StartDate
         ###启动时间
-        TThostFtdcTimeType	StartTime
+        TThostFtdcTimeType StartTime
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###本席位最大成交编号
-        TThostFtdcTradeIDType	MaxTradeID
+        TThostFtdcTradeIDType MaxTradeID
         ###本席位最大报单备拷
-        TThostFtdcReturnCodeType	MaxOrderMessageReference
+        TThostFtdcReturnCodeType MaxOrderMessageReference
     
 
     ###投资者结算结果
     cdef struct CThostFtdcSettlementInfoField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###消息正文
-        TThostFtdcContentType	Content
+        TThostFtdcContentType Content
     
 
     ###合约保证金率调整
     cdef struct CThostFtdcInstrumentMarginRateAdjustField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###多头保证金率
-        TThostFtdcRatioType	LongMarginRatioByMoney
+        TThostFtdcRatioType LongMarginRatioByMoney
         ###多头保证金费
-        TThostFtdcMoneyType	LongMarginRatioByVolume
+        TThostFtdcMoneyType LongMarginRatioByVolume
         ###空头保证金率
-        TThostFtdcRatioType	ShortMarginRatioByMoney
+        TThostFtdcRatioType ShortMarginRatioByMoney
         ###空头保证金费
-        TThostFtdcMoneyType	ShortMarginRatioByVolume
+        TThostFtdcMoneyType ShortMarginRatioByVolume
         ###是否相对交易所收取
-        TThostFtdcBoolType	IsRelative
+        TThostFtdcBoolType IsRelative
     
 
     ###交易所保证金率
     cdef struct CThostFtdcExchangeMarginRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###多头保证金率
-        TThostFtdcRatioType	LongMarginRatioByMoney
+        TThostFtdcRatioType LongMarginRatioByMoney
         ###多头保证金费
-        TThostFtdcMoneyType	LongMarginRatioByVolume
+        TThostFtdcMoneyType LongMarginRatioByVolume
         ###空头保证金率
-        TThostFtdcRatioType	ShortMarginRatioByMoney
+        TThostFtdcRatioType ShortMarginRatioByMoney
         ###空头保证金费
-        TThostFtdcMoneyType	ShortMarginRatioByVolume
+        TThostFtdcMoneyType ShortMarginRatioByVolume
     
 
     ###交易所保证金率调整
     cdef struct CThostFtdcExchangeMarginRateAdjustField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###跟随交易所投资者多头保证金率
-        TThostFtdcRatioType	LongMarginRatioByMoney
+        TThostFtdcRatioType LongMarginRatioByMoney
         ###跟随交易所投资者多头保证金费
-        TThostFtdcMoneyType	LongMarginRatioByVolume
+        TThostFtdcMoneyType LongMarginRatioByVolume
         ###跟随交易所投资者空头保证金率
-        TThostFtdcRatioType	ShortMarginRatioByMoney
+        TThostFtdcRatioType ShortMarginRatioByMoney
         ###跟随交易所投资者空头保证金费
-        TThostFtdcMoneyType	ShortMarginRatioByVolume
+        TThostFtdcMoneyType ShortMarginRatioByVolume
         ###交易所多头保证金率
-        TThostFtdcRatioType	ExchLongMarginRatioByMoney
+        TThostFtdcRatioType ExchLongMarginRatioByMoney
         ###交易所多头保证金费
-        TThostFtdcMoneyType	ExchLongMarginRatioByVolume
+        TThostFtdcMoneyType ExchLongMarginRatioByVolume
         ###交易所空头保证金率
-        TThostFtdcRatioType	ExchShortMarginRatioByMoney
+        TThostFtdcRatioType ExchShortMarginRatioByMoney
         ###交易所空头保证金费
-        TThostFtdcMoneyType	ExchShortMarginRatioByVolume
+        TThostFtdcMoneyType ExchShortMarginRatioByVolume
         ###不跟随交易所投资者多头保证金率
-        TThostFtdcRatioType	NoLongMarginRatioByMoney
+        TThostFtdcRatioType NoLongMarginRatioByMoney
         ###不跟随交易所投资者多头保证金费
-        TThostFtdcMoneyType	NoLongMarginRatioByVolume
+        TThostFtdcMoneyType NoLongMarginRatioByVolume
         ###不跟随交易所投资者空头保证金率
-        TThostFtdcRatioType	NoShortMarginRatioByMoney
+        TThostFtdcRatioType NoShortMarginRatioByMoney
         ###不跟随交易所投资者空头保证金费
-        TThostFtdcMoneyType	NoShortMarginRatioByVolume
+        TThostFtdcMoneyType NoShortMarginRatioByVolume
     
 
     ###汇率
     cdef struct CThostFtdcExchangeRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###源币种
-        TThostFtdcCurrencyIDType	FromCurrencyID
+        TThostFtdcCurrencyIDType FromCurrencyID
         ###源币种单位数量
-        TThostFtdcCurrencyUnitType	FromCurrencyUnit
+        TThostFtdcCurrencyUnitType FromCurrencyUnit
         ###目标币种
-        TThostFtdcCurrencyIDType	ToCurrencyID
+        TThostFtdcCurrencyIDType ToCurrencyID
         ###汇率
-        TThostFtdcExchangeRateType	ExchangeRate
+        TThostFtdcExchangeRateType ExchangeRate
     
 
     ###结算引用
     cdef struct CThostFtdcSettlementRefField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
     
 
     ###当前时间
     cdef struct CThostFtdcCurrentTimeField:
     
         ###当前日期
-        TThostFtdcDateType	CurrDate
+        TThostFtdcDateType CurrDate
         ###当前时间
-        TThostFtdcTimeType	CurrTime
+        TThostFtdcTimeType CurrTime
         ###当前时间（毫秒）
-        TThostFtdcMillisecType	CurrMillisec
+        TThostFtdcMillisecType CurrMillisec
         ###业务日期
-        TThostFtdcDateType	ActionDay
+        TThostFtdcDateType ActionDay
     
 
     ###通讯阶段
     cdef struct CThostFtdcCommPhaseField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###通讯时段编号
-        TThostFtdcCommPhaseNoType	CommPhaseNo
+        TThostFtdcCommPhaseNoType CommPhaseNo
         ###系统编号
-        TThostFtdcSystemIDType	SystemID
+        TThostFtdcSystemIDType SystemID
     
 
     ###登录信息
     cdef struct CThostFtdcLoginInfoField:
     
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###登录日期
-        TThostFtdcDateType	LoginDate
+        TThostFtdcDateType LoginDate
         ###登录时间
-        TThostFtdcTimeType	LoginTime
+        TThostFtdcTimeType LoginTime
         ###IP地址
-        TThostFtdcIPAddressType	IPAddress
+        TThostFtdcIPAddressType IPAddress
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###接口端产品信息
-        TThostFtdcProductInfoType	InterfaceProductInfo
+        TThostFtdcProductInfoType InterfaceProductInfo
         ###协议信息
-        TThostFtdcProtocolInfoType	ProtocolInfo
+        TThostFtdcProtocolInfoType ProtocolInfo
         ###系统名称
-        TThostFtdcSystemNameType	SystemName
+        TThostFtdcSystemNameType SystemName
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###最大报单引用
-        TThostFtdcOrderRefType	MaxOrderRef
+        TThostFtdcOrderRefType MaxOrderRef
         ###上期所时间
-        TThostFtdcTimeType	SHFETime
+        TThostFtdcTimeType SHFETime
         ###大商所时间
-        TThostFtdcTimeType	DCETime
+        TThostFtdcTimeType DCETime
         ###郑商所时间
-        TThostFtdcTimeType	CZCETime
+        TThostFtdcTimeType CZCETime
         ###中金所时间
-        TThostFtdcTimeType	FFEXTime
+        TThostFtdcTimeType FFEXTime
         ###Mac地址
-        TThostFtdcMacAddressType	MacAddress
+        TThostFtdcMacAddressType MacAddress
         ###动态密码
-        TThostFtdcPasswordType	OneTimePassword
+        TThostFtdcPasswordType OneTimePassword
         ###能源中心时间
-        TThostFtdcTimeType	INETime
+        TThostFtdcTimeType INETime
     
 
     ###登录信息
     cdef struct CThostFtdcLogoutAllField:
     
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###系统名称
-        TThostFtdcSystemNameType	SystemName
+        TThostFtdcSystemNameType SystemName
     
 
     ###前置状态
     cdef struct CThostFtdcFrontStatusField:
     
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###上次报告日期
-        TThostFtdcDateType	LastReportDate
+        TThostFtdcDateType LastReportDate
         ###上次报告时间
-        TThostFtdcTimeType	LastReportTime
+        TThostFtdcTimeType LastReportTime
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
     
 
     ###用户口令变更
     cdef struct CThostFtdcUserPasswordUpdateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###原来的口令
-        TThostFtdcPasswordType	OldPassword
+        TThostFtdcPasswordType OldPassword
         ###新的口令
-        TThostFtdcPasswordType	NewPassword
+        TThostFtdcPasswordType NewPassword
     
 
     ###输入报单
     cdef struct CThostFtdcInputOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###报单价格条件
-        TThostFtdcOrderPriceTypeType	OrderPriceType
+        TThostFtdcOrderPriceTypeType OrderPriceType
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###组合开平标志
-        TThostFtdcCombOffsetFlagType	CombOffsetFlag
+        TThostFtdcCombOffsetFlagType CombOffsetFlag
         ###组合投机套保标志
-        TThostFtdcCombHedgeFlagType	CombHedgeFlag
+        TThostFtdcCombHedgeFlagType CombHedgeFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量
-        TThostFtdcVolumeType	VolumeTotalOriginal
+        TThostFtdcVolumeType VolumeTotalOriginal
         ###有效期类型
-        TThostFtdcTimeConditionType	TimeCondition
+        TThostFtdcTimeConditionType TimeCondition
         ###GTD日期
-        TThostFtdcDateType	GTDDate
+        TThostFtdcDateType GTDDate
         ###成交量类型
-        TThostFtdcVolumeConditionType	VolumeCondition
+        TThostFtdcVolumeConditionType VolumeCondition
         ###最小成交量
-        TThostFtdcVolumeType	MinVolume
+        TThostFtdcVolumeType MinVolume
         ###触发条件
-        TThostFtdcContingentConditionType	ContingentCondition
+        TThostFtdcContingentConditionType ContingentCondition
         ###止损价
-        TThostFtdcPriceType	StopPrice
+        TThostFtdcPriceType StopPrice
         ###强平原因
-        TThostFtdcForceCloseReasonType	ForceCloseReason
+        TThostFtdcForceCloseReasonType ForceCloseReason
         ###自动挂起标志
-        TThostFtdcBoolType	IsAutoSuspend
+        TThostFtdcBoolType IsAutoSuspend
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###用户强评标志
-        TThostFtdcBoolType	UserForceClose
+        TThostFtdcBoolType UserForceClose
         ###互换单标志
-        TThostFtdcBoolType	IsSwapOrder
+        TThostFtdcBoolType IsSwapOrder
     
 
     ###报单
     cdef struct CThostFtdcOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###报单价格条件
-        TThostFtdcOrderPriceTypeType	OrderPriceType
+        TThostFtdcOrderPriceTypeType OrderPriceType
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###组合开平标志
-        TThostFtdcCombOffsetFlagType	CombOffsetFlag
+        TThostFtdcCombOffsetFlagType CombOffsetFlag
         ###组合投机套保标志
-        TThostFtdcCombHedgeFlagType	CombHedgeFlag
+        TThostFtdcCombHedgeFlagType CombHedgeFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量
-        TThostFtdcVolumeType	VolumeTotalOriginal
+        TThostFtdcVolumeType VolumeTotalOriginal
         ###有效期类型
-        TThostFtdcTimeConditionType	TimeCondition
+        TThostFtdcTimeConditionType TimeCondition
         ###GTD日期
-        TThostFtdcDateType	GTDDate
+        TThostFtdcDateType GTDDate
         ###成交量类型
-        TThostFtdcVolumeConditionType	VolumeCondition
+        TThostFtdcVolumeConditionType VolumeCondition
         ###最小成交量
-        TThostFtdcVolumeType	MinVolume
+        TThostFtdcVolumeType MinVolume
         ###触发条件
-        TThostFtdcContingentConditionType	ContingentCondition
+        TThostFtdcContingentConditionType ContingentCondition
         ###止损价
-        TThostFtdcPriceType	StopPrice
+        TThostFtdcPriceType StopPrice
         ###强平原因
-        TThostFtdcForceCloseReasonType	ForceCloseReason
+        TThostFtdcForceCloseReasonType ForceCloseReason
         ###自动挂起标志
-        TThostFtdcBoolType	IsAutoSuspend
+        TThostFtdcBoolType IsAutoSuspend
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报单提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###报单来源
-        TThostFtdcOrderSourceType	OrderSource
+        TThostFtdcOrderSourceType OrderSource
         ###报单状态
-        TThostFtdcOrderStatusType	OrderStatus
+        TThostFtdcOrderStatusType OrderStatus
         ###报单类型
-        TThostFtdcOrderTypeType	OrderType
+        TThostFtdcOrderTypeType OrderType
         ###今成交数量
-        TThostFtdcVolumeType	VolumeTraded
+        TThostFtdcVolumeType VolumeTraded
         ###剩余数量
-        TThostFtdcVolumeType	VolumeTotal
+        TThostFtdcVolumeType VolumeTotal
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###委托时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###激活时间
-        TThostFtdcTimeType	ActiveTime
+        TThostFtdcTimeType ActiveTime
         ###挂起时间
-        TThostFtdcTimeType	SuspendTime
+        TThostFtdcTimeType SuspendTime
         ###最后修改时间
-        TThostFtdcTimeType	UpdateTime
+        TThostFtdcTimeType UpdateTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###最后修改交易所交易员代码
-        TThostFtdcTraderIDType	ActiveTraderID
+        TThostFtdcTraderIDType ActiveTraderID
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###用户强评标志
-        TThostFtdcBoolType	UserForceClose
+        TThostFtdcBoolType UserForceClose
         ###操作用户代码
-        TThostFtdcUserIDType	ActiveUserID
+        TThostFtdcUserIDType ActiveUserID
         ###经纪公司报单编号
-        TThostFtdcSequenceNoType	BrokerOrderSeq
+        TThostFtdcSequenceNoType BrokerOrderSeq
         ###相关报单
-        TThostFtdcOrderSysIDType	RelativeOrderSysID
+        TThostFtdcOrderSysIDType RelativeOrderSysID
         ###郑商所成交数量
-        TThostFtdcVolumeType	ZCETotalTradedVolume
+        TThostFtdcVolumeType ZCETotalTradedVolume
         ###互换单标志
-        TThostFtdcBoolType	IsSwapOrder
+        TThostFtdcBoolType IsSwapOrder
     
 
     ###交易所报单
     cdef struct CThostFtdcExchangeOrderField:
     
         ###报单价格条件
-        TThostFtdcOrderPriceTypeType	OrderPriceType
+        TThostFtdcOrderPriceTypeType OrderPriceType
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###组合开平标志
-        TThostFtdcCombOffsetFlagType	CombOffsetFlag
+        TThostFtdcCombOffsetFlagType CombOffsetFlag
         ###组合投机套保标志
-        TThostFtdcCombHedgeFlagType	CombHedgeFlag
+        TThostFtdcCombHedgeFlagType CombHedgeFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量
-        TThostFtdcVolumeType	VolumeTotalOriginal
+        TThostFtdcVolumeType VolumeTotalOriginal
         ###有效期类型
-        TThostFtdcTimeConditionType	TimeCondition
+        TThostFtdcTimeConditionType TimeCondition
         ###GTD日期
-        TThostFtdcDateType	GTDDate
+        TThostFtdcDateType GTDDate
         ###成交量类型
-        TThostFtdcVolumeConditionType	VolumeCondition
+        TThostFtdcVolumeConditionType VolumeCondition
         ###最小成交量
-        TThostFtdcVolumeType	MinVolume
+        TThostFtdcVolumeType MinVolume
         ###触发条件
-        TThostFtdcContingentConditionType	ContingentCondition
+        TThostFtdcContingentConditionType ContingentCondition
         ###止损价
-        TThostFtdcPriceType	StopPrice
+        TThostFtdcPriceType StopPrice
         ###强平原因
-        TThostFtdcForceCloseReasonType	ForceCloseReason
+        TThostFtdcForceCloseReasonType ForceCloseReason
         ###自动挂起标志
-        TThostFtdcBoolType	IsAutoSuspend
+        TThostFtdcBoolType IsAutoSuspend
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报单提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###报单来源
-        TThostFtdcOrderSourceType	OrderSource
+        TThostFtdcOrderSourceType OrderSource
         ###报单状态
-        TThostFtdcOrderStatusType	OrderStatus
+        TThostFtdcOrderStatusType OrderStatus
         ###报单类型
-        TThostFtdcOrderTypeType	OrderType
+        TThostFtdcOrderTypeType OrderType
         ###今成交数量
-        TThostFtdcVolumeType	VolumeTraded
+        TThostFtdcVolumeType VolumeTraded
         ###剩余数量
-        TThostFtdcVolumeType	VolumeTotal
+        TThostFtdcVolumeType VolumeTotal
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###委托时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###激活时间
-        TThostFtdcTimeType	ActiveTime
+        TThostFtdcTimeType ActiveTime
         ###挂起时间
-        TThostFtdcTimeType	SuspendTime
+        TThostFtdcTimeType SuspendTime
         ###最后修改时间
-        TThostFtdcTimeType	UpdateTime
+        TThostFtdcTimeType UpdateTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###最后修改交易所交易员代码
-        TThostFtdcTraderIDType	ActiveTraderID
+        TThostFtdcTraderIDType ActiveTraderID
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
     
 
     ###交易所报单插入失败
     cdef struct CThostFtdcExchangeOrderInsertErrorField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###输入报单操作
     cdef struct CThostFtdcInputOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###报单操作引用
-        TThostFtdcOrderActionRefType	OrderActionRef
+        TThostFtdcOrderActionRefType OrderActionRef
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量变化
-        TThostFtdcVolumeType	VolumeChange
+        TThostFtdcVolumeType VolumeChange
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###报单操作
     cdef struct CThostFtdcOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###报单操作引用
-        TThostFtdcOrderActionRefType	OrderActionRef
+        TThostFtdcOrderActionRefType OrderActionRef
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量变化
-        TThostFtdcVolumeType	VolumeChange
+        TThostFtdcVolumeType VolumeChange
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###交易所报单操作
     cdef struct CThostFtdcExchangeOrderActionField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量变化
-        TThostFtdcVolumeType	VolumeChange
+        TThostFtdcVolumeType VolumeChange
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###交易所报单操作失败
     cdef struct CThostFtdcExchangeOrderActionErrorField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###交易所成交
     cdef struct CThostFtdcExchangeTradeField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###成交编号
-        TThostFtdcTradeIDType	TradeID
+        TThostFtdcTradeIDType TradeID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###交易角色
-        TThostFtdcTradingRoleType	TradingRole
+        TThostFtdcTradingRoleType TradingRole
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###价格
-        TThostFtdcPriceType	Price
+        TThostFtdcPriceType Price
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###成交时期
-        TThostFtdcDateType	TradeDate
+        TThostFtdcDateType TradeDate
         ###成交时间
-        TThostFtdcTimeType	TradeTime
+        TThostFtdcTimeType TradeTime
         ###成交类型
-        TThostFtdcTradeTypeType	TradeType
+        TThostFtdcTradeTypeType TradeType
         ###成交价来源
-        TThostFtdcPriceSourceType	PriceSource
+        TThostFtdcPriceSourceType PriceSource
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###成交来源
-        TThostFtdcTradeSourceType	TradeSource
+        TThostFtdcTradeSourceType TradeSource
     
 
     ###成交
     cdef struct CThostFtdcTradeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###成交编号
-        TThostFtdcTradeIDType	TradeID
+        TThostFtdcTradeIDType TradeID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###交易角色
-        TThostFtdcTradingRoleType	TradingRole
+        TThostFtdcTradingRoleType TradingRole
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###价格
-        TThostFtdcPriceType	Price
+        TThostFtdcPriceType Price
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###成交时期
-        TThostFtdcDateType	TradeDate
+        TThostFtdcDateType TradeDate
         ###成交时间
-        TThostFtdcTimeType	TradeTime
+        TThostFtdcTimeType TradeTime
         ###成交类型
-        TThostFtdcTradeTypeType	TradeType
+        TThostFtdcTradeTypeType TradeType
         ###成交价来源
-        TThostFtdcPriceSourceType	PriceSource
+        TThostFtdcPriceSourceType PriceSource
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###经纪公司报单编号
-        TThostFtdcSequenceNoType	BrokerOrderSeq
+        TThostFtdcSequenceNoType BrokerOrderSeq
         ###成交来源
-        TThostFtdcTradeSourceType	TradeSource
+        TThostFtdcTradeSourceType TradeSource
     
 
     ###用户会话
     cdef struct CThostFtdcUserSessionField:
     
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###登录日期
-        TThostFtdcDateType	LoginDate
+        TThostFtdcDateType LoginDate
         ###登录时间
-        TThostFtdcTimeType	LoginTime
+        TThostFtdcTimeType LoginTime
         ###IP地址
-        TThostFtdcIPAddressType	IPAddress
+        TThostFtdcIPAddressType IPAddress
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###接口端产品信息
-        TThostFtdcProductInfoType	InterfaceProductInfo
+        TThostFtdcProductInfoType InterfaceProductInfo
         ###协议信息
-        TThostFtdcProtocolInfoType	ProtocolInfo
+        TThostFtdcProtocolInfoType ProtocolInfo
         ###Mac地址
-        TThostFtdcMacAddressType	MacAddress
+        TThostFtdcMacAddressType MacAddress
     
 
     ###查询最大报单数量
     cdef struct CThostFtdcQueryMaxOrderVolumeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###最大允许报单数量
-        TThostFtdcVolumeType	MaxVolume
+        TThostFtdcVolumeType MaxVolume
     
 
     ###投资者结算结果确认信息
     cdef struct CThostFtdcSettlementInfoConfirmField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###确认日期
-        TThostFtdcDateType	ConfirmDate
+        TThostFtdcDateType ConfirmDate
         ###确认时间
-        TThostFtdcTimeType	ConfirmTime
+        TThostFtdcTimeType ConfirmTime
     
 
     ###出入金同步
     cdef struct CThostFtdcSyncDepositField:
     
         ###出入金流水号
-        TThostFtdcDepositSeqNoType	DepositSeqNo
+        TThostFtdcDepositSeqNoType DepositSeqNo
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###入金金额
-        TThostFtdcMoneyType	Deposit
+        TThostFtdcMoneyType Deposit
         ###是否强制进行
-        TThostFtdcBoolType	IsForce
+        TThostFtdcBoolType IsForce
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###货币质押同步
     cdef struct CThostFtdcSyncFundMortgageField:
     
         ###货币质押流水号
-        TThostFtdcDepositSeqNoType	MortgageSeqNo
+        TThostFtdcDepositSeqNoType MortgageSeqNo
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###源币种
-        TThostFtdcCurrencyIDType	FromCurrencyID
+        TThostFtdcCurrencyIDType FromCurrencyID
         ###质押金额
-        TThostFtdcMoneyType	MortgageAmount
+        TThostFtdcMoneyType MortgageAmount
         ###目标币种
-        TThostFtdcCurrencyIDType	ToCurrencyID
+        TThostFtdcCurrencyIDType ToCurrencyID
     
 
     ###经纪公司同步
     cdef struct CThostFtdcBrokerSyncField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
 
     ###正在同步中的投资者
     cdef struct CThostFtdcSyncingInvestorField:
     
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者分组代码
-        TThostFtdcInvestorIDType	InvestorGroupID
+        TThostFtdcInvestorIDType InvestorGroupID
         ###投资者名称
-        TThostFtdcPartyNameType	InvestorName
+        TThostFtdcPartyNameType InvestorName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdentifiedCardType
+        TThostFtdcIdCardTypeType IdentifiedCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
         ###联系电话
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###通讯地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###开户日期
-        TThostFtdcDateType	OpenDate
+        TThostFtdcDateType OpenDate
         ###手机
-        TThostFtdcMobileType	Mobile
+        TThostFtdcMobileType Mobile
         ###手续费率模板代码
-        TThostFtdcInvestorIDType	CommModelID
+        TThostFtdcInvestorIDType CommModelID
         ###保证金率模板代码
-        TThostFtdcInvestorIDType	MarginModelID
+        TThostFtdcInvestorIDType MarginModelID
     
 
     ###正在同步中的交易代码
     cdef struct CThostFtdcSyncingTradingCodeField:
     
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
         ###交易编码类型
-        TThostFtdcClientIDTypeType	ClientIDType
+        TThostFtdcClientIDTypeType ClientIDType
     
 
     ###正在同步中的投资者分组
     cdef struct CThostFtdcSyncingInvestorGroupField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者分组代码
-        TThostFtdcInvestorIDType	InvestorGroupID
+        TThostFtdcInvestorIDType InvestorGroupID
         ###投资者分组名称
-        TThostFtdcInvestorGroupNameType	InvestorGroupName
+        TThostFtdcInvestorGroupNameType InvestorGroupName
     
 
     ###正在同步中的交易账号
     cdef struct CThostFtdcSyncingTradingAccountField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###上次质押金额
-        TThostFtdcMoneyType	PreMortgage
+        TThostFtdcMoneyType PreMortgage
         ###上次信用额度
-        TThostFtdcMoneyType	PreCredit
+        TThostFtdcMoneyType PreCredit
         ###上次存款额
-        TThostFtdcMoneyType	PreDeposit
+        TThostFtdcMoneyType PreDeposit
         ###上次结算准备金
-        TThostFtdcMoneyType	PreBalance
+        TThostFtdcMoneyType PreBalance
         ###上次占用的保证金
-        TThostFtdcMoneyType	PreMargin
+        TThostFtdcMoneyType PreMargin
         ###利息基数
-        TThostFtdcMoneyType	InterestBase
+        TThostFtdcMoneyType InterestBase
         ###利息收入
-        TThostFtdcMoneyType	Interest
+        TThostFtdcMoneyType Interest
         ###入金金额
-        TThostFtdcMoneyType	Deposit
+        TThostFtdcMoneyType Deposit
         ###出金金额
-        TThostFtdcMoneyType	Withdraw
+        TThostFtdcMoneyType Withdraw
         ###冻结的保证金
-        TThostFtdcMoneyType	FrozenMargin
+        TThostFtdcMoneyType FrozenMargin
         ###冻结的资金
-        TThostFtdcMoneyType	FrozenCash
+        TThostFtdcMoneyType FrozenCash
         ###冻结的手续费
-        TThostFtdcMoneyType	FrozenCommission
+        TThostFtdcMoneyType FrozenCommission
         ###当前保证金总额
-        TThostFtdcMoneyType	CurrMargin
+        TThostFtdcMoneyType CurrMargin
         ###资金差额
-        TThostFtdcMoneyType	CashIn
+        TThostFtdcMoneyType CashIn
         ###手续费
-        TThostFtdcMoneyType	Commission
+        TThostFtdcMoneyType Commission
         ###平仓盈亏
-        TThostFtdcMoneyType	CloseProfit
+        TThostFtdcMoneyType CloseProfit
         ###持仓盈亏
-        TThostFtdcMoneyType	PositionProfit
+        TThostFtdcMoneyType PositionProfit
         ###期货结算准备金
-        TThostFtdcMoneyType	Balance
+        TThostFtdcMoneyType Balance
         ###可用资金
-        TThostFtdcMoneyType	Available
+        TThostFtdcMoneyType Available
         ###可取资金
-        TThostFtdcMoneyType	WithdrawQuota
+        TThostFtdcMoneyType WithdrawQuota
         ###基本准备金
-        TThostFtdcMoneyType	Reserve
+        TThostFtdcMoneyType Reserve
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###信用额度
-        TThostFtdcMoneyType	Credit
+        TThostFtdcMoneyType Credit
         ###质押金额
-        TThostFtdcMoneyType	Mortgage
+        TThostFtdcMoneyType Mortgage
         ###交易所保证金
-        TThostFtdcMoneyType	ExchangeMargin
+        TThostFtdcMoneyType ExchangeMargin
         ###投资者交割保证金
-        TThostFtdcMoneyType	DeliveryMargin
+        TThostFtdcMoneyType DeliveryMargin
         ###交易所交割保证金
-        TThostFtdcMoneyType	ExchangeDeliveryMargin
+        TThostFtdcMoneyType ExchangeDeliveryMargin
         ###保底期货结算准备金
-        TThostFtdcMoneyType	ReserveBalance
+        TThostFtdcMoneyType ReserveBalance
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###上次货币质入金额
-        TThostFtdcMoneyType	PreFundMortgageIn
+        TThostFtdcMoneyType PreFundMortgageIn
         ###上次货币质出金额
-        TThostFtdcMoneyType	PreFundMortgageOut
+        TThostFtdcMoneyType PreFundMortgageOut
         ###货币质入金额
-        TThostFtdcMoneyType	FundMortgageIn
+        TThostFtdcMoneyType FundMortgageIn
         ###货币质出金额
-        TThostFtdcMoneyType	FundMortgageOut
+        TThostFtdcMoneyType FundMortgageOut
         ###货币质押余额
-        TThostFtdcMoneyType	FundMortgageAvailable
+        TThostFtdcMoneyType FundMortgageAvailable
         ###可质押货币金额
-        TThostFtdcMoneyType	MortgageableFund
+        TThostFtdcMoneyType MortgageableFund
         ###特殊产品占用保证金
-        TThostFtdcMoneyType	SpecProductMargin
+        TThostFtdcMoneyType SpecProductMargin
         ###特殊产品冻结保证金
-        TThostFtdcMoneyType	SpecProductFrozenMargin
+        TThostFtdcMoneyType SpecProductFrozenMargin
         ###特殊产品手续费
-        TThostFtdcMoneyType	SpecProductCommission
+        TThostFtdcMoneyType SpecProductCommission
         ###特殊产品冻结手续费
-        TThostFtdcMoneyType	SpecProductFrozenCommission
+        TThostFtdcMoneyType SpecProductFrozenCommission
         ###特殊产品持仓盈亏
-        TThostFtdcMoneyType	SpecProductPositionProfit
+        TThostFtdcMoneyType SpecProductPositionProfit
         ###特殊产品平仓盈亏
-        TThostFtdcMoneyType	SpecProductCloseProfit
+        TThostFtdcMoneyType SpecProductCloseProfit
         ###根据持仓盈亏算法计算的特殊产品持仓盈亏
-        TThostFtdcMoneyType	SpecProductPositionProfitByAlg
+        TThostFtdcMoneyType SpecProductPositionProfitByAlg
         ###特殊产品交易所保证金
-        TThostFtdcMoneyType	SpecProductExchangeMargin
+        TThostFtdcMoneyType SpecProductExchangeMargin
     
 
     ###正在同步中的投资者持仓
     cdef struct CThostFtdcSyncingInvestorPositionField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###持仓多空方向
-        TThostFtdcPosiDirectionType	PosiDirection
+        TThostFtdcPosiDirectionType PosiDirection
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###持仓日期
-        TThostFtdcPositionDateType	PositionDate
+        TThostFtdcPositionDateType PositionDate
         ###上日持仓
-        TThostFtdcVolumeType	YdPosition
+        TThostFtdcVolumeType YdPosition
         ###今日持仓
-        TThostFtdcVolumeType	Position
+        TThostFtdcVolumeType Position
         ###多头冻结
-        TThostFtdcVolumeType	LongFrozen
+        TThostFtdcVolumeType LongFrozen
         ###空头冻结
-        TThostFtdcVolumeType	ShortFrozen
+        TThostFtdcVolumeType ShortFrozen
         ###开仓冻结金额
-        TThostFtdcMoneyType	LongFrozenAmount
+        TThostFtdcMoneyType LongFrozenAmount
         ###开仓冻结金额
-        TThostFtdcMoneyType	ShortFrozenAmount
+        TThostFtdcMoneyType ShortFrozenAmount
         ###开仓量
-        TThostFtdcVolumeType	OpenVolume
+        TThostFtdcVolumeType OpenVolume
         ###平仓量
-        TThostFtdcVolumeType	CloseVolume
+        TThostFtdcVolumeType CloseVolume
         ###开仓金额
-        TThostFtdcMoneyType	OpenAmount
+        TThostFtdcMoneyType OpenAmount
         ###平仓金额
-        TThostFtdcMoneyType	CloseAmount
+        TThostFtdcMoneyType CloseAmount
         ###持仓成本
-        TThostFtdcMoneyType	PositionCost
+        TThostFtdcMoneyType PositionCost
         ###上次占用的保证金
-        TThostFtdcMoneyType	PreMargin
+        TThostFtdcMoneyType PreMargin
         ###占用的保证金
-        TThostFtdcMoneyType	UseMargin
+        TThostFtdcMoneyType UseMargin
         ###冻结的保证金
-        TThostFtdcMoneyType	FrozenMargin
+        TThostFtdcMoneyType FrozenMargin
         ###冻结的资金
-        TThostFtdcMoneyType	FrozenCash
+        TThostFtdcMoneyType FrozenCash
         ###冻结的手续费
-        TThostFtdcMoneyType	FrozenCommission
+        TThostFtdcMoneyType FrozenCommission
         ###资金差额
-        TThostFtdcMoneyType	CashIn
+        TThostFtdcMoneyType CashIn
         ###手续费
-        TThostFtdcMoneyType	Commission
+        TThostFtdcMoneyType Commission
         ###平仓盈亏
-        TThostFtdcMoneyType	CloseProfit
+        TThostFtdcMoneyType CloseProfit
         ###持仓盈亏
-        TThostFtdcMoneyType	PositionProfit
+        TThostFtdcMoneyType PositionProfit
         ###上次结算价
-        TThostFtdcPriceType	PreSettlementPrice
+        TThostFtdcPriceType PreSettlementPrice
         ###本次结算价
-        TThostFtdcPriceType	SettlementPrice
+        TThostFtdcPriceType SettlementPrice
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###开仓成本
-        TThostFtdcMoneyType	OpenCost
+        TThostFtdcMoneyType OpenCost
         ###交易所保证金
-        TThostFtdcMoneyType	ExchangeMargin
+        TThostFtdcMoneyType ExchangeMargin
         ###组合成交形成的持仓
-        TThostFtdcVolumeType	CombPosition
+        TThostFtdcVolumeType CombPosition
         ###组合多头冻结
-        TThostFtdcVolumeType	CombLongFrozen
+        TThostFtdcVolumeType CombLongFrozen
         ###组合空头冻结
-        TThostFtdcVolumeType	CombShortFrozen
+        TThostFtdcVolumeType CombShortFrozen
         ###逐日盯市平仓盈亏
-        TThostFtdcMoneyType	CloseProfitByDate
+        TThostFtdcMoneyType CloseProfitByDate
         ###逐笔对冲平仓盈亏
-        TThostFtdcMoneyType	CloseProfitByTrade
+        TThostFtdcMoneyType CloseProfitByTrade
         ###今日持仓
-        TThostFtdcVolumeType	TodayPosition
+        TThostFtdcVolumeType TodayPosition
         ###保证金率
-        TThostFtdcRatioType	MarginRateByMoney
+        TThostFtdcRatioType MarginRateByMoney
         ###保证金率(按手数)
-        TThostFtdcRatioType	MarginRateByVolume
+        TThostFtdcRatioType MarginRateByVolume
         ###执行冻结
-        TThostFtdcVolumeType	StrikeFrozen
+        TThostFtdcVolumeType StrikeFrozen
         ###执行冻结金额
-        TThostFtdcMoneyType	StrikeFrozenAmount
+        TThostFtdcMoneyType StrikeFrozenAmount
         ###放弃执行冻结
-        TThostFtdcVolumeType	AbandonFrozen
+        TThostFtdcVolumeType AbandonFrozen
     
 
     ###正在同步中的合约保证金率
     cdef struct CThostFtdcSyncingInstrumentMarginRateField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###多头保证金率
-        TThostFtdcRatioType	LongMarginRatioByMoney
+        TThostFtdcRatioType LongMarginRatioByMoney
         ###多头保证金费
-        TThostFtdcMoneyType	LongMarginRatioByVolume
+        TThostFtdcMoneyType LongMarginRatioByVolume
         ###空头保证金率
-        TThostFtdcRatioType	ShortMarginRatioByMoney
+        TThostFtdcRatioType ShortMarginRatioByMoney
         ###空头保证金费
-        TThostFtdcMoneyType	ShortMarginRatioByVolume
+        TThostFtdcMoneyType ShortMarginRatioByVolume
         ###是否相对交易所收取
-        TThostFtdcBoolType	IsRelative
+        TThostFtdcBoolType IsRelative
     
 
     ###正在同步中的合约手续费率
     cdef struct CThostFtdcSyncingInstrumentCommissionRateField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###开仓手续费率
-        TThostFtdcRatioType	OpenRatioByMoney
+        TThostFtdcRatioType OpenRatioByMoney
         ###开仓手续费
-        TThostFtdcRatioType	OpenRatioByVolume
+        TThostFtdcRatioType OpenRatioByVolume
         ###平仓手续费率
-        TThostFtdcRatioType	CloseRatioByMoney
+        TThostFtdcRatioType CloseRatioByMoney
         ###平仓手续费
-        TThostFtdcRatioType	CloseRatioByVolume
+        TThostFtdcRatioType CloseRatioByVolume
         ###平今手续费率
-        TThostFtdcRatioType	CloseTodayRatioByMoney
+        TThostFtdcRatioType CloseTodayRatioByMoney
         ###平今手续费
-        TThostFtdcRatioType	CloseTodayRatioByVolume
+        TThostFtdcRatioType CloseTodayRatioByVolume
     
 
     ###正在同步中的合约交易权限
     cdef struct CThostFtdcSyncingInstrumentTradingRightField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易权限
-        TThostFtdcTradingRightType	TradingRight
+        TThostFtdcTradingRightType TradingRight
     
 
     ###查询报单
     cdef struct CThostFtdcQryOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###开始时间
-        TThostFtdcTimeType	InsertTimeStart
+        TThostFtdcTimeType InsertTimeStart
         ###结束时间
-        TThostFtdcTimeType	InsertTimeEnd
+        TThostFtdcTimeType InsertTimeEnd
     
 
     ###查询成交
     cdef struct CThostFtdcQryTradeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###成交编号
-        TThostFtdcTradeIDType	TradeID
+        TThostFtdcTradeIDType TradeID
         ###开始时间
-        TThostFtdcTimeType	TradeTimeStart
+        TThostFtdcTimeType TradeTimeStart
         ###结束时间
-        TThostFtdcTimeType	TradeTimeEnd
+        TThostFtdcTimeType TradeTimeEnd
     
 
     ###查询投资者持仓
     cdef struct CThostFtdcQryInvestorPositionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###查询资金账户
     cdef struct CThostFtdcQryTradingAccountField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###查询投资者
     cdef struct CThostFtdcQryInvestorField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###查询交易编码
     cdef struct CThostFtdcQryTradingCodeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###交易编码类型
-        TThostFtdcClientIDTypeType	ClientIDType
+        TThostFtdcClientIDTypeType ClientIDType
     
 
     ###查询投资者组
     cdef struct CThostFtdcQryInvestorGroupField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
 
     ###查询合约保证金率
     cdef struct CThostFtdcQryInstrumentMarginRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
     
 
     ###查询手续费率
     cdef struct CThostFtdcQryInstrumentCommissionRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###查询合约交易权限
     cdef struct CThostFtdcQryInstrumentTradingRightField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###查询经纪公司
     cdef struct CThostFtdcQryBrokerField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
 
     ###查询交易员
     cdef struct CThostFtdcQryTraderField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###查询管理用户功能权限
     cdef struct CThostFtdcQrySuperUserFunctionField:
     
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###查询用户会话
     cdef struct CThostFtdcQryUserSessionField:
     
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###查询经纪公司会员代码
     cdef struct CThostFtdcQryPartBrokerField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
     
 
     ###查询前置状态
     cdef struct CThostFtdcQryFrontStatusField:
     
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
     
 
     ###查询交易所报单
     cdef struct CThostFtdcQryExchangeOrderField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###查询报单操作
     cdef struct CThostFtdcQryOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###查询交易所报单操作
     cdef struct CThostFtdcQryExchangeOrderActionField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###查询管理用户
     cdef struct CThostFtdcQrySuperUserField:
     
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###查询交易所
     cdef struct CThostFtdcQryExchangeField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###查询产品
     cdef struct CThostFtdcQryProductField:
     
         ###产品代码
-        TThostFtdcInstrumentIDType	ProductID
+        TThostFtdcInstrumentIDType ProductID
         ###产品类型
-        TThostFtdcProductClassType	ProductClass
+        TThostFtdcProductClassType ProductClass
     
 
     ###查询合约
     cdef struct CThostFtdcQryInstrumentField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###产品代码
-        TThostFtdcInstrumentIDType	ProductID
+        TThostFtdcInstrumentIDType ProductID
     
 
     ###查询行情
     cdef struct CThostFtdcQryDepthMarketDataField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###查询经纪公司用户
     cdef struct CThostFtdcQryBrokerUserField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###查询经纪公司用户权限
     cdef struct CThostFtdcQryBrokerUserFunctionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###查询交易员报盘机
     cdef struct CThostFtdcQryTraderOfferField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###查询出入金流水
     cdef struct CThostFtdcQrySyncDepositField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###出入金流水号
-        TThostFtdcDepositSeqNoType	DepositSeqNo
+        TThostFtdcDepositSeqNoType DepositSeqNo
     
 
     ###查询投资者结算结果
     cdef struct CThostFtdcQrySettlementInfoField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
     
 
     ###查询交易所保证金率
     cdef struct CThostFtdcQryExchangeMarginRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
     
 
     ###查询交易所调整保证金率
     cdef struct CThostFtdcQryExchangeMarginRateAdjustField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
     
 
     ###查询汇率
     cdef struct CThostFtdcQryExchangeRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###源币种
-        TThostFtdcCurrencyIDType	FromCurrencyID
+        TThostFtdcCurrencyIDType FromCurrencyID
         ###目标币种
-        TThostFtdcCurrencyIDType	ToCurrencyID
+        TThostFtdcCurrencyIDType ToCurrencyID
     
 
     ###查询货币质押流水
     cdef struct CThostFtdcQrySyncFundMortgageField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###货币质押流水号
-        TThostFtdcDepositSeqNoType	MortgageSeqNo
+        TThostFtdcDepositSeqNoType MortgageSeqNo
     
 
     ###查询报单
     cdef struct CThostFtdcQryHisOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###开始时间
-        TThostFtdcTimeType	InsertTimeStart
+        TThostFtdcTimeType InsertTimeStart
         ###结束时间
-        TThostFtdcTimeType	InsertTimeEnd
+        TThostFtdcTimeType InsertTimeEnd
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
     
 
     ###当前期权合约最小保证金
     cdef struct CThostFtdcOptionInstrMiniMarginField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###单位（手）期权合约最小保证金
-        TThostFtdcMoneyType	MinMargin
+        TThostFtdcMoneyType MinMargin
         ###取值方式
-        TThostFtdcValueMethodType	ValueMethod
+        TThostFtdcValueMethodType ValueMethod
         ###是否跟随交易所收取
-        TThostFtdcBoolType	IsRelative
+        TThostFtdcBoolType IsRelative
     
 
     ###当前期权合约保证金调整系数
     cdef struct CThostFtdcOptionInstrMarginAdjustField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###投机空头保证金调整系数
-        TThostFtdcRatioType	SShortMarginRatioByMoney
+        TThostFtdcRatioType SShortMarginRatioByMoney
         ###投机空头保证金调整系数
-        TThostFtdcMoneyType	SShortMarginRatioByVolume
+        TThostFtdcMoneyType SShortMarginRatioByVolume
         ###保值空头保证金调整系数
-        TThostFtdcRatioType	HShortMarginRatioByMoney
+        TThostFtdcRatioType HShortMarginRatioByMoney
         ###保值空头保证金调整系数
-        TThostFtdcMoneyType	HShortMarginRatioByVolume
+        TThostFtdcMoneyType HShortMarginRatioByVolume
         ###套利空头保证金调整系数
-        TThostFtdcRatioType	AShortMarginRatioByMoney
+        TThostFtdcRatioType AShortMarginRatioByMoney
         ###套利空头保证金调整系数
-        TThostFtdcMoneyType	AShortMarginRatioByVolume
+        TThostFtdcMoneyType AShortMarginRatioByVolume
         ###是否跟随交易所收取
-        TThostFtdcBoolType	IsRelative
+        TThostFtdcBoolType IsRelative
     
 
     ###当前期权合约手续费的详细内容
     cdef struct CThostFtdcOptionInstrCommRateField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###开仓手续费率
-        TThostFtdcRatioType	OpenRatioByMoney
+        TThostFtdcRatioType OpenRatioByMoney
         ###开仓手续费
-        TThostFtdcRatioType	OpenRatioByVolume
+        TThostFtdcRatioType OpenRatioByVolume
         ###平仓手续费率
-        TThostFtdcRatioType	CloseRatioByMoney
+        TThostFtdcRatioType CloseRatioByMoney
         ###平仓手续费
-        TThostFtdcRatioType	CloseRatioByVolume
+        TThostFtdcRatioType CloseRatioByVolume
         ###平今手续费率
-        TThostFtdcRatioType	CloseTodayRatioByMoney
+        TThostFtdcRatioType CloseTodayRatioByMoney
         ###平今手续费
-        TThostFtdcRatioType	CloseTodayRatioByVolume
+        TThostFtdcRatioType CloseTodayRatioByVolume
         ###执行手续费率
-        TThostFtdcRatioType	StrikeRatioByMoney
+        TThostFtdcRatioType StrikeRatioByMoney
         ###执行手续费
-        TThostFtdcRatioType	StrikeRatioByVolume
+        TThostFtdcRatioType StrikeRatioByVolume
     
 
     ###期权交易成本
     cdef struct CThostFtdcOptionInstrTradeCostField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###期权合约保证金不变部分
-        TThostFtdcMoneyType	FixedMargin
+        TThostFtdcMoneyType FixedMargin
         ###期权合约最小保证金
-        TThostFtdcMoneyType	MiniMargin
+        TThostFtdcMoneyType MiniMargin
         ###期权合约权利金
-        TThostFtdcMoneyType	Royalty
+        TThostFtdcMoneyType Royalty
         ###交易所期权合约保证金不变部分
-        TThostFtdcMoneyType	ExchFixedMargin
+        TThostFtdcMoneyType ExchFixedMargin
         ###交易所期权合约最小保证金
-        TThostFtdcMoneyType	ExchMiniMargin
+        TThostFtdcMoneyType ExchMiniMargin
     
 
     ###期权交易成本查询
     cdef struct CThostFtdcQryOptionInstrTradeCostField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###期权合约报价
-        TThostFtdcPriceType	InputPrice
+        TThostFtdcPriceType InputPrice
         ###标的价格,填0则用昨结算价
-        TThostFtdcPriceType	UnderlyingPrice
+        TThostFtdcPriceType UnderlyingPrice
     
 
     ###期权手续费率查询
     cdef struct CThostFtdcQryOptionInstrCommRateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###股指现货指数
     cdef struct CThostFtdcIndexPriceField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###指数现货收盘价
-        TThostFtdcPriceType	ClosePrice
+        TThostFtdcPriceType ClosePrice
     
 
     ###输入的执行宣告
     cdef struct CThostFtdcInputExecOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###执行宣告引用
-        TThostFtdcOrderRefType	ExecOrderRef
+        TThostFtdcOrderRefType ExecOrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###执行类型
-        TThostFtdcActionTypeType	ActionType
+        TThostFtdcActionTypeType ActionType
         ###保留头寸申请的持仓方向
-        TThostFtdcPosiDirectionType	PosiDirection
+        TThostFtdcPosiDirectionType PosiDirection
         ###期权行权后是否保留期货头寸的标记
-        TThostFtdcExecOrderPositionFlagType	ReservePositionFlag
+        TThostFtdcExecOrderPositionFlagType ReservePositionFlag
         ###期权行权后生成的头寸是否自动平仓
-        TThostFtdcExecOrderCloseFlagType	CloseFlag
+        TThostFtdcExecOrderCloseFlagType CloseFlag
     
 
     ###输入执行宣告操作
     cdef struct CThostFtdcInputExecOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###执行宣告操作引用
-        TThostFtdcOrderActionRefType	ExecOrderActionRef
+        TThostFtdcOrderActionRefType ExecOrderActionRef
         ###执行宣告引用
-        TThostFtdcOrderRefType	ExecOrderRef
+        TThostFtdcOrderRefType ExecOrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###执行宣告操作编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###执行宣告
     cdef struct CThostFtdcExecOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###执行宣告引用
-        TThostFtdcOrderRefType	ExecOrderRef
+        TThostFtdcOrderRefType ExecOrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###执行类型
-        TThostFtdcActionTypeType	ActionType
+        TThostFtdcActionTypeType ActionType
         ###保留头寸申请的持仓方向
-        TThostFtdcPosiDirectionType	PosiDirection
+        TThostFtdcPosiDirectionType PosiDirection
         ###期权行权后是否保留期货头寸的标记
-        TThostFtdcExecOrderPositionFlagType	ReservePositionFlag
+        TThostFtdcExecOrderPositionFlagType ReservePositionFlag
         ###期权行权后生成的头寸是否自动平仓
-        TThostFtdcExecOrderCloseFlagType	CloseFlag
+        TThostFtdcExecOrderCloseFlagType CloseFlag
         ###本地执行宣告编号
-        TThostFtdcOrderLocalIDType	ExecOrderLocalID
+        TThostFtdcOrderLocalIDType ExecOrderLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###执行宣告提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###执行宣告编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###插入时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###执行结果
-        TThostFtdcExecResultType	ExecResult
+        TThostFtdcExecResultType ExecResult
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###操作用户代码
-        TThostFtdcUserIDType	ActiveUserID
+        TThostFtdcUserIDType ActiveUserID
         ###经纪公司报单编号
-        TThostFtdcSequenceNoType	BrokerExecOrderSeq
+        TThostFtdcSequenceNoType BrokerExecOrderSeq
     
 
     ###执行宣告操作
     cdef struct CThostFtdcExecOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###执行宣告操作引用
-        TThostFtdcOrderActionRefType	ExecOrderActionRef
+        TThostFtdcOrderActionRefType ExecOrderActionRef
         ###执行宣告引用
-        TThostFtdcOrderRefType	ExecOrderRef
+        TThostFtdcOrderRefType ExecOrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###执行宣告操作编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地执行宣告编号
-        TThostFtdcOrderLocalIDType	ExecOrderLocalID
+        TThostFtdcOrderLocalIDType ExecOrderLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###执行类型
-        TThostFtdcActionTypeType	ActionType
+        TThostFtdcActionTypeType ActionType
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###执行宣告查询
     cdef struct CThostFtdcQryExecOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###执行宣告编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###开始时间
-        TThostFtdcTimeType	InsertTimeStart
+        TThostFtdcTimeType InsertTimeStart
         ###结束时间
-        TThostFtdcTimeType	InsertTimeEnd
+        TThostFtdcTimeType InsertTimeEnd
     
 
     ###交易所执行宣告信息
     cdef struct CThostFtdcExchangeExecOrderField:
     
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###执行类型
-        TThostFtdcActionTypeType	ActionType
+        TThostFtdcActionTypeType ActionType
         ###保留头寸申请的持仓方向
-        TThostFtdcPosiDirectionType	PosiDirection
+        TThostFtdcPosiDirectionType PosiDirection
         ###期权行权后是否保留期货头寸的标记
-        TThostFtdcExecOrderPositionFlagType	ReservePositionFlag
+        TThostFtdcExecOrderPositionFlagType ReservePositionFlag
         ###期权行权后生成的头寸是否自动平仓
-        TThostFtdcExecOrderCloseFlagType	CloseFlag
+        TThostFtdcExecOrderCloseFlagType CloseFlag
         ###本地执行宣告编号
-        TThostFtdcOrderLocalIDType	ExecOrderLocalID
+        TThostFtdcOrderLocalIDType ExecOrderLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###执行宣告提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###执行宣告编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###插入时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###执行结果
-        TThostFtdcExecResultType	ExecResult
+        TThostFtdcExecResultType ExecResult
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
     
 
     ###交易所执行宣告查询
     cdef struct CThostFtdcQryExchangeExecOrderField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###执行宣告操作查询
     cdef struct CThostFtdcQryExecOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###交易所执行宣告操作
     cdef struct CThostFtdcExchangeExecOrderActionField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###执行宣告操作编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地执行宣告编号
-        TThostFtdcOrderLocalIDType	ExecOrderLocalID
+        TThostFtdcOrderLocalIDType ExecOrderLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###执行类型
-        TThostFtdcActionTypeType	ActionType
+        TThostFtdcActionTypeType ActionType
     
 
     ###交易所执行宣告操作查询
     cdef struct CThostFtdcQryExchangeExecOrderActionField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###错误执行宣告
     cdef struct CThostFtdcErrExecOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###执行宣告引用
-        TThostFtdcOrderRefType	ExecOrderRef
+        TThostFtdcOrderRefType ExecOrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###执行类型
-        TThostFtdcActionTypeType	ActionType
+        TThostFtdcActionTypeType ActionType
         ###保留头寸申请的持仓方向
-        TThostFtdcPosiDirectionType	PosiDirection
+        TThostFtdcPosiDirectionType PosiDirection
         ###期权行权后是否保留期货头寸的标记
-        TThostFtdcExecOrderPositionFlagType	ReservePositionFlag
+        TThostFtdcExecOrderPositionFlagType ReservePositionFlag
         ###期权行权后生成的头寸是否自动平仓
-        TThostFtdcExecOrderCloseFlagType	CloseFlag
+        TThostFtdcExecOrderCloseFlagType CloseFlag
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询错误执行宣告
     cdef struct CThostFtdcQryErrExecOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###错误执行宣告操作
     cdef struct CThostFtdcErrExecOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###执行宣告操作引用
-        TThostFtdcOrderActionRefType	ExecOrderActionRef
+        TThostFtdcOrderActionRefType ExecOrderActionRef
         ###执行宣告引用
-        TThostFtdcOrderRefType	ExecOrderRef
+        TThostFtdcOrderRefType ExecOrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###执行宣告操作编号
-        TThostFtdcExecOrderSysIDType	ExecOrderSysID
+        TThostFtdcExecOrderSysIDType ExecOrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询错误执行宣告操作
     cdef struct CThostFtdcQryErrExecOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###投资者期权合约交易权限
     cdef struct CThostFtdcOptionInstrTradingRightField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###交易权限
-        TThostFtdcTradingRightType	TradingRight
+        TThostFtdcTradingRightType TradingRight
     
 
     ###查询期权合约交易权限
     cdef struct CThostFtdcQryOptionInstrTradingRightField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
     
 
     ###输入的询价
     cdef struct CThostFtdcInputForQuoteField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###询价引用
-        TThostFtdcOrderRefType	ForQuoteRef
+        TThostFtdcOrderRefType ForQuoteRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###询价
     cdef struct CThostFtdcForQuoteField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###询价引用
-        TThostFtdcOrderRefType	ForQuoteRef
+        TThostFtdcOrderRefType ForQuoteRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###本地询价编号
-        TThostFtdcOrderLocalIDType	ForQuoteLocalID
+        TThostFtdcOrderLocalIDType ForQuoteLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###插入时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###询价状态
-        TThostFtdcForQuoteStatusType	ForQuoteStatus
+        TThostFtdcForQuoteStatusType ForQuoteStatus
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###操作用户代码
-        TThostFtdcUserIDType	ActiveUserID
+        TThostFtdcUserIDType ActiveUserID
         ###经纪公司询价编号
-        TThostFtdcSequenceNoType	BrokerForQutoSeq
+        TThostFtdcSequenceNoType BrokerForQutoSeq
     
 
     ###询价查询
     cdef struct CThostFtdcQryForQuoteField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###开始时间
-        TThostFtdcTimeType	InsertTimeStart
+        TThostFtdcTimeType InsertTimeStart
         ###结束时间
-        TThostFtdcTimeType	InsertTimeEnd
+        TThostFtdcTimeType InsertTimeEnd
     
 
     ###交易所询价信息
     cdef struct CThostFtdcExchangeForQuoteField:
     
         ###本地询价编号
-        TThostFtdcOrderLocalIDType	ForQuoteLocalID
+        TThostFtdcOrderLocalIDType ForQuoteLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###插入时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###询价状态
-        TThostFtdcForQuoteStatusType	ForQuoteStatus
+        TThostFtdcForQuoteStatusType ForQuoteStatus
     
 
     ###交易所询价查询
     cdef struct CThostFtdcQryExchangeForQuoteField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###输入的报价
     cdef struct CThostFtdcInputQuoteField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报价引用
-        TThostFtdcOrderRefType	QuoteRef
+        TThostFtdcOrderRefType QuoteRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###卖价格
-        TThostFtdcPriceType	AskPrice
+        TThostFtdcPriceType AskPrice
         ###买价格
-        TThostFtdcPriceType	BidPrice
+        TThostFtdcPriceType BidPrice
         ###卖数量
-        TThostFtdcVolumeType	AskVolume
+        TThostFtdcVolumeType AskVolume
         ###买数量
-        TThostFtdcVolumeType	BidVolume
+        TThostFtdcVolumeType BidVolume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###卖开平标志
-        TThostFtdcOffsetFlagType	AskOffsetFlag
+        TThostFtdcOffsetFlagType AskOffsetFlag
         ###买开平标志
-        TThostFtdcOffsetFlagType	BidOffsetFlag
+        TThostFtdcOffsetFlagType BidOffsetFlag
         ###卖投机套保标志
-        TThostFtdcHedgeFlagType	AskHedgeFlag
+        TThostFtdcHedgeFlagType AskHedgeFlag
         ###买投机套保标志
-        TThostFtdcHedgeFlagType	BidHedgeFlag
+        TThostFtdcHedgeFlagType BidHedgeFlag
         ###衍生卖报单引用
-        TThostFtdcOrderRefType	AskOrderRef
+        TThostFtdcOrderRefType AskOrderRef
         ###衍生买报单引用
-        TThostFtdcOrderRefType	BidOrderRef
+        TThostFtdcOrderRefType BidOrderRef
         ###应价编号
-        TThostFtdcOrderSysIDType	ForQuoteSysID
+        TThostFtdcOrderSysIDType ForQuoteSysID
     
 
     ###输入报价操作
     cdef struct CThostFtdcInputQuoteActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###报价操作引用
-        TThostFtdcOrderActionRefType	QuoteActionRef
+        TThostFtdcOrderActionRefType QuoteActionRef
         ###报价引用
-        TThostFtdcOrderRefType	QuoteRef
+        TThostFtdcOrderRefType QuoteRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报价操作编号
-        TThostFtdcOrderSysIDType	QuoteSysID
+        TThostFtdcOrderSysIDType QuoteSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###报价
     cdef struct CThostFtdcQuoteField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报价引用
-        TThostFtdcOrderRefType	QuoteRef
+        TThostFtdcOrderRefType QuoteRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###卖价格
-        TThostFtdcPriceType	AskPrice
+        TThostFtdcPriceType AskPrice
         ###买价格
-        TThostFtdcPriceType	BidPrice
+        TThostFtdcPriceType BidPrice
         ###卖数量
-        TThostFtdcVolumeType	AskVolume
+        TThostFtdcVolumeType AskVolume
         ###买数量
-        TThostFtdcVolumeType	BidVolume
+        TThostFtdcVolumeType BidVolume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###卖开平标志
-        TThostFtdcOffsetFlagType	AskOffsetFlag
+        TThostFtdcOffsetFlagType AskOffsetFlag
         ###买开平标志
-        TThostFtdcOffsetFlagType	BidOffsetFlag
+        TThostFtdcOffsetFlagType BidOffsetFlag
         ###卖投机套保标志
-        TThostFtdcHedgeFlagType	AskHedgeFlag
+        TThostFtdcHedgeFlagType AskHedgeFlag
         ###买投机套保标志
-        TThostFtdcHedgeFlagType	BidHedgeFlag
+        TThostFtdcHedgeFlagType BidHedgeFlag
         ###本地报价编号
-        TThostFtdcOrderLocalIDType	QuoteLocalID
+        TThostFtdcOrderLocalIDType QuoteLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报价提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###报价提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###报价编号
-        TThostFtdcOrderSysIDType	QuoteSysID
+        TThostFtdcOrderSysIDType QuoteSysID
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###插入时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###报价状态
-        TThostFtdcOrderStatusType	QuoteStatus
+        TThostFtdcOrderStatusType QuoteStatus
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###卖方报单编号
-        TThostFtdcOrderSysIDType	AskOrderSysID
+        TThostFtdcOrderSysIDType AskOrderSysID
         ###买方报单编号
-        TThostFtdcOrderSysIDType	BidOrderSysID
+        TThostFtdcOrderSysIDType BidOrderSysID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###操作用户代码
-        TThostFtdcUserIDType	ActiveUserID
+        TThostFtdcUserIDType ActiveUserID
         ###经纪公司报价编号
-        TThostFtdcSequenceNoType	BrokerQuoteSeq
+        TThostFtdcSequenceNoType BrokerQuoteSeq
         ###衍生卖报单引用
-        TThostFtdcOrderRefType	AskOrderRef
+        TThostFtdcOrderRefType AskOrderRef
         ###衍生买报单引用
-        TThostFtdcOrderRefType	BidOrderRef
+        TThostFtdcOrderRefType BidOrderRef
         ###应价编号
-        TThostFtdcOrderSysIDType	ForQuoteSysID
+        TThostFtdcOrderSysIDType ForQuoteSysID
     
 
     ###报价操作
     cdef struct CThostFtdcQuoteActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###报价操作引用
-        TThostFtdcOrderActionRefType	QuoteActionRef
+        TThostFtdcOrderActionRefType QuoteActionRef
         ###报价引用
-        TThostFtdcOrderRefType	QuoteRef
+        TThostFtdcOrderRefType QuoteRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报价操作编号
-        TThostFtdcOrderSysIDType	QuoteSysID
+        TThostFtdcOrderSysIDType QuoteSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报价编号
-        TThostFtdcOrderLocalIDType	QuoteLocalID
+        TThostFtdcOrderLocalIDType QuoteLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###报价查询
     cdef struct CThostFtdcQryQuoteField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报价编号
-        TThostFtdcOrderSysIDType	QuoteSysID
+        TThostFtdcOrderSysIDType QuoteSysID
         ###开始时间
-        TThostFtdcTimeType	InsertTimeStart
+        TThostFtdcTimeType InsertTimeStart
         ###结束时间
-        TThostFtdcTimeType	InsertTimeEnd
+        TThostFtdcTimeType InsertTimeEnd
     
 
     ###交易所报价信息
     cdef struct CThostFtdcExchangeQuoteField:
     
         ###卖价格
-        TThostFtdcPriceType	AskPrice
+        TThostFtdcPriceType AskPrice
         ###买价格
-        TThostFtdcPriceType	BidPrice
+        TThostFtdcPriceType BidPrice
         ###卖数量
-        TThostFtdcVolumeType	AskVolume
+        TThostFtdcVolumeType AskVolume
         ###买数量
-        TThostFtdcVolumeType	BidVolume
+        TThostFtdcVolumeType BidVolume
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###卖开平标志
-        TThostFtdcOffsetFlagType	AskOffsetFlag
+        TThostFtdcOffsetFlagType AskOffsetFlag
         ###买开平标志
-        TThostFtdcOffsetFlagType	BidOffsetFlag
+        TThostFtdcOffsetFlagType BidOffsetFlag
         ###卖投机套保标志
-        TThostFtdcHedgeFlagType	AskHedgeFlag
+        TThostFtdcHedgeFlagType AskHedgeFlag
         ###买投机套保标志
-        TThostFtdcHedgeFlagType	BidHedgeFlag
+        TThostFtdcHedgeFlagType BidHedgeFlag
         ###本地报价编号
-        TThostFtdcOrderLocalIDType	QuoteLocalID
+        TThostFtdcOrderLocalIDType QuoteLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报价提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###报价提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###报价编号
-        TThostFtdcOrderSysIDType	QuoteSysID
+        TThostFtdcOrderSysIDType QuoteSysID
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###插入时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###报价状态
-        TThostFtdcOrderStatusType	QuoteStatus
+        TThostFtdcOrderStatusType QuoteStatus
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###卖方报单编号
-        TThostFtdcOrderSysIDType	AskOrderSysID
+        TThostFtdcOrderSysIDType AskOrderSysID
         ###买方报单编号
-        TThostFtdcOrderSysIDType	BidOrderSysID
+        TThostFtdcOrderSysIDType BidOrderSysID
         ###应价编号
-        TThostFtdcOrderSysIDType	ForQuoteSysID
+        TThostFtdcOrderSysIDType ForQuoteSysID
     
 
     ###交易所报价查询
     cdef struct CThostFtdcQryExchangeQuoteField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###报价操作查询
     cdef struct CThostFtdcQryQuoteActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###交易所报价操作
     cdef struct CThostFtdcExchangeQuoteActionField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报价操作编号
-        TThostFtdcOrderSysIDType	QuoteSysID
+        TThostFtdcOrderSysIDType QuoteSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报价编号
-        TThostFtdcOrderLocalIDType	QuoteLocalID
+        TThostFtdcOrderLocalIDType QuoteLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###交易所报价操作查询
     cdef struct CThostFtdcQryExchangeQuoteActionField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###期权合约delta值
     cdef struct CThostFtdcOptionInstrDeltaField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###Delta值
-        TThostFtdcRatioType	Delta
+        TThostFtdcRatioType Delta
     
 
     ###发给做市商的询价请求
     cdef struct CThostFtdcForQuoteRspField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###询价编号
-        TThostFtdcOrderSysIDType	ForQuoteSysID
+        TThostFtdcOrderSysIDType ForQuoteSysID
         ###询价时间
-        TThostFtdcTimeType	ForQuoteTime
+        TThostFtdcTimeType ForQuoteTime
         ###业务日期
-        TThostFtdcDateType	ActionDay
+        TThostFtdcDateType ActionDay
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###当前期权合约执行偏移值的详细内容
     cdef struct CThostFtdcStrikeOffsetField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###执行偏移值
-        TThostFtdcMoneyType	Offset
+        TThostFtdcMoneyType Offset
     
 
     ###期权执行偏移值查询
     cdef struct CThostFtdcQryStrikeOffsetField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###组合合约安全系数
     cdef struct CThostFtdcCombInstrumentGuardField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###
-        TThostFtdcRatioType	GuarantRatio
+        TThostFtdcRatioType GuarantRatio
     
 
     ###组合合约安全系数查询
     cdef struct CThostFtdcQryCombInstrumentGuardField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###输入的申请组合
     cdef struct CThostFtdcInputCombActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###组合引用
-        TThostFtdcOrderRefType	CombActionRef
+        TThostFtdcOrderRefType CombActionRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###组合指令方向
-        TThostFtdcCombDirectionType	CombDirection
+        TThostFtdcCombDirectionType CombDirection
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
     
 
     ###申请组合
     cdef struct CThostFtdcCombActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###组合引用
-        TThostFtdcOrderRefType	CombActionRef
+        TThostFtdcOrderRefType CombActionRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###组合指令方向
-        TThostFtdcCombDirectionType	CombDirection
+        TThostFtdcCombDirectionType CombDirection
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###本地申请组合编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###组合状态
-        TThostFtdcOrderActionStatusType	ActionStatus
+        TThostFtdcOrderActionStatusType ActionStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
     
 
     ###申请组合查询
     cdef struct CThostFtdcQryCombActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###交易所申请组合信息
     cdef struct CThostFtdcExchangeCombActionField:
     
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###组合指令方向
-        TThostFtdcCombDirectionType	CombDirection
+        TThostFtdcCombDirectionType CombDirection
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###本地申请组合编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###组合状态
-        TThostFtdcOrderActionStatusType	ActionStatus
+        TThostFtdcOrderActionStatusType ActionStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
     
 
     ###交易所申请组合查询
     cdef struct CThostFtdcQryExchangeCombActionField:
     
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###产品报价汇率
     cdef struct CThostFtdcProductExchRateField:
     
         ###产品代码
-        TThostFtdcInstrumentIDType	ProductID
+        TThostFtdcInstrumentIDType ProductID
         ###报价币种类型
-        TThostFtdcCurrencyIDType	QuoteCurrencyID
+        TThostFtdcCurrencyIDType QuoteCurrencyID
         ###汇率
-        TThostFtdcExchangeRateType	ExchangeRate
+        TThostFtdcExchangeRateType ExchangeRate
     
 
     ###产品报价汇率查询
     cdef struct CThostFtdcQryProductExchRateField:
     
         ###产品代码
-        TThostFtdcInstrumentIDType	ProductID
+        TThostFtdcInstrumentIDType ProductID
     
 
     ###市场行情
     cdef struct CThostFtdcMarketDataField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###最新价
-        TThostFtdcPriceType	LastPrice
+        TThostFtdcPriceType LastPrice
         ###上次结算价
-        TThostFtdcPriceType	PreSettlementPrice
+        TThostFtdcPriceType PreSettlementPrice
         ###昨收盘
-        TThostFtdcPriceType	PreClosePrice
+        TThostFtdcPriceType PreClosePrice
         ###昨持仓量
-        TThostFtdcLargeVolumeType	PreOpenInterest
+        TThostFtdcLargeVolumeType PreOpenInterest
         ###今开盘
-        TThostFtdcPriceType	OpenPrice
+        TThostFtdcPriceType OpenPrice
         ###最高价
-        TThostFtdcPriceType	HighestPrice
+        TThostFtdcPriceType HighestPrice
         ###最低价
-        TThostFtdcPriceType	LowestPrice
+        TThostFtdcPriceType LowestPrice
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###成交金额
-        TThostFtdcMoneyType	Turnover
+        TThostFtdcMoneyType Turnover
         ###持仓量
-        TThostFtdcLargeVolumeType	OpenInterest
+        TThostFtdcLargeVolumeType OpenInterest
         ###今收盘
-        TThostFtdcPriceType	ClosePrice
+        TThostFtdcPriceType ClosePrice
         ###本次结算价
-        TThostFtdcPriceType	SettlementPrice
+        TThostFtdcPriceType SettlementPrice
         ###涨停板价
-        TThostFtdcPriceType	UpperLimitPrice
+        TThostFtdcPriceType UpperLimitPrice
         ###跌停板价
-        TThostFtdcPriceType	LowerLimitPrice
+        TThostFtdcPriceType LowerLimitPrice
         ###昨虚实度
-        TThostFtdcRatioType	PreDelta
+        TThostFtdcRatioType PreDelta
         ###今虚实度
-        TThostFtdcRatioType	CurrDelta
+        TThostFtdcRatioType CurrDelta
         ###最后修改时间
-        TThostFtdcTimeType	UpdateTime
+        TThostFtdcTimeType UpdateTime
         ###最后修改毫秒
-        TThostFtdcMillisecType	UpdateMillisec
+        TThostFtdcMillisecType UpdateMillisec
         ###业务日期
-        TThostFtdcDateType	ActionDay
+        TThostFtdcDateType ActionDay
     
 
     ###行情基础属性
     cdef struct CThostFtdcMarketDataBaseField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###上次结算价
-        TThostFtdcPriceType	PreSettlementPrice
+        TThostFtdcPriceType PreSettlementPrice
         ###昨收盘
-        TThostFtdcPriceType	PreClosePrice
+        TThostFtdcPriceType PreClosePrice
         ###昨持仓量
-        TThostFtdcLargeVolumeType	PreOpenInterest
+        TThostFtdcLargeVolumeType PreOpenInterest
         ###昨虚实度
-        TThostFtdcRatioType	PreDelta
+        TThostFtdcRatioType PreDelta
     
 
     ###行情静态属性
     cdef struct CThostFtdcMarketDataStaticField:
     
         ###今开盘
-        TThostFtdcPriceType	OpenPrice
+        TThostFtdcPriceType OpenPrice
         ###最高价
-        TThostFtdcPriceType	HighestPrice
+        TThostFtdcPriceType HighestPrice
         ###最低价
-        TThostFtdcPriceType	LowestPrice
+        TThostFtdcPriceType LowestPrice
         ###今收盘
-        TThostFtdcPriceType	ClosePrice
+        TThostFtdcPriceType ClosePrice
         ###涨停板价
-        TThostFtdcPriceType	UpperLimitPrice
+        TThostFtdcPriceType UpperLimitPrice
         ###跌停板价
-        TThostFtdcPriceType	LowerLimitPrice
+        TThostFtdcPriceType LowerLimitPrice
         ###本次结算价
-        TThostFtdcPriceType	SettlementPrice
+        TThostFtdcPriceType SettlementPrice
         ###今虚实度
-        TThostFtdcRatioType	CurrDelta
+        TThostFtdcRatioType CurrDelta
     
 
     ###行情最新成交属性
     cdef struct CThostFtdcMarketDataLastMatchField:
     
         ###最新价
-        TThostFtdcPriceType	LastPrice
+        TThostFtdcPriceType LastPrice
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###成交金额
-        TThostFtdcMoneyType	Turnover
+        TThostFtdcMoneyType Turnover
         ###持仓量
-        TThostFtdcLargeVolumeType	OpenInterest
+        TThostFtdcLargeVolumeType OpenInterest
     
 
     ###行情最优价属性
     cdef struct CThostFtdcMarketDataBestPriceField:
     
         ###申买价一
-        TThostFtdcPriceType	BidPrice1
+        TThostFtdcPriceType BidPrice1
         ###申买量一
-        TThostFtdcVolumeType	BidVolume1
+        TThostFtdcVolumeType BidVolume1
         ###申卖价一
-        TThostFtdcPriceType	AskPrice1
+        TThostFtdcPriceType AskPrice1
         ###申卖量一
-        TThostFtdcVolumeType	AskVolume1
+        TThostFtdcVolumeType AskVolume1
     
 
     ###行情申买二、三属性
     cdef struct CThostFtdcMarketDataBid23Field:
     
         ###申买价二
-        TThostFtdcPriceType	BidPrice2
+        TThostFtdcPriceType BidPrice2
         ###申买量二
-        TThostFtdcVolumeType	BidVolume2
+        TThostFtdcVolumeType BidVolume2
         ###申买价三
-        TThostFtdcPriceType	BidPrice3
+        TThostFtdcPriceType BidPrice3
         ###申买量三
-        TThostFtdcVolumeType	BidVolume3
+        TThostFtdcVolumeType BidVolume3
     
 
     ###行情申卖二、三属性
     cdef struct CThostFtdcMarketDataAsk23Field:
     
         ###申卖价二
-        TThostFtdcPriceType	AskPrice2
+        TThostFtdcPriceType AskPrice2
         ###申卖量二
-        TThostFtdcVolumeType	AskVolume2
+        TThostFtdcVolumeType AskVolume2
         ###申卖价三
-        TThostFtdcPriceType	AskPrice3
+        TThostFtdcPriceType AskPrice3
         ###申卖量三
-        TThostFtdcVolumeType	AskVolume3
+        TThostFtdcVolumeType AskVolume3
     
 
     ###行情申买四、五属性
     cdef struct CThostFtdcMarketDataBid45Field:
     
         ###申买价四
-        TThostFtdcPriceType	BidPrice4
+        TThostFtdcPriceType BidPrice4
         ###申买量四
-        TThostFtdcVolumeType	BidVolume4
+        TThostFtdcVolumeType BidVolume4
         ###申买价五
-        TThostFtdcPriceType	BidPrice5
+        TThostFtdcPriceType BidPrice5
         ###申买量五
-        TThostFtdcVolumeType	BidVolume5
+        TThostFtdcVolumeType BidVolume5
     
 
     ###行情申卖四、五属性
     cdef struct CThostFtdcMarketDataAsk45Field:
     
         ###申卖价四
-        TThostFtdcPriceType	AskPrice4
+        TThostFtdcPriceType AskPrice4
         ###申卖量四
-        TThostFtdcVolumeType	AskVolume4
+        TThostFtdcVolumeType AskVolume4
         ###申卖价五
-        TThostFtdcPriceType	AskPrice5
+        TThostFtdcPriceType AskPrice5
         ###申卖量五
-        TThostFtdcVolumeType	AskVolume5
+        TThostFtdcVolumeType AskVolume5
     
 
     ###行情更新时间属性
     cdef struct CThostFtdcMarketDataUpdateTimeField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###最后修改时间
-        TThostFtdcTimeType	UpdateTime
+        TThostFtdcTimeType UpdateTime
         ###最后修改毫秒
-        TThostFtdcMillisecType	UpdateMillisec
+        TThostFtdcMillisecType UpdateMillisec
         ###业务日期
-        TThostFtdcDateType	ActionDay
+        TThostFtdcDateType ActionDay
     
 
     ###行情交易所代码属性
     cdef struct CThostFtdcMarketDataExchangeField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###指定的合约
     cdef struct CThostFtdcSpecificInstrumentField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###合约状态
     cdef struct CThostFtdcInstrumentStatusField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###结算组代码
-        TThostFtdcSettlementGroupIDType	SettlementGroupID
+        TThostFtdcSettlementGroupIDType SettlementGroupID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###合约交易状态
-        TThostFtdcInstrumentStatusType	InstrumentStatus
+        TThostFtdcInstrumentStatusType InstrumentStatus
         ###交易阶段编号
-        TThostFtdcTradingSegmentSNType	TradingSegmentSN
+        TThostFtdcTradingSegmentSNType TradingSegmentSN
         ###进入本状态时间
-        TThostFtdcTimeType	EnterTime
+        TThostFtdcTimeType EnterTime
         ###进入本状态原因
-        TThostFtdcInstStatusEnterReasonType	EnterReason
+        TThostFtdcInstStatusEnterReasonType EnterReason
     
 
     ###查询合约状态
     cdef struct CThostFtdcQryInstrumentStatusField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
     
 
     ###投资者账户
     cdef struct CThostFtdcInvestorAccountField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###浮动盈亏算法
     cdef struct CThostFtdcPositionProfitAlgorithmField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###盈亏算法
-        TThostFtdcAlgorithmType	Algorithm
+        TThostFtdcAlgorithmType Algorithm
         ###备注
-        TThostFtdcMemoType	Memo
+        TThostFtdcMemoType Memo
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###会员资金折扣
     cdef struct CThostFtdcDiscountField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###资金折扣比例
-        TThostFtdcRatioType	Discount
+        TThostFtdcRatioType Discount
     
 
     ###查询转帐银行
     cdef struct CThostFtdcQryTransferBankField:
     
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分中心代码
-        TThostFtdcBankBrchIDType	BankBrchID
+        TThostFtdcBankBrchIDType BankBrchID
     
 
     ###转帐银行
     cdef struct CThostFtdcTransferBankField:
     
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分中心代码
-        TThostFtdcBankBrchIDType	BankBrchID
+        TThostFtdcBankBrchIDType BankBrchID
         ###银行名称
-        TThostFtdcBankNameType	BankName
+        TThostFtdcBankNameType BankName
         ###是否活跃
-        TThostFtdcBoolType	IsActive
+        TThostFtdcBoolType IsActive
     
 
     ###查询投资者持仓明细
     cdef struct CThostFtdcQryInvestorPositionDetailField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###投资者持仓明细
     cdef struct CThostFtdcInvestorPositionDetailField:
     
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###买卖
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###开仓日期
-        TThostFtdcDateType	OpenDate
+        TThostFtdcDateType OpenDate
         ###成交编号
-        TThostFtdcTradeIDType	TradeID
+        TThostFtdcTradeIDType TradeID
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
         ###开仓价
-        TThostFtdcPriceType	OpenPrice
+        TThostFtdcPriceType OpenPrice
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###成交类型
-        TThostFtdcTradeTypeType	TradeType
+        TThostFtdcTradeTypeType TradeType
         ###组合合约代码
-        TThostFtdcInstrumentIDType	CombInstrumentID
+        TThostFtdcInstrumentIDType CombInstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###逐日盯市平仓盈亏
-        TThostFtdcMoneyType	CloseProfitByDate
+        TThostFtdcMoneyType CloseProfitByDate
         ###逐笔对冲平仓盈亏
-        TThostFtdcMoneyType	CloseProfitByTrade
+        TThostFtdcMoneyType CloseProfitByTrade
         ###逐日盯市持仓盈亏
-        TThostFtdcMoneyType	PositionProfitByDate
+        TThostFtdcMoneyType PositionProfitByDate
         ###逐笔对冲持仓盈亏
-        TThostFtdcMoneyType	PositionProfitByTrade
+        TThostFtdcMoneyType PositionProfitByTrade
         ###投资者保证金
-        TThostFtdcMoneyType	Margin
+        TThostFtdcMoneyType Margin
         ###交易所保证金
-        TThostFtdcMoneyType	ExchMargin
+        TThostFtdcMoneyType ExchMargin
         ###保证金率
-        TThostFtdcRatioType	MarginRateByMoney
+        TThostFtdcRatioType MarginRateByMoney
         ###保证金率(按手数)
-        TThostFtdcRatioType	MarginRateByVolume
+        TThostFtdcRatioType MarginRateByVolume
         ###昨结算价
-        TThostFtdcPriceType	LastSettlementPrice
+        TThostFtdcPriceType LastSettlementPrice
         ###结算价
-        TThostFtdcPriceType	SettlementPrice
+        TThostFtdcPriceType SettlementPrice
         ###平仓量
-        TThostFtdcVolumeType	CloseVolume
+        TThostFtdcVolumeType CloseVolume
         ###平仓金额
-        TThostFtdcMoneyType	CloseAmount
+        TThostFtdcMoneyType CloseAmount
     
 
     ###资金账户口令域
     cdef struct CThostFtdcTradingAccountPasswordField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###交易所行情报盘机
     cdef struct CThostFtdcMDTraderOfferField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###交易所交易员连接状态
-        TThostFtdcTraderConnectStatusType	TraderConnectStatus
+        TThostFtdcTraderConnectStatusType TraderConnectStatus
         ###发出连接请求的日期
-        TThostFtdcDateType	ConnectRequestDate
+        TThostFtdcDateType ConnectRequestDate
         ###发出连接请求的时间
-        TThostFtdcTimeType	ConnectRequestTime
+        TThostFtdcTimeType ConnectRequestTime
         ###上次报告日期
-        TThostFtdcDateType	LastReportDate
+        TThostFtdcDateType LastReportDate
         ###上次报告时间
-        TThostFtdcTimeType	LastReportTime
+        TThostFtdcTimeType LastReportTime
         ###完成连接日期
-        TThostFtdcDateType	ConnectDate
+        TThostFtdcDateType ConnectDate
         ###完成连接时间
-        TThostFtdcTimeType	ConnectTime
+        TThostFtdcTimeType ConnectTime
         ###启动日期
-        TThostFtdcDateType	StartDate
+        TThostFtdcDateType StartDate
         ###启动时间
-        TThostFtdcTimeType	StartTime
+        TThostFtdcTimeType StartTime
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###本席位最大成交编号
-        TThostFtdcTradeIDType	MaxTradeID
+        TThostFtdcTradeIDType MaxTradeID
         ###本席位最大报单备拷
-        TThostFtdcReturnCodeType	MaxOrderMessageReference
+        TThostFtdcReturnCodeType MaxOrderMessageReference
     
 
     ###查询行情报盘机
     cdef struct CThostFtdcQryMDTraderOfferField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
     
 
     ###查询客户通知
     cdef struct CThostFtdcQryNoticeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
 
     ###客户通知
     cdef struct CThostFtdcNoticeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###消息正文
-        TThostFtdcContentType	Content
+        TThostFtdcContentType Content
         ###经纪公司通知内容序列号
-        TThostFtdcSequenceLabelType	SequenceLabel
+        TThostFtdcSequenceLabelType SequenceLabel
     
 
     ###用户权限
     cdef struct CThostFtdcUserRightField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###客户权限类型
-        TThostFtdcUserRightTypeType	UserRightType
+        TThostFtdcUserRightTypeType UserRightType
         ###是否禁止
-        TThostFtdcBoolType	IsForbidden
+        TThostFtdcBoolType IsForbidden
     
 
     ###查询结算信息确认域
     cdef struct CThostFtdcQrySettlementInfoConfirmField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###装载结算信息
     cdef struct CThostFtdcLoadSettlementInfoField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
 
     ###经纪公司可提资金算法表
     cdef struct CThostFtdcBrokerWithdrawAlgorithmField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###可提资金算法
-        TThostFtdcAlgorithmType	WithdrawAlgorithm
+        TThostFtdcAlgorithmType WithdrawAlgorithm
         ###资金使用率
-        TThostFtdcRatioType	UsingRatio
+        TThostFtdcRatioType UsingRatio
         ###可提是否包含平仓盈利
-        TThostFtdcIncludeCloseProfitType	IncludeCloseProfit
+        TThostFtdcIncludeCloseProfitType IncludeCloseProfit
         ###本日无仓且无成交客户是否受可提比例限制
-        TThostFtdcAllWithoutTradeType	AllWithoutTrade
+        TThostFtdcAllWithoutTradeType AllWithoutTrade
         ###可用是否包含平仓盈利
-        TThostFtdcIncludeCloseProfitType	AvailIncludeCloseProfit
+        TThostFtdcIncludeCloseProfitType AvailIncludeCloseProfit
         ###是否启用用户事件
-        TThostFtdcBoolType	IsBrokerUserEvent
+        TThostFtdcBoolType IsBrokerUserEvent
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###货币质押比率
-        TThostFtdcRatioType	FundMortgageRatio
+        TThostFtdcRatioType FundMortgageRatio
         ###权益算法
-        TThostFtdcBalanceAlgorithmType	BalanceAlgorithm
+        TThostFtdcBalanceAlgorithmType BalanceAlgorithm
     
 
     ###资金账户口令变更域
     cdef struct CThostFtdcTradingAccountPasswordUpdateV1Field:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###原来的口令
-        TThostFtdcPasswordType	OldPassword
+        TThostFtdcPasswordType OldPassword
         ###新的口令
-        TThostFtdcPasswordType	NewPassword
+        TThostFtdcPasswordType NewPassword
     
 
     ###资金账户口令变更域
     cdef struct CThostFtdcTradingAccountPasswordUpdateField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###原来的口令
-        TThostFtdcPasswordType	OldPassword
+        TThostFtdcPasswordType OldPassword
         ###新的口令
-        TThostFtdcPasswordType	NewPassword
+        TThostFtdcPasswordType NewPassword
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###查询组合合约分腿
     cdef struct CThostFtdcQryCombinationLegField:
     
         ###组合合约代码
-        TThostFtdcInstrumentIDType	CombInstrumentID
+        TThostFtdcInstrumentIDType CombInstrumentID
         ###单腿编号
-        TThostFtdcLegIDType	LegID
+        TThostFtdcLegIDType LegID
         ###单腿合约代码
-        TThostFtdcInstrumentIDType	LegInstrumentID
+        TThostFtdcInstrumentIDType LegInstrumentID
     
 
     ###查询组合合约分腿
     cdef struct CThostFtdcQrySyncStatusField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
     
 
     ###组合交易合约的单腿
     cdef struct CThostFtdcCombinationLegField:
     
         ###组合合约代码
-        TThostFtdcInstrumentIDType	CombInstrumentID
+        TThostFtdcInstrumentIDType CombInstrumentID
         ###单腿编号
-        TThostFtdcLegIDType	LegID
+        TThostFtdcLegIDType LegID
         ###单腿合约代码
-        TThostFtdcInstrumentIDType	LegInstrumentID
+        TThostFtdcInstrumentIDType LegInstrumentID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###单腿乘数
-        TThostFtdcLegMultipleType	LegMultiple
+        TThostFtdcLegMultipleType LegMultiple
         ###派生层数
-        TThostFtdcImplyLevelType	ImplyLevel
+        TThostFtdcImplyLevelType ImplyLevel
     
 
     ###数据同步状态
     cdef struct CThostFtdcSyncStatusField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###数据同步状态
-        TThostFtdcDataSyncStatusType	DataSyncStatus
+        TThostFtdcDataSyncStatusType DataSyncStatus
     
 
     ###查询联系人
     cdef struct CThostFtdcQryLinkManField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###联系人
     cdef struct CThostFtdcLinkManField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###联系人类型
-        TThostFtdcPersonTypeType	PersonType
+        TThostFtdcPersonTypeType PersonType
         ###证件类型
-        TThostFtdcIdCardTypeType	IdentifiedCardType
+        TThostFtdcIdCardTypeType IdentifiedCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###名称
-        TThostFtdcPartyNameType	PersonName
+        TThostFtdcPartyNameType PersonName
         ###联系电话
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###通讯地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮政编码
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###优先级
-        TThostFtdcPriorityType	Priority
+        TThostFtdcPriorityType Priority
         ###开户邮政编码
-        TThostFtdcUOAZipCodeType	UOAZipCode
+        TThostFtdcUOAZipCodeType UOAZipCode
         ###全称
-        TThostFtdcInvestorFullNameType	PersonFullName
+        TThostFtdcInvestorFullNameType PersonFullName
     
 
     ###查询经纪公司用户事件
     cdef struct CThostFtdcQryBrokerUserEventField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户事件类型
-        TThostFtdcUserEventTypeType	UserEventType
+        TThostFtdcUserEventTypeType UserEventType
     
 
     ###查询经纪公司用户事件
     cdef struct CThostFtdcBrokerUserEventField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###用户事件类型
-        TThostFtdcUserEventTypeType	UserEventType
+        TThostFtdcUserEventTypeType UserEventType
         ###用户事件序号
-        TThostFtdcSequenceNoType	EventSequenceNo
+        TThostFtdcSequenceNoType EventSequenceNo
         ###事件发生日期
-        TThostFtdcDateType	EventDate
+        TThostFtdcDateType EventDate
         ###事件发生时间
-        TThostFtdcTimeType	EventTime
+        TThostFtdcTimeType EventTime
         ###用户事件信息
-        TThostFtdcUserEventInfoType	UserEventInfo
+        TThostFtdcUserEventInfoType UserEventInfo
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###查询签约银行请求
     cdef struct CThostFtdcQryContractBankField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分中心代码
-        TThostFtdcBankBrchIDType	BankBrchID
+        TThostFtdcBankBrchIDType BankBrchID
     
 
     ###查询签约银行响应
     cdef struct CThostFtdcContractBankField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分中心代码
-        TThostFtdcBankBrchIDType	BankBrchID
+        TThostFtdcBankBrchIDType BankBrchID
         ###银行名称
-        TThostFtdcBankNameType	BankName
+        TThostFtdcBankNameType BankName
     
 
     ###投资者组合持仓明细
     cdef struct CThostFtdcInvestorPositionCombineDetailField:
     
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###开仓日期
-        TThostFtdcDateType	OpenDate
+        TThostFtdcDateType OpenDate
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###组合编号
-        TThostFtdcTradeIDType	ComTradeID
+        TThostFtdcTradeIDType ComTradeID
         ###撮合编号
-        TThostFtdcTradeIDType	TradeID
+        TThostFtdcTradeIDType TradeID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###买卖
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###持仓量
-        TThostFtdcVolumeType	TotalAmt
+        TThostFtdcVolumeType TotalAmt
         ###投资者保证金
-        TThostFtdcMoneyType	Margin
+        TThostFtdcMoneyType Margin
         ###交易所保证金
-        TThostFtdcMoneyType	ExchMargin
+        TThostFtdcMoneyType ExchMargin
         ###保证金率
-        TThostFtdcRatioType	MarginRateByMoney
+        TThostFtdcRatioType MarginRateByMoney
         ###保证金率(按手数)
-        TThostFtdcRatioType	MarginRateByVolume
+        TThostFtdcRatioType MarginRateByVolume
         ###单腿编号
-        TThostFtdcLegIDType	LegID
+        TThostFtdcLegIDType LegID
         ###单腿乘数
-        TThostFtdcLegMultipleType	LegMultiple
+        TThostFtdcLegMultipleType LegMultiple
         ###组合持仓合约编码
-        TThostFtdcInstrumentIDType	CombInstrumentID
+        TThostFtdcInstrumentIDType CombInstrumentID
         ###成交组号
-        TThostFtdcTradeGroupIDType	TradeGroupID
+        TThostFtdcTradeGroupIDType TradeGroupID
     
 
     ###预埋单
     cdef struct CThostFtdcParkedOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###报单价格条件
-        TThostFtdcOrderPriceTypeType	OrderPriceType
+        TThostFtdcOrderPriceTypeType OrderPriceType
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###组合开平标志
-        TThostFtdcCombOffsetFlagType	CombOffsetFlag
+        TThostFtdcCombOffsetFlagType CombOffsetFlag
         ###组合投机套保标志
-        TThostFtdcCombHedgeFlagType	CombHedgeFlag
+        TThostFtdcCombHedgeFlagType CombHedgeFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量
-        TThostFtdcVolumeType	VolumeTotalOriginal
+        TThostFtdcVolumeType VolumeTotalOriginal
         ###有效期类型
-        TThostFtdcTimeConditionType	TimeCondition
+        TThostFtdcTimeConditionType TimeCondition
         ###GTD日期
-        TThostFtdcDateType	GTDDate
+        TThostFtdcDateType GTDDate
         ###成交量类型
-        TThostFtdcVolumeConditionType	VolumeCondition
+        TThostFtdcVolumeConditionType VolumeCondition
         ###最小成交量
-        TThostFtdcVolumeType	MinVolume
+        TThostFtdcVolumeType MinVolume
         ###触发条件
-        TThostFtdcContingentConditionType	ContingentCondition
+        TThostFtdcContingentConditionType ContingentCondition
         ###止损价
-        TThostFtdcPriceType	StopPrice
+        TThostFtdcPriceType StopPrice
         ###强平原因
-        TThostFtdcForceCloseReasonType	ForceCloseReason
+        TThostFtdcForceCloseReasonType ForceCloseReason
         ###自动挂起标志
-        TThostFtdcBoolType	IsAutoSuspend
+        TThostFtdcBoolType IsAutoSuspend
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###用户强评标志
-        TThostFtdcBoolType	UserForceClose
+        TThostFtdcBoolType UserForceClose
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###预埋报单编号
-        TThostFtdcParkedOrderIDType	ParkedOrderID
+        TThostFtdcParkedOrderIDType ParkedOrderID
         ###用户类型
-        TThostFtdcUserTypeType	UserType
+        TThostFtdcUserTypeType UserType
         ###预埋单状态
-        TThostFtdcParkedOrderStatusType	Status
+        TThostFtdcParkedOrderStatusType Status
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
         ###互换单标志
-        TThostFtdcBoolType	IsSwapOrder
+        TThostFtdcBoolType IsSwapOrder
     
 
     ###输入预埋单操作
     cdef struct CThostFtdcParkedOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###报单操作引用
-        TThostFtdcOrderActionRefType	OrderActionRef
+        TThostFtdcOrderActionRefType OrderActionRef
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量变化
-        TThostFtdcVolumeType	VolumeChange
+        TThostFtdcVolumeType VolumeChange
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###预埋撤单单编号
-        TThostFtdcParkedOrderActionIDType	ParkedOrderActionID
+        TThostFtdcParkedOrderActionIDType ParkedOrderActionID
         ###用户类型
-        TThostFtdcUserTypeType	UserType
+        TThostFtdcUserTypeType UserType
         ###预埋撤单状态
-        TThostFtdcParkedOrderStatusType	Status
+        TThostFtdcParkedOrderStatusType Status
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询预埋单
     cdef struct CThostFtdcQryParkedOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###查询预埋撤单
     cdef struct CThostFtdcQryParkedOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###删除预埋单
     cdef struct CThostFtdcRemoveParkedOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###预埋报单编号
-        TThostFtdcParkedOrderIDType	ParkedOrderID
+        TThostFtdcParkedOrderIDType ParkedOrderID
     
 
     ###删除预埋撤单
     cdef struct CThostFtdcRemoveParkedOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###预埋撤单编号
-        TThostFtdcParkedOrderActionIDType	ParkedOrderActionID
+        TThostFtdcParkedOrderActionIDType ParkedOrderActionID
     
 
     ###经纪公司可提资金算法表
     cdef struct CThostFtdcInvestorWithdrawAlgorithmField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###可提资金比例
-        TThostFtdcRatioType	UsingRatio
+        TThostFtdcRatioType UsingRatio
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###货币质押比率
-        TThostFtdcRatioType	FundMortgageRatio
+        TThostFtdcRatioType FundMortgageRatio
     
 
     ###查询组合持仓明细
     cdef struct CThostFtdcQryInvestorPositionCombineDetailField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###组合持仓合约编码
-        TThostFtdcInstrumentIDType	CombInstrumentID
+        TThostFtdcInstrumentIDType CombInstrumentID
     
 
     ###成交均价
     cdef struct CThostFtdcMarketDataAveragePriceField:
     
         ###当日均价
-        TThostFtdcPriceType	AveragePrice
+        TThostFtdcPriceType AveragePrice
     
 
     ###校验投资者密码
     cdef struct CThostFtdcVerifyInvestorPasswordField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
     
 
     ###用户IP
     cdef struct CThostFtdcUserIPField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###IP地址
-        TThostFtdcIPAddressType	IPAddress
+        TThostFtdcIPAddressType IPAddress
         ###IP地址掩码
-        TThostFtdcIPAddressType	IPMask
+        TThostFtdcIPAddressType IPMask
         ###Mac地址
-        TThostFtdcMacAddressType	MacAddress
+        TThostFtdcMacAddressType MacAddress
     
 
     ###用户事件通知信息
     cdef struct CThostFtdcTradingNoticeInfoField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###发送时间
-        TThostFtdcTimeType	SendTime
+        TThostFtdcTimeType SendTime
         ###消息正文
-        TThostFtdcContentType	FieldContent
+        TThostFtdcContentType FieldContent
         ###序列系列号
-        TThostFtdcSequenceSeriesType	SequenceSeries
+        TThostFtdcSequenceSeriesType SequenceSeries
         ###序列号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
     
 
     ###用户事件通知
     cdef struct CThostFtdcTradingNoticeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者范围
-        TThostFtdcInvestorRangeType	InvestorRange
+        TThostFtdcInvestorRangeType InvestorRange
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###序列系列号
-        TThostFtdcSequenceSeriesType	SequenceSeries
+        TThostFtdcSequenceSeriesType SequenceSeries
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###发送时间
-        TThostFtdcTimeType	SendTime
+        TThostFtdcTimeType SendTime
         ###序列号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###消息正文
-        TThostFtdcContentType	FieldContent
+        TThostFtdcContentType FieldContent
     
 
     ###查询交易事件通知
     cdef struct CThostFtdcQryTradingNoticeField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###查询错误报单
     cdef struct CThostFtdcQryErrOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###错误报单
     cdef struct CThostFtdcErrOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###报单价格条件
-        TThostFtdcOrderPriceTypeType	OrderPriceType
+        TThostFtdcOrderPriceTypeType OrderPriceType
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###组合开平标志
-        TThostFtdcCombOffsetFlagType	CombOffsetFlag
+        TThostFtdcCombOffsetFlagType CombOffsetFlag
         ###组合投机套保标志
-        TThostFtdcCombHedgeFlagType	CombHedgeFlag
+        TThostFtdcCombHedgeFlagType CombHedgeFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量
-        TThostFtdcVolumeType	VolumeTotalOriginal
+        TThostFtdcVolumeType VolumeTotalOriginal
         ###有效期类型
-        TThostFtdcTimeConditionType	TimeCondition
+        TThostFtdcTimeConditionType TimeCondition
         ###GTD日期
-        TThostFtdcDateType	GTDDate
+        TThostFtdcDateType GTDDate
         ###成交量类型
-        TThostFtdcVolumeConditionType	VolumeCondition
+        TThostFtdcVolumeConditionType VolumeCondition
         ###最小成交量
-        TThostFtdcVolumeType	MinVolume
+        TThostFtdcVolumeType MinVolume
         ###触发条件
-        TThostFtdcContingentConditionType	ContingentCondition
+        TThostFtdcContingentConditionType ContingentCondition
         ###止损价
-        TThostFtdcPriceType	StopPrice
+        TThostFtdcPriceType StopPrice
         ###强平原因
-        TThostFtdcForceCloseReasonType	ForceCloseReason
+        TThostFtdcForceCloseReasonType ForceCloseReason
         ###自动挂起标志
-        TThostFtdcBoolType	IsAutoSuspend
+        TThostFtdcBoolType IsAutoSuspend
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###用户强评标志
-        TThostFtdcBoolType	UserForceClose
+        TThostFtdcBoolType UserForceClose
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
         ###互换单标志
-        TThostFtdcBoolType	IsSwapOrder
+        TThostFtdcBoolType IsSwapOrder
     
 
     ###查询错误报单操作
     cdef struct CThostFtdcErrorConditionalOrderField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###报单价格条件
-        TThostFtdcOrderPriceTypeType	OrderPriceType
+        TThostFtdcOrderPriceTypeType OrderPriceType
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###组合开平标志
-        TThostFtdcCombOffsetFlagType	CombOffsetFlag
+        TThostFtdcCombOffsetFlagType CombOffsetFlag
         ###组合投机套保标志
-        TThostFtdcCombHedgeFlagType	CombHedgeFlag
+        TThostFtdcCombHedgeFlagType CombHedgeFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量
-        TThostFtdcVolumeType	VolumeTotalOriginal
+        TThostFtdcVolumeType VolumeTotalOriginal
         ###有效期类型
-        TThostFtdcTimeConditionType	TimeCondition
+        TThostFtdcTimeConditionType TimeCondition
         ###GTD日期
-        TThostFtdcDateType	GTDDate
+        TThostFtdcDateType GTDDate
         ###成交量类型
-        TThostFtdcVolumeConditionType	VolumeCondition
+        TThostFtdcVolumeConditionType VolumeCondition
         ###最小成交量
-        TThostFtdcVolumeType	MinVolume
+        TThostFtdcVolumeType MinVolume
         ###触发条件
-        TThostFtdcContingentConditionType	ContingentCondition
+        TThostFtdcContingentConditionType ContingentCondition
         ###止损价
-        TThostFtdcPriceType	StopPrice
+        TThostFtdcPriceType StopPrice
         ###强平原因
-        TThostFtdcForceCloseReasonType	ForceCloseReason
+        TThostFtdcForceCloseReasonType ForceCloseReason
         ###自动挂起标志
-        TThostFtdcBoolType	IsAutoSuspend
+        TThostFtdcBoolType IsAutoSuspend
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###合约在交易所的代码
-        TThostFtdcExchangeInstIDType	ExchangeInstID
+        TThostFtdcExchangeInstIDType ExchangeInstID
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###报单提交状态
-        TThostFtdcOrderSubmitStatusType	OrderSubmitStatus
+        TThostFtdcOrderSubmitStatusType OrderSubmitStatus
         ###报单提示序号
-        TThostFtdcSequenceNoType	NotifySequence
+        TThostFtdcSequenceNoType NotifySequence
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###报单来源
-        TThostFtdcOrderSourceType	OrderSource
+        TThostFtdcOrderSourceType OrderSource
         ###报单状态
-        TThostFtdcOrderStatusType	OrderStatus
+        TThostFtdcOrderStatusType OrderStatus
         ###报单类型
-        TThostFtdcOrderTypeType	OrderType
+        TThostFtdcOrderTypeType OrderType
         ###今成交数量
-        TThostFtdcVolumeType	VolumeTraded
+        TThostFtdcVolumeType VolumeTraded
         ###剩余数量
-        TThostFtdcVolumeType	VolumeTotal
+        TThostFtdcVolumeType VolumeTotal
         ###报单日期
-        TThostFtdcDateType	InsertDate
+        TThostFtdcDateType InsertDate
         ###委托时间
-        TThostFtdcTimeType	InsertTime
+        TThostFtdcTimeType InsertTime
         ###激活时间
-        TThostFtdcTimeType	ActiveTime
+        TThostFtdcTimeType ActiveTime
         ###挂起时间
-        TThostFtdcTimeType	SuspendTime
+        TThostFtdcTimeType SuspendTime
         ###最后修改时间
-        TThostFtdcTimeType	UpdateTime
+        TThostFtdcTimeType UpdateTime
         ###撤销时间
-        TThostFtdcTimeType	CancelTime
+        TThostFtdcTimeType CancelTime
         ###最后修改交易所交易员代码
-        TThostFtdcTraderIDType	ActiveTraderID
+        TThostFtdcTraderIDType ActiveTraderID
         ###结算会员编号
-        TThostFtdcParticipantIDType	ClearingPartID
+        TThostFtdcParticipantIDType ClearingPartID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###用户端产品信息
-        TThostFtdcProductInfoType	UserProductInfo
+        TThostFtdcProductInfoType UserProductInfo
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###用户强评标志
-        TThostFtdcBoolType	UserForceClose
+        TThostFtdcBoolType UserForceClose
         ###操作用户代码
-        TThostFtdcUserIDType	ActiveUserID
+        TThostFtdcUserIDType ActiveUserID
         ###经纪公司报单编号
-        TThostFtdcSequenceNoType	BrokerOrderSeq
+        TThostFtdcSequenceNoType BrokerOrderSeq
         ###相关报单
-        TThostFtdcOrderSysIDType	RelativeOrderSysID
+        TThostFtdcOrderSysIDType RelativeOrderSysID
         ###郑商所成交数量
-        TThostFtdcVolumeType	ZCETotalTradedVolume
+        TThostFtdcVolumeType ZCETotalTradedVolume
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
         ###互换单标志
-        TThostFtdcBoolType	IsSwapOrder
+        TThostFtdcBoolType IsSwapOrder
     
 
     ###查询错误报单操作
     cdef struct CThostFtdcQryErrOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###错误报单操作
     cdef struct CThostFtdcErrOrderActionField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###报单操作引用
-        TThostFtdcOrderActionRefType	OrderActionRef
+        TThostFtdcOrderActionRefType OrderActionRef
         ###报单引用
-        TThostFtdcOrderRefType	OrderRef
+        TThostFtdcOrderRefType OrderRef
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###前置编号
-        TThostFtdcFrontIDType	FrontID
+        TThostFtdcFrontIDType FrontID
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###报单编号
-        TThostFtdcOrderSysIDType	OrderSysID
+        TThostFtdcOrderSysIDType OrderSysID
         ###操作标志
-        TThostFtdcActionFlagType	ActionFlag
+        TThostFtdcActionFlagType ActionFlag
         ###价格
-        TThostFtdcPriceType	LimitPrice
+        TThostFtdcPriceType LimitPrice
         ###数量变化
-        TThostFtdcVolumeType	VolumeChange
+        TThostFtdcVolumeType VolumeChange
         ###操作日期
-        TThostFtdcDateType	ActionDate
+        TThostFtdcDateType ActionDate
         ###操作时间
-        TThostFtdcTimeType	ActionTime
+        TThostFtdcTimeType ActionTime
         ###交易所交易员代码
-        TThostFtdcTraderIDType	TraderID
+        TThostFtdcTraderIDType TraderID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###本地报单编号
-        TThostFtdcOrderLocalIDType	OrderLocalID
+        TThostFtdcOrderLocalIDType OrderLocalID
         ###操作本地编号
-        TThostFtdcOrderLocalIDType	ActionLocalID
+        TThostFtdcOrderLocalIDType ActionLocalID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###客户代码
-        TThostFtdcClientIDType	ClientID
+        TThostFtdcClientIDType ClientID
         ###业务单元
-        TThostFtdcBusinessUnitType	BusinessUnit
+        TThostFtdcBusinessUnitType BusinessUnit
         ###报单操作状态
-        TThostFtdcOrderActionStatusType	OrderActionStatus
+        TThostFtdcOrderActionStatusType OrderActionStatus
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###状态信息
-        TThostFtdcErrorMsgType	StatusMsg
+        TThostFtdcErrorMsgType StatusMsg
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询交易所状态
     cdef struct CThostFtdcQryExchangeSequenceField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###交易所状态
     cdef struct CThostFtdcExchangeSequenceField:
     
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###序号
-        TThostFtdcSequenceNoType	SequenceNo
+        TThostFtdcSequenceNoType SequenceNo
         ###合约交易状态
-        TThostFtdcInstrumentStatusType	MarketStatus
+        TThostFtdcInstrumentStatusType MarketStatus
     
 
     ###根据价格查询最大报单数量
     cdef struct CThostFtdcQueryMaxOrderVolumeWithPriceField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###开平标志
-        TThostFtdcOffsetFlagType	OffsetFlag
+        TThostFtdcOffsetFlagType OffsetFlag
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###最大允许报单数量
-        TThostFtdcVolumeType	MaxVolume
+        TThostFtdcVolumeType MaxVolume
         ###报单价格
-        TThostFtdcPriceType	Price
+        TThostFtdcPriceType Price
     
 
     ###查询经纪公司交易参数
     cdef struct CThostFtdcQryBrokerTradingParamsField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###经纪公司交易参数
     cdef struct CThostFtdcBrokerTradingParamsField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###保证金价格类型
-        TThostFtdcMarginPriceTypeType	MarginPriceType
+        TThostFtdcMarginPriceTypeType MarginPriceType
         ###盈亏算法
-        TThostFtdcAlgorithmType	Algorithm
+        TThostFtdcAlgorithmType Algorithm
         ###可用是否包含平仓盈利
-        TThostFtdcIncludeCloseProfitType	AvailIncludeCloseProfit
+        TThostFtdcIncludeCloseProfitType AvailIncludeCloseProfit
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###期权权利金价格类型
-        TThostFtdcOptionRoyaltyPriceTypeType	OptionRoyaltyPriceType
+        TThostFtdcOptionRoyaltyPriceTypeType OptionRoyaltyPriceType
     
 
     ###查询经纪公司交易算法
     cdef struct CThostFtdcQryBrokerTradingAlgosField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###经纪公司交易算法
     cdef struct CThostFtdcBrokerTradingAlgosField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###持仓处理算法编号
-        TThostFtdcHandlePositionAlgoIDType	HandlePositionAlgoID
+        TThostFtdcHandlePositionAlgoIDType HandlePositionAlgoID
         ###寻找保证金率算法编号
-        TThostFtdcFindMarginRateAlgoIDType	FindMarginRateAlgoID
+        TThostFtdcFindMarginRateAlgoIDType FindMarginRateAlgoID
         ###资金处理算法编号
-        TThostFtdcHandleTradingAccountAlgoIDType	HandleTradingAccountAlgoID
+        TThostFtdcHandleTradingAccountAlgoIDType HandleTradingAccountAlgoID
     
 
     ###查询经纪公司资金
     cdef struct CThostFtdcQueryBrokerDepositField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
     
 
     ###经纪公司资金
     cdef struct CThostFtdcBrokerDepositField:
     
         ###交易日期
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###会员代码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###上次结算准备金
-        TThostFtdcMoneyType	PreBalance
+        TThostFtdcMoneyType PreBalance
         ###当前保证金总额
-        TThostFtdcMoneyType	CurrMargin
+        TThostFtdcMoneyType CurrMargin
         ###平仓盈亏
-        TThostFtdcMoneyType	CloseProfit
+        TThostFtdcMoneyType CloseProfit
         ###期货结算准备金
-        TThostFtdcMoneyType	Balance
+        TThostFtdcMoneyType Balance
         ###入金金额
-        TThostFtdcMoneyType	Deposit
+        TThostFtdcMoneyType Deposit
         ###出金金额
-        TThostFtdcMoneyType	Withdraw
+        TThostFtdcMoneyType Withdraw
         ###可提资金
-        TThostFtdcMoneyType	Available
+        TThostFtdcMoneyType Available
         ###基本准备金
-        TThostFtdcMoneyType	Reserve
+        TThostFtdcMoneyType Reserve
         ###冻结的保证金
-        TThostFtdcMoneyType	FrozenMargin
+        TThostFtdcMoneyType FrozenMargin
     
 
     ###查询保证金监管系统经纪公司密钥
     cdef struct CThostFtdcQryCFMMCBrokerKeyField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
     
 
     ###保证金监管系统经纪公司密钥
     cdef struct CThostFtdcCFMMCBrokerKeyField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###经纪公司统一编码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###密钥生成日期
-        TThostFtdcDateType	CreateDate
+        TThostFtdcDateType CreateDate
         ###密钥生成时间
-        TThostFtdcTimeType	CreateTime
+        TThostFtdcTimeType CreateTime
         ###密钥编号
-        TThostFtdcSequenceNoType	KeyID
+        TThostFtdcSequenceNoType KeyID
         ###动态密钥
-        TThostFtdcCFMMCKeyType	CurrentKey
+        TThostFtdcCFMMCKeyType CurrentKey
         ###动态密钥类型
-        TThostFtdcCFMMCKeyKindType	KeyKind
+        TThostFtdcCFMMCKeyKindType KeyKind
     
 
     ###保证金监管系统经纪公司资金账户密钥
     cdef struct CThostFtdcCFMMCTradingAccountKeyField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###经纪公司统一编码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###密钥编号
-        TThostFtdcSequenceNoType	KeyID
+        TThostFtdcSequenceNoType KeyID
         ###动态密钥
-        TThostFtdcCFMMCKeyType	CurrentKey
+        TThostFtdcCFMMCKeyType CurrentKey
     
 
     ###请求查询保证金监管系统经纪公司资金账户密钥
     cdef struct CThostFtdcQryCFMMCTradingAccountKeyField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
     
 
     ###用户动态令牌参数
     cdef struct CThostFtdcBrokerUserOTPParamField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###动态令牌提供商
-        TThostFtdcOTPVendorsIDType	OTPVendorsID
+        TThostFtdcOTPVendorsIDType OTPVendorsID
         ###动态令牌序列号
-        TThostFtdcSerialNumberType	SerialNumber
+        TThostFtdcSerialNumberType SerialNumber
         ###令牌密钥
-        TThostFtdcAuthKeyType	AuthKey
+        TThostFtdcAuthKeyType AuthKey
         ###漂移值
-        TThostFtdcLastDriftType	LastDrift
+        TThostFtdcLastDriftType LastDrift
         ###成功值
-        TThostFtdcLastSuccessType	LastSuccess
+        TThostFtdcLastSuccessType LastSuccess
         ###动态令牌类型
-        TThostFtdcOTPTypeType	OTPType
+        TThostFtdcOTPTypeType OTPType
     
 
     ###手工同步用户动态令牌
     cdef struct CThostFtdcManualSyncBrokerUserOTPField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###动态令牌类型
-        TThostFtdcOTPTypeType	OTPType
+        TThostFtdcOTPTypeType OTPType
         ###第一个动态密码
-        TThostFtdcPasswordType	FirstOTP
+        TThostFtdcPasswordType FirstOTP
         ###第二个动态密码
-        TThostFtdcPasswordType	SecondOTP
+        TThostFtdcPasswordType SecondOTP
     
 
     ###投资者手续费率模板
     cdef struct CThostFtdcCommRateModelField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###手续费率模板代码
-        TThostFtdcInvestorIDType	CommModelID
+        TThostFtdcInvestorIDType CommModelID
         ###模板名称
-        TThostFtdcCommModelNameType	CommModelName
+        TThostFtdcCommModelNameType CommModelName
     
 
     ###请求查询投资者手续费率模板
     cdef struct CThostFtdcQryCommRateModelField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###手续费率模板代码
-        TThostFtdcInvestorIDType	CommModelID
+        TThostFtdcInvestorIDType CommModelID
     
 
     ###投资者保证金率模板
     cdef struct CThostFtdcMarginModelField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###保证金率模板代码
-        TThostFtdcInvestorIDType	MarginModelID
+        TThostFtdcInvestorIDType MarginModelID
         ###模板名称
-        TThostFtdcCommModelNameType	MarginModelName
+        TThostFtdcCommModelNameType MarginModelName
     
 
     ###请求查询投资者保证金率模板
     cdef struct CThostFtdcQryMarginModelField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###保证金率模板代码
-        TThostFtdcInvestorIDType	MarginModelID
+        TThostFtdcInvestorIDType MarginModelID
     
 
     ###仓单折抵信息
     cdef struct CThostFtdcEWarrantOffsetField:
     
         ###交易日期
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
         ###买卖方向
-        TThostFtdcDirectionType	Direction
+        TThostFtdcDirectionType Direction
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
         ###数量
-        TThostFtdcVolumeType	Volume
+        TThostFtdcVolumeType Volume
     
 
     ###查询仓单折抵信息
     cdef struct CThostFtdcQryEWarrantOffsetField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易所代码
-        TThostFtdcExchangeIDType	ExchangeID
+        TThostFtdcExchangeIDType ExchangeID
         ###合约代码
-        TThostFtdcInstrumentIDType	InstrumentID
+        TThostFtdcInstrumentIDType InstrumentID
     
 
     ###查询投资者品种#跨品种保证金
     cdef struct CThostFtdcQryInvestorProductGroupMarginField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###品种#跨品种标示
-        TThostFtdcInstrumentIDType	ProductGroupID
+        TThostFtdcInstrumentIDType ProductGroupID
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
     
 
     ###投资者品种#跨品种保证金
     cdef struct CThostFtdcInvestorProductGroupMarginField:
     
         ###品种#跨品种标示
-        TThostFtdcInstrumentIDType	ProductGroupID
+        TThostFtdcInstrumentIDType ProductGroupID
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###交易日
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###结算编号
-        TThostFtdcSettlementIDType	SettlementID
+        TThostFtdcSettlementIDType SettlementID
         ###冻结的保证金
-        TThostFtdcMoneyType	FrozenMargin
+        TThostFtdcMoneyType FrozenMargin
         ###多头冻结的保证金
-        TThostFtdcMoneyType	LongFrozenMargin
+        TThostFtdcMoneyType LongFrozenMargin
         ###空头冻结的保证金
-        TThostFtdcMoneyType	ShortFrozenMargin
+        TThostFtdcMoneyType ShortFrozenMargin
         ###占用的保证金
-        TThostFtdcMoneyType	UseMargin
+        TThostFtdcMoneyType UseMargin
         ###多头保证金
-        TThostFtdcMoneyType	LongUseMargin
+        TThostFtdcMoneyType LongUseMargin
         ###空头保证金
-        TThostFtdcMoneyType	ShortUseMargin
+        TThostFtdcMoneyType ShortUseMargin
         ###交易所保证金
-        TThostFtdcMoneyType	ExchMargin
+        TThostFtdcMoneyType ExchMargin
         ###交易所多头保证金
-        TThostFtdcMoneyType	LongExchMargin
+        TThostFtdcMoneyType LongExchMargin
         ###交易所空头保证金
-        TThostFtdcMoneyType	ShortExchMargin
+        TThostFtdcMoneyType ShortExchMargin
         ###平仓盈亏
-        TThostFtdcMoneyType	CloseProfit
+        TThostFtdcMoneyType CloseProfit
         ###冻结的手续费
-        TThostFtdcMoneyType	FrozenCommission
+        TThostFtdcMoneyType FrozenCommission
         ###手续费
-        TThostFtdcMoneyType	Commission
+        TThostFtdcMoneyType Commission
         ###冻结的资金
-        TThostFtdcMoneyType	FrozenCash
+        TThostFtdcMoneyType FrozenCash
         ###资金差额
-        TThostFtdcMoneyType	CashIn
+        TThostFtdcMoneyType CashIn
         ###持仓盈亏
-        TThostFtdcMoneyType	PositionProfit
+        TThostFtdcMoneyType PositionProfit
         ###折抵总金额
-        TThostFtdcMoneyType	OffsetAmount
+        TThostFtdcMoneyType OffsetAmount
         ###多头折抵总金额
-        TThostFtdcMoneyType	LongOffsetAmount
+        TThostFtdcMoneyType LongOffsetAmount
         ###空头折抵总金额
-        TThostFtdcMoneyType	ShortOffsetAmount
+        TThostFtdcMoneyType ShortOffsetAmount
         ###交易所折抵总金额
-        TThostFtdcMoneyType	ExchOffsetAmount
+        TThostFtdcMoneyType ExchOffsetAmount
         ###交易所多头折抵总金额
-        TThostFtdcMoneyType	LongExchOffsetAmount
+        TThostFtdcMoneyType LongExchOffsetAmount
         ###交易所空头折抵总金额
-        TThostFtdcMoneyType	ShortExchOffsetAmount
+        TThostFtdcMoneyType ShortExchOffsetAmount
         ###投机套保标志
-        TThostFtdcHedgeFlagType	HedgeFlag
+        TThostFtdcHedgeFlagType HedgeFlag
     
 
     ###查询监控中心用户令牌
     cdef struct CThostFtdcQueryCFMMCTradingAccountTokenField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
-    
+        TThostFtdcInvestorIDType InvestorID
+
 
     ###监控中心用户令牌
     cdef struct CThostFtdcCFMMCTradingAccountTokenField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###经纪公司统一编码
-        TThostFtdcParticipantIDType	ParticipantID
+        TThostFtdcParticipantIDType ParticipantID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###密钥编号
-        TThostFtdcSequenceNoType	KeyID
+        TThostFtdcSequenceNoType KeyID
         ###动态令牌
-        TThostFtdcCFMMCTokenType	Token
-    
+        TThostFtdcCFMMCTokenType Token
+
+    ###查询产品组
+    cdef struct CThostFtdcQryProductGroupField:
+        ###产品代码
+        TThostFtdcInstrumentIDType ProductID
+        ###交易所代码
+        TThostFtdcExchangeIDType ExchangeID
+
+    ###投资者品种#跨品种保证金产品组
+    cdef struct CThostFtdcProductGroupField:
+        ###产品代码
+        TThostFtdcInstrumentIDType ProductID
+        ###交易所代码
+        TThostFtdcExchangeIDType ExchangeID
+        ###产品组代码
+        TThostFtdcInstrumentIDType ProductGroupID
+
 
     ###转帐开户请求
     cdef struct CThostFtdcReqOpenAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###性别
-        TThostFtdcGenderType	Gender
+        TThostFtdcGenderType Gender
         ###国家代码
-        TThostFtdcCountryCodeType	CountryCode
+        TThostFtdcCountryCodeType CountryCode
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮编
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###电话号码
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###手机
-        TThostFtdcMobilePhoneType	MobilePhone
+        TThostFtdcMobilePhoneType MobilePhone
         ###传真
-        TThostFtdcFaxType	Fax
+        TThostFtdcFaxType Fax
         ###电子邮件
-        TThostFtdcEMailType	EMail
+        TThostFtdcEMailType EMail
         ###资金账户状态
-        TThostFtdcMoneyAccountStatusType	MoneyAccountStatus
+        TThostFtdcMoneyAccountStatusType MoneyAccountStatus
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###汇钞标志
-        TThostFtdcCashExchangeCodeType	CashExchangeCode
+        TThostFtdcCashExchangeCodeType CashExchangeCode
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###转帐销户请求
     cdef struct CThostFtdcReqCancelAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###性别
-        TThostFtdcGenderType	Gender
+        TThostFtdcGenderType Gender
         ###国家代码
-        TThostFtdcCountryCodeType	CountryCode
+        TThostFtdcCountryCodeType CountryCode
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮编
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###电话号码
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###手机
-        TThostFtdcMobilePhoneType	MobilePhone
+        TThostFtdcMobilePhoneType MobilePhone
         ###传真
-        TThostFtdcFaxType	Fax
+        TThostFtdcFaxType Fax
         ###电子邮件
-        TThostFtdcEMailType	EMail
+        TThostFtdcEMailType EMail
         ###资金账户状态
-        TThostFtdcMoneyAccountStatusType	MoneyAccountStatus
+        TThostFtdcMoneyAccountStatusType MoneyAccountStatus
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###汇钞标志
-        TThostFtdcCashExchangeCodeType	CashExchangeCode
+        TThostFtdcCashExchangeCodeType CashExchangeCode
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###变更银行账户请求
     cdef struct CThostFtdcReqChangeAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###性别
-        TThostFtdcGenderType	Gender
+        TThostFtdcGenderType Gender
         ###国家代码
-        TThostFtdcCountryCodeType	CountryCode
+        TThostFtdcCountryCodeType CountryCode
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮编
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###电话号码
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###手机
-        TThostFtdcMobilePhoneType	MobilePhone
+        TThostFtdcMobilePhoneType MobilePhone
         ###传真
-        TThostFtdcFaxType	Fax
+        TThostFtdcFaxType Fax
         ###电子邮件
-        TThostFtdcEMailType	EMail
+        TThostFtdcEMailType EMail
         ###资金账户状态
-        TThostFtdcMoneyAccountStatusType	MoneyAccountStatus
+        TThostFtdcMoneyAccountStatusType MoneyAccountStatus
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###新银行帐号
-        TThostFtdcBankAccountType	NewBankAccount
+        TThostFtdcBankAccountType NewBankAccount
         ###新银行密码
-        TThostFtdcPasswordType	NewBankPassWord
+        TThostFtdcPasswordType NewBankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
     
 
     ###转账请求
     cdef struct CThostFtdcReqTransferField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###转帐金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###期货可取金额
-        TThostFtdcTradeAmountType	FutureFetchAmount
+        TThostFtdcTradeAmountType FutureFetchAmount
         ###费用支付标志
-        TThostFtdcFeePayFlagType	FeePayFlag
+        TThostFtdcFeePayFlagType FeePayFlag
         ###应收客户费用
-        TThostFtdcCustFeeType	CustFee
+        TThostFtdcCustFeeType CustFee
         ###应收期货公司费用
-        TThostFtdcFutureFeeType	BrokerFee
+        TThostFtdcFutureFeeType BrokerFee
         ###发送方给接收方的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###转账交易状态
-        TThostFtdcTransferStatusType	TransferStatus
+        TThostFtdcTransferStatusType TransferStatus
     
 
     ###银行发起银行资金转期货响应
     cdef struct CThostFtdcRspTransferField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###转帐金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###期货可取金额
-        TThostFtdcTradeAmountType	FutureFetchAmount
+        TThostFtdcTradeAmountType FutureFetchAmount
         ###费用支付标志
-        TThostFtdcFeePayFlagType	FeePayFlag
+        TThostFtdcFeePayFlagType FeePayFlag
         ###应收客户费用
-        TThostFtdcCustFeeType	CustFee
+        TThostFtdcCustFeeType CustFee
         ###应收期货公司费用
-        TThostFtdcFutureFeeType	BrokerFee
+        TThostFtdcFutureFeeType BrokerFee
         ###发送方给接收方的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###转账交易状态
-        TThostFtdcTransferStatusType	TransferStatus
+        TThostFtdcTransferStatusType TransferStatus
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###冲正请求
     cdef struct CThostFtdcReqRepealField:
     
         ###冲正时间间隔
-        TThostFtdcRepealTimeIntervalType	RepealTimeInterval
+        TThostFtdcRepealTimeIntervalType RepealTimeInterval
         ###已经冲正次数
-        TThostFtdcRepealedTimesType	RepealedTimes
+        TThostFtdcRepealedTimesType RepealedTimes
         ###银行冲正标志
-        TThostFtdcBankRepealFlagType	BankRepealFlag
+        TThostFtdcBankRepealFlagType BankRepealFlag
         ###期商冲正标志
-        TThostFtdcBrokerRepealFlagType	BrokerRepealFlag
+        TThostFtdcBrokerRepealFlagType BrokerRepealFlag
         ###被冲正平台流水号
-        TThostFtdcPlateSerialType	PlateRepealSerial
+        TThostFtdcPlateSerialType PlateRepealSerial
         ###被冲正银行流水号
-        TThostFtdcBankSerialType	BankRepealSerial
+        TThostFtdcBankSerialType BankRepealSerial
         ###被冲正期货流水号
-        TThostFtdcFutureSerialType	FutureRepealSerial
+        TThostFtdcFutureSerialType FutureRepealSerial
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###转帐金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###期货可取金额
-        TThostFtdcTradeAmountType	FutureFetchAmount
+        TThostFtdcTradeAmountType FutureFetchAmount
         ###费用支付标志
-        TThostFtdcFeePayFlagType	FeePayFlag
+        TThostFtdcFeePayFlagType FeePayFlag
         ###应收客户费用
-        TThostFtdcCustFeeType	CustFee
+        TThostFtdcCustFeeType CustFee
         ###应收期货公司费用
-        TThostFtdcFutureFeeType	BrokerFee
+        TThostFtdcFutureFeeType BrokerFee
         ###发送方给接收方的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###转账交易状态
-        TThostFtdcTransferStatusType	TransferStatus
+        TThostFtdcTransferStatusType TransferStatus
     
 
     ###冲正响应
     cdef struct CThostFtdcRspRepealField:
     
         ###冲正时间间隔
-        TThostFtdcRepealTimeIntervalType	RepealTimeInterval
+        TThostFtdcRepealTimeIntervalType RepealTimeInterval
         ###已经冲正次数
-        TThostFtdcRepealedTimesType	RepealedTimes
+        TThostFtdcRepealedTimesType RepealedTimes
         ###银行冲正标志
-        TThostFtdcBankRepealFlagType	BankRepealFlag
+        TThostFtdcBankRepealFlagType BankRepealFlag
         ###期商冲正标志
-        TThostFtdcBrokerRepealFlagType	BrokerRepealFlag
+        TThostFtdcBrokerRepealFlagType BrokerRepealFlag
         ###被冲正平台流水号
-        TThostFtdcPlateSerialType	PlateRepealSerial
+        TThostFtdcPlateSerialType PlateRepealSerial
         ###被冲正银行流水号
-        TThostFtdcBankSerialType	BankRepealSerial
+        TThostFtdcBankSerialType BankRepealSerial
         ###被冲正期货流水号
-        TThostFtdcFutureSerialType	FutureRepealSerial
+        TThostFtdcFutureSerialType FutureRepealSerial
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###转帐金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###期货可取金额
-        TThostFtdcTradeAmountType	FutureFetchAmount
+        TThostFtdcTradeAmountType FutureFetchAmount
         ###费用支付标志
-        TThostFtdcFeePayFlagType	FeePayFlag
+        TThostFtdcFeePayFlagType FeePayFlag
         ###应收客户费用
-        TThostFtdcCustFeeType	CustFee
+        TThostFtdcCustFeeType CustFee
         ###应收期货公司费用
-        TThostFtdcFutureFeeType	BrokerFee
+        TThostFtdcFutureFeeType BrokerFee
         ###发送方给接收方的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###转账交易状态
-        TThostFtdcTransferStatusType	TransferStatus
+        TThostFtdcTransferStatusType TransferStatus
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询账户信息请求
     cdef struct CThostFtdcReqQueryAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
     
 
     ###查询账户信息响应
     cdef struct CThostFtdcRspQueryAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###银行可用金额
-        TThostFtdcTradeAmountType	BankUseAmount
+        TThostFtdcTradeAmountType BankUseAmount
         ###银行可取金额
-        TThostFtdcTradeAmountType	BankFetchAmount
+        TThostFtdcTradeAmountType BankFetchAmount
     
 
     ###期商签到签退
     cdef struct CThostFtdcFutureSignIOField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
     
 
     ###期商签到响应
     cdef struct CThostFtdcRspFutureSignInField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
         ###PIN密钥
-        TThostFtdcPasswordKeyType	PinKey
+        TThostFtdcPasswordKeyType PinKey
         ###MAC密钥
-        TThostFtdcPasswordKeyType	MacKey
+        TThostFtdcPasswordKeyType MacKey
     
 
     ###期商签退请求
     cdef struct CThostFtdcReqFutureSignOutField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
     
 
     ###期商签退响应
     cdef struct CThostFtdcRspFutureSignOutField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询指定流水号的交易结果请求
     cdef struct CThostFtdcReqQueryTradeResultBySerialField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###流水号
-        TThostFtdcSerialType	Reference
+        TThostFtdcSerialType Reference
         ###本流水号发布者的机构类型
-        TThostFtdcInstitutionTypeType	RefrenceIssureType
+        TThostFtdcInstitutionTypeType RefrenceIssureType
         ###本流水号发布者机构编码
-        TThostFtdcOrganCodeType	RefrenceIssure
+        TThostFtdcOrganCodeType RefrenceIssure
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###转帐金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
     
 
     ###查询指定流水号的交易结果响应
     cdef struct CThostFtdcRspQueryTradeResultBySerialField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
         ###流水号
-        TThostFtdcSerialType	Reference
+        TThostFtdcSerialType Reference
         ###本流水号发布者的机构类型
-        TThostFtdcInstitutionTypeType	RefrenceIssureType
+        TThostFtdcInstitutionTypeType RefrenceIssureType
         ###本流水号发布者机构编码
-        TThostFtdcOrganCodeType	RefrenceIssure
+        TThostFtdcOrganCodeType RefrenceIssure
         ###原始返回代码
-        TThostFtdcReturnCodeType	OriginReturnCode
+        TThostFtdcReturnCodeType OriginReturnCode
         ###原始返回码描述
-        TThostFtdcDescrInfoForReturnCodeType	OriginDescrInfoForReturnCode
+        TThostFtdcDescrInfoForReturnCodeType OriginDescrInfoForReturnCode
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###转帐金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
     
 
     ###日终文件就绪请求
     cdef struct CThostFtdcReqDayEndFileReadyField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###文件业务功能
-        TThostFtdcFileBusinessCodeType	FileBusinessCode
+        TThostFtdcFileBusinessCodeType FileBusinessCode
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
     
 
     ###返回结果
     cdef struct CThostFtdcReturnResultField:
     
         ###返回代码
-        TThostFtdcReturnCodeType	ReturnCode
+        TThostFtdcReturnCodeType ReturnCode
         ###返回码描述
-        TThostFtdcDescrInfoForReturnCodeType	DescrInfoForReturnCode
+        TThostFtdcDescrInfoForReturnCodeType DescrInfoForReturnCode
     
 
     ###验证期货资金密码
     cdef struct CThostFtdcVerifyFuturePasswordField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###验证客户信息
     cdef struct CThostFtdcVerifyCustInfoField:
     
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
     
 
     ###验证期货资金密码和客户信息
     cdef struct CThostFtdcVerifyFuturePasswordAndCustInfoField:
     
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###验证期货资金密码和客户信息
     cdef struct CThostFtdcDepositResultInformField:
     
         ###出入金流水号，该流水号为银期报盘返回的流水号
-        TThostFtdcDepositSeqNoType	DepositSeqNo
+        TThostFtdcDepositSeqNoType DepositSeqNo
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###入金金额
-        TThostFtdcMoneyType	Deposit
+        TThostFtdcMoneyType Deposit
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###返回代码
-        TThostFtdcReturnCodeType	ReturnCode
+        TThostFtdcReturnCodeType ReturnCode
         ###返回码描述
-        TThostFtdcDescrInfoForReturnCodeType	DescrInfoForReturnCode
+        TThostFtdcDescrInfoForReturnCodeType DescrInfoForReturnCode
     
 
     ###交易核心向银期报盘发出密钥同步请求
     cdef struct CThostFtdcReqSyncKeyField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###交易核心给银期报盘的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
     
 
     ###交易核心向银期报盘发出密钥同步响应
     cdef struct CThostFtdcRspSyncKeyField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###交易核心给银期报盘的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###查询账户信息通知
     cdef struct CThostFtdcNotifyQueryAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###银行可用金额
-        TThostFtdcTradeAmountType	BankUseAmount
+        TThostFtdcTradeAmountType BankUseAmount
         ###银行可取金额
-        TThostFtdcTradeAmountType	BankFetchAmount
+        TThostFtdcTradeAmountType BankFetchAmount
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###银期转账交易流水表
     cdef struct CThostFtdcTransferSerialField:
     
         ###平台流水号
-        TThostFtdcPlateSerialType	PlateSerial
+        TThostFtdcPlateSerialType PlateSerial
         ###交易发起方日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易日期
-        TThostFtdcDateType	TradingDay
+        TThostFtdcDateType TradingDay
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###交易代码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###会话编号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###银行编码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构编码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###期货公司编码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###期货公司帐号类型
-        TThostFtdcFutureAccTypeType	FutureAccType
+        TThostFtdcFutureAccTypeType FutureAccType
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###投资者代码
-        TThostFtdcInvestorIDType	InvestorID
+        TThostFtdcInvestorIDType InvestorID
         ###期货公司流水号
-        TThostFtdcFutureSerialType	FutureSerial
+        TThostFtdcFutureSerialType FutureSerial
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###交易金额
-        TThostFtdcTradeAmountType	TradeAmount
+        TThostFtdcTradeAmountType TradeAmount
         ###应收客户费用
-        TThostFtdcCustFeeType	CustFee
+        TThostFtdcCustFeeType CustFee
         ###应收期货公司费用
-        TThostFtdcFutureFeeType	BrokerFee
+        TThostFtdcFutureFeeType BrokerFee
         ###有效标志
-        TThostFtdcAvailabilityFlagType	AvailabilityFlag
+        TThostFtdcAvailabilityFlagType AvailabilityFlag
         ###操作员
-        TThostFtdcOperatorCodeType	OperatorCode
+        TThostFtdcOperatorCodeType OperatorCode
         ###新银行帐号
-        TThostFtdcBankAccountType	BankNewAccount
+        TThostFtdcBankAccountType BankNewAccount
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###请求查询转帐流水
     cdef struct CThostFtdcQryTransferSerialField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###银行编码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###期商签到通知
     cdef struct CThostFtdcNotifyFutureSignInField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
         ###PIN密钥
-        TThostFtdcPasswordKeyType	PinKey
+        TThostFtdcPasswordKeyType PinKey
         ###MAC密钥
-        TThostFtdcPasswordKeyType	MacKey
+        TThostFtdcPasswordKeyType MacKey
     
 
     ###期商签退通知
     cdef struct CThostFtdcNotifyFutureSignOutField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###交易核心向银期报盘发出密钥同步处理结果的通知
     cdef struct CThostFtdcNotifySyncKeyField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###交易核心给银期报盘的消息
-        TThostFtdcAddInfoType	Message
+        TThostFtdcAddInfoType Message
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###请求编号
-        TThostFtdcRequestIDType	RequestID
+        TThostFtdcRequestIDType RequestID
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###请求查询银期签约关系
     cdef struct CThostFtdcQryAccountregisterField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###银行编码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构编码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###客户开销户信息表
     cdef struct CThostFtdcAccountregisterField:
     
         ###交易日期
-        TThostFtdcTradeDateType	TradeDay
+        TThostFtdcTradeDateType TradeDay
         ###银行编码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构编码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###期货公司编码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期货公司分支机构编码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###开销户类别
-        TThostFtdcOpenOrDestroyType	OpenOrDestroy
+        TThostFtdcOpenOrDestroyType OpenOrDestroy
         ###签约日期
-        TThostFtdcTradeDateType	RegDate
+        TThostFtdcTradeDateType RegDate
         ###解约日期
-        TThostFtdcTradeDateType	OutDate
+        TThostFtdcTradeDateType OutDate
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
     
 
     ###银期开户信息
     cdef struct CThostFtdcOpenAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###性别
-        TThostFtdcGenderType	Gender
+        TThostFtdcGenderType Gender
         ###国家代码
-        TThostFtdcCountryCodeType	CountryCode
+        TThostFtdcCountryCodeType CountryCode
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮编
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###电话号码
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###手机
-        TThostFtdcMobilePhoneType	MobilePhone
+        TThostFtdcMobilePhoneType MobilePhone
         ###传真
-        TThostFtdcFaxType	Fax
+        TThostFtdcFaxType Fax
         ###电子邮件
-        TThostFtdcEMailType	EMail
+        TThostFtdcEMailType EMail
         ###资金账户状态
-        TThostFtdcMoneyAccountStatusType	MoneyAccountStatus
+        TThostFtdcMoneyAccountStatusType MoneyAccountStatus
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###汇钞标志
-        TThostFtdcCashExchangeCodeType	CashExchangeCode
+        TThostFtdcCashExchangeCodeType CashExchangeCode
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###银期销户信息
     cdef struct CThostFtdcCancelAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###性别
-        TThostFtdcGenderType	Gender
+        TThostFtdcGenderType Gender
         ###国家代码
-        TThostFtdcCountryCodeType	CountryCode
+        TThostFtdcCountryCodeType CountryCode
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮编
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###电话号码
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###手机
-        TThostFtdcMobilePhoneType	MobilePhone
+        TThostFtdcMobilePhoneType MobilePhone
         ###传真
-        TThostFtdcFaxType	Fax
+        TThostFtdcFaxType Fax
         ###电子邮件
-        TThostFtdcEMailType	EMail
+        TThostFtdcEMailType EMail
         ###资金账户状态
-        TThostFtdcMoneyAccountStatusType	MoneyAccountStatus
+        TThostFtdcMoneyAccountStatusType MoneyAccountStatus
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###汇钞标志
-        TThostFtdcCashExchangeCodeType	CashExchangeCode
+        TThostFtdcCashExchangeCodeType CashExchangeCode
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###渠道标志
-        TThostFtdcDeviceIDType	DeviceID
+        TThostFtdcDeviceIDType DeviceID
         ###期货单位帐号类型
-        TThostFtdcBankAccTypeType	BankSecuAccType
+        TThostFtdcBankAccTypeType BankSecuAccType
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###期货单位帐号
-        TThostFtdcBankAccountType	BankSecuAcc
+        TThostFtdcBankAccountType BankSecuAcc
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易柜员
-        TThostFtdcOperNoType	OperNo
+        TThostFtdcOperNoType OperNo
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###用户标识
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###银期变更银行账号信息
     cdef struct CThostFtdcChangeAccountField:
     
         ###业务功能码
-        TThostFtdcTradeCodeType	TradeCode
+        TThostFtdcTradeCodeType TradeCode
         ###银行代码
-        TThostFtdcBankIDType	BankID
+        TThostFtdcBankIDType BankID
         ###银行分支机构代码
-        TThostFtdcBankBrchIDType	BankBranchID
+        TThostFtdcBankBrchIDType BankBranchID
         ###期商代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###期商分支机构代码
-        TThostFtdcFutureBranchIDType	BrokerBranchID
+        TThostFtdcFutureBranchIDType BrokerBranchID
         ###交易日期
-        TThostFtdcTradeDateType	TradeDate
+        TThostFtdcTradeDateType TradeDate
         ###交易时间
-        TThostFtdcTradeTimeType	TradeTime
+        TThostFtdcTradeTimeType TradeTime
         ###银行流水号
-        TThostFtdcBankSerialType	BankSerial
+        TThostFtdcBankSerialType BankSerial
         ###交易系统日期 
-        TThostFtdcTradeDateType	TradingDay
+        TThostFtdcTradeDateType TradingDay
         ###银期平台消息流水号
-        TThostFtdcSerialType	PlateSerial
+        TThostFtdcSerialType PlateSerial
         ###最后分片标志
-        TThostFtdcLastFragmentType	LastFragment
+        TThostFtdcLastFragmentType LastFragment
         ###会话号
-        TThostFtdcSessionIDType	SessionID
+        TThostFtdcSessionIDType SessionID
         ###客户姓名
-        TThostFtdcIndividualNameType	CustomerName
+        TThostFtdcIndividualNameType CustomerName
         ###证件类型
-        TThostFtdcIdCardTypeType	IdCardType
+        TThostFtdcIdCardTypeType IdCardType
         ###证件号码
-        TThostFtdcIdentifiedCardNoType	IdentifiedCardNo
+        TThostFtdcIdentifiedCardNoType IdentifiedCardNo
         ###性别
-        TThostFtdcGenderType	Gender
+        TThostFtdcGenderType Gender
         ###国家代码
-        TThostFtdcCountryCodeType	CountryCode
+        TThostFtdcCountryCodeType CountryCode
         ###客户类型
-        TThostFtdcCustTypeType	CustType
+        TThostFtdcCustTypeType CustType
         ###地址
-        TThostFtdcAddressType	Address
+        TThostFtdcAddressType Address
         ###邮编
-        TThostFtdcZipCodeType	ZipCode
+        TThostFtdcZipCodeType ZipCode
         ###电话号码
-        TThostFtdcTelephoneType	Telephone
+        TThostFtdcTelephoneType Telephone
         ###手机
-        TThostFtdcMobilePhoneType	MobilePhone
+        TThostFtdcMobilePhoneType MobilePhone
         ###传真
-        TThostFtdcFaxType	Fax
+        TThostFtdcFaxType Fax
         ###电子邮件
-        TThostFtdcEMailType	EMail
+        TThostFtdcEMailType EMail
         ###资金账户状态
-        TThostFtdcMoneyAccountStatusType	MoneyAccountStatus
+        TThostFtdcMoneyAccountStatusType MoneyAccountStatus
         ###银行帐号
-        TThostFtdcBankAccountType	BankAccount
+        TThostFtdcBankAccountType BankAccount
         ###银行密码
-        TThostFtdcPasswordType	BankPassWord
+        TThostFtdcPasswordType BankPassWord
         ###新银行帐号
-        TThostFtdcBankAccountType	NewBankAccount
+        TThostFtdcBankAccountType NewBankAccount
         ###新银行密码
-        TThostFtdcPasswordType	NewBankPassWord
+        TThostFtdcPasswordType NewBankPassWord
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###期货密码
-        TThostFtdcPasswordType	Password
+        TThostFtdcPasswordType Password
         ###银行帐号类型
-        TThostFtdcBankAccTypeType	BankAccType
+        TThostFtdcBankAccTypeType BankAccType
         ###安装编号
-        TThostFtdcInstallIDType	InstallID
+        TThostFtdcInstallIDType InstallID
         ###验证客户证件号码标志
-        TThostFtdcYesNoIndicatorType	VerifyCertNoFlag
+        TThostFtdcYesNoIndicatorType VerifyCertNoFlag
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###期货公司银行编码
-        TThostFtdcBankCodingForFutureType	BrokerIDByBank
+        TThostFtdcBankCodingForFutureType BrokerIDByBank
         ###银行密码标志
-        TThostFtdcPwdFlagType	BankPwdFlag
+        TThostFtdcPwdFlagType BankPwdFlag
         ###期货资金密码核对标志
-        TThostFtdcPwdFlagType	SecuPwdFlag
+        TThostFtdcPwdFlagType SecuPwdFlag
         ###交易ID
-        TThostFtdcTIDType	TID
+        TThostFtdcTIDType TID
         ###摘要
-        TThostFtdcDigestType	Digest
+        TThostFtdcDigestType Digest
         ###错误代码
-        TThostFtdcErrorIDType	ErrorID
+        TThostFtdcErrorIDType ErrorID
         ###错误信息
-        TThostFtdcErrorMsgType	ErrorMsg
+        TThostFtdcErrorMsgType ErrorMsg
     
 
     ###二级代理操作员银期权限
     cdef struct CThostFtdcSecAgentACIDMapField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###资金账户
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###币种
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
         ###境外中介机构资金帐号
-        TThostFtdcAccountIDType	BrokerSecAgentID
+        TThostFtdcAccountIDType BrokerSecAgentID
     
 
     ###二级代理操作员银期权限查询
     cdef struct CThostFtdcQrySecAgentACIDMapField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###资金账户
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###币种
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
     
 
     ###灾备中心交易权限
     cdef struct CThostFtdcUserRightsAssignField:
     
         ###应用单元代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###交易中心代码
-        TThostFtdcDRIdentityIDType	DRIdentityID
+        TThostFtdcDRIdentityIDType DRIdentityID
     
 
     ###经济公司是否有在本标示的交易权限
     cdef struct CThostFtdcBrokerUserRightAssignField:
     
         ###应用单元代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###交易中心代码
-        TThostFtdcDRIdentityIDType	DRIdentityID
+        TThostFtdcDRIdentityIDType DRIdentityID
         ###能否交易
-        TThostFtdcBoolType	Tradeable
+        TThostFtdcBoolType Tradeable
     
 
     ###灾备交易转换报文
     cdef struct CThostFtdcDRTransferField:
     
         ###原交易中心代码
-        TThostFtdcDRIdentityIDType	OrigDRIdentityID
+        TThostFtdcDRIdentityIDType OrigDRIdentityID
         ###目标交易中心代码
-        TThostFtdcDRIdentityIDType	DestDRIdentityID
+        TThostFtdcDRIdentityIDType DestDRIdentityID
         ###原应用单元代码
-        TThostFtdcBrokerIDType	OrigBrokerID
+        TThostFtdcBrokerIDType OrigBrokerID
         ###目标易用单元代码
-        TThostFtdcBrokerIDType	DestBrokerID
+        TThostFtdcBrokerIDType DestBrokerID
     
 
     ###Fens用户信息
     cdef struct CThostFtdcFensUserInfoField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
         ###登录模式
-        TThostFtdcLoginModeType	LoginMode
+        TThostFtdcLoginModeType LoginMode
     
 
     ###当前银期所属交易中心
     cdef struct CThostFtdcCurrTransferIdentityField:
     
         ###交易中心代码
-        TThostFtdcDRIdentityIDType	IdentityID
+        TThostFtdcDRIdentityIDType IdentityID
     
 
     ###禁止登录用户
     cdef struct CThostFtdcLoginForbiddenUserField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###查询禁止登录用户
     cdef struct CThostFtdcQryLoginForbiddenUserField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###用户代码
-        TThostFtdcUserIDType	UserID
+        TThostFtdcUserIDType UserID
     
 
     ###UDP组播组信息
     cdef struct CThostFtdcMulticastGroupInfoField:
     
         ###组播组IP地址
-        TThostFtdcIPAddressType	GroupIP
+        TThostFtdcIPAddressType GroupIP
         ###组播组IP端口
-        TThostFtdcIPPortType	GroupPort
+        TThostFtdcIPPortType GroupPort
         ###源地址
-        TThostFtdcIPAddressType	SourceIP
+        TThostFtdcIPAddressType SourceIP
     
 
     ###资金账户基本准备金
     cdef struct CThostFtdcTradingAccountReserveField:
     
         ###经纪公司代码
-        TThostFtdcBrokerIDType	BrokerID
+        TThostFtdcBrokerIDType BrokerID
         ###投资者帐号
-        TThostFtdcAccountIDType	AccountID
+        TThostFtdcAccountIDType AccountID
         ###基本准备金
-        TThostFtdcMoneyType	Reserve
+        TThostFtdcMoneyType Reserve
         ###币种代码
-        TThostFtdcCurrencyIDType	CurrencyID
+        TThostFtdcCurrencyIDType CurrencyID
+    
+    ###当前报单手续费的详细内容
+    cdef struct CThostFtdcInstrumentOrderCommRateField:
+        ###合约代码
+        TThostFtdcInstrumentIDType InstrumentID
+        ###投资者范围
+        TThostFtdcInvestorRangeType InvestorRange
+        ###经纪公司代码
+        TThostFtdcBrokerIDType BrokerID
+        ###投资者代码
+        TThostFtdcInvestorIDType InvestorID
+        ###投机套保标志
+        TThostFtdcHedgeFlagType HedgeFlag
+        ###报单手续费
+        TThostFtdcRatioType OrderCommByVolume
+        ###撤单手续费
+        TThostFtdcRatioType OrderActionCommByVolume
+
+    ###报单手续费率查询
+    cdef struct CThostFtdcQryInstrumentOrderCommRateField:
+        ###经纪公司代码
+        TThostFtdcBrokerIDType BrokerID
+        ###投资者代码
+        TThostFtdcInvestorIDType InvestorID
+        ###合约代码
+        TThostFtdcInstrumentIDType InstrumentID
     

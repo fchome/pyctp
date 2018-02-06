@@ -109,6 +109,12 @@ class pyThostFtdcReqAuthenticateField:
 	###认证码
     AuthCode = '' #str [17]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.UserProductInfo = self.UserProductInfo.encode('gb2312') + bytearray(11 - len(self.UserProductInfo)) #str [11]
+        self.AuthCode = self.AuthCode.encode('gb2312') + bytearray(17 - len(self.AuthCode)) #str [17]
+
 ###客户端认证响应
 class pyThostFtdcRspAuthenticateField:
 	###经纪公司代码
@@ -1162,6 +1168,11 @@ class pyThostFtdcUserPasswordUpdateField:
 	###新的口令
     NewPassword = '' #str [41]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.OldPassword = self.OldPassword.encode('gb2312') + bytearray(41 - len(self.OldPassword)) #str [41]
+        self.NewPassword = self.NewPassword.encode('gb2312') + bytearray(41 - len(self.NewPassword)) #str [41]
 
 ###输入报单
 class pyThostFtdcInputOrderField:
@@ -1212,6 +1223,17 @@ class pyThostFtdcInputOrderField:
     UserForceClose = 0 #int
 	###互换单标志
     IsSwapOrder = 0 #int
+
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.OrderRef = self.OrderRef.encode('gb2312') + bytearray(13 - len(self.OrderRef)) #str [13]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.CombOffsetFlag = self.CombOffsetFlag.encode('gb2312') + bytearray(5 - len(self.CombOffsetFlag)) #str [5]
+        self.CombHedgeFlag = self.CombHedgeFlag.encode('gb2312') + bytearray(5 - len(self.CombHedgeFlag)) #str [5]
+        self.GTDDate = self.GTDDate.encode('gb2312') + bytearray(9 - len(self.GTDDate)) #str [9]
+        self.BusinessUnit = self.BusinessUnit.encode('gb2312') + bytearray(21 - len(self.BusinessUnit)) #str [21]
 
 
 ###报单
@@ -1759,6 +1781,12 @@ class pyThostFtdcSettlementInfoConfirmField:
 	###确认时间
     ConfirmTime = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ConfirmDate = self.ConfirmDate.encode('gb2312') + bytearray(9 - len(self.ConfirmDate)) #str [9]
+        self.ConfirmTime = self.ConfirmTime.encode('gb2312') + bytearray(9 - len(self.ConfirmTime)) #str [9]
+
 
 ###出入金同步
 class pyThostFtdcSyncDepositField:
@@ -2131,6 +2159,14 @@ class pyThostFtdcQryOrderField:
 	###结束时间
     InsertTimeEnd = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.OrderSysID = self.OrderSysID.encode('gb2312') + bytearray(21 - len(self.OrderSysID)) #str [21]
+        self.InsertTimeStart = self.InsertTimeStart.encode('gb2312') + bytearray(9 - len(self.InsertTimeStart)) #str [9]
+        self.InsertTimeEnd = self.InsertTimeEnd.encode('gb2312') + bytearray(9 - len(self.InsertTimeEnd)) #str [9]
 
 ###查询成交
 class pyThostFtdcQryTradeField:
@@ -2150,6 +2186,14 @@ class pyThostFtdcQryTradeField:
 	###结束时间
     TradeTimeEnd = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.TradeID = self.TradeID.encode('gb2312') + bytearray(21 - len(self.TradeID)) #str [21]
+        self.TradeTimeStart = self.TradeTimeStart.encode('gb2312') + bytearray(9 - len(self.TradeTimeStart)) #str [9]
+        self.TradeTimeEnd = self.TradeTimeEnd.encode('gb2312') + bytearray(9 - len(self.TradeTimeEnd)) #str [9]
 
 ###查询投资者持仓
 class pyThostFtdcQryInvestorPositionField:
@@ -2161,6 +2205,10 @@ class pyThostFtdcQryInvestorPositionField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###查询资金账户
 class pyThostFtdcQryTradingAccountField:
@@ -2172,6 +2220,10 @@ class pyThostFtdcQryTradingAccountField:
 	###币种代码
     CurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
 
 ###查询投资者
 class pyThostFtdcQryInvestorField:
@@ -2181,6 +2233,9 @@ class pyThostFtdcQryInvestorField:
 	###投资者代码
     InvestorID = '' #str [13]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
 
 ###查询交易编码
 class pyThostFtdcQryTradingCodeField:
@@ -2196,6 +2251,11 @@ class pyThostFtdcQryTradingCodeField:
 	###交易编码类型
     ClientIDType = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.ClientID = self.ClientID.encode('gb2312') + bytearray(11 - len(self.ClientID)) #str [11]
 
 ###查询投资者组
 class pyThostFtdcQryInvestorGroupField:
@@ -2216,6 +2276,10 @@ class pyThostFtdcQryInstrumentMarginRateField:
 	###投机套保标志
     HedgeFlag = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###查询手续费率
 class pyThostFtdcQryInstrumentCommissionRateField:
@@ -2227,6 +2291,10 @@ class pyThostFtdcQryInstrumentCommissionRateField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###查询合约交易权限
 class pyThostFtdcQryInstrumentTradingRightField:
@@ -2347,6 +2415,8 @@ class pyThostFtdcQryExchangeField:
 	###交易所代码
     ExchangeID = '' #str [9]
 
+    def encode(self):
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
 
 ###查询产品
 class pyThostFtdcQryProductField:
@@ -2355,6 +2425,9 @@ class pyThostFtdcQryProductField:
     ProductID = '' #str [31]
 	###产品类型
     ProductClass = None #bytes [1]
+
+    def encode(self):
+        self.ProductID = self.ProductID.encode('gb2312') + bytearray(31 - len(self.ProductID)) #str [31]
 
 
 ###查询合约
@@ -2369,6 +2442,11 @@ class pyThostFtdcQryInstrumentField:
 	###产品代码
     ProductID = '' #str [31]
 
+    def encode(self):
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.ExchangeInstID = self.ExchangeInstID.encode('gb2312') + bytearray(31 - len(self.ExchangeInstID)) #str [31]
+        self.ProductID = self.ProductID.encode('gb2312') + bytearray(31 - len(self.ProductID)) #str [31]
 
 ###查询行情
 class pyThostFtdcQryDepthMarketDataField:
@@ -2376,6 +2454,8 @@ class pyThostFtdcQryDepthMarketDataField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###查询经纪公司用户
 class pyThostFtdcQryBrokerUserField:
@@ -2425,6 +2505,10 @@ class pyThostFtdcQrySettlementInfoField:
 	###交易日
     TradingDay = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.TradingDay = self.TradingDay.encode('gb2312') + bytearray(9 - len(self.TradingDay)) #str [9]
 
 ###查询交易所保证金率
 class pyThostFtdcQryExchangeMarginRateField:
@@ -2436,6 +2520,9 @@ class pyThostFtdcQryExchangeMarginRateField:
 	###投机套保标志
     HedgeFlag = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###查询交易所调整保证金率
 class pyThostFtdcQryExchangeMarginRateAdjustField:
@@ -2447,6 +2534,9 @@ class pyThostFtdcQryExchangeMarginRateAdjustField:
 	###投机套保标志
     HedgeFlag = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###查询汇率
 class pyThostFtdcQryExchangeRateField:
@@ -2458,6 +2548,10 @@ class pyThostFtdcQryExchangeRateField:
 	###目标币种
     ToCurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.FromCurrencyID = self.FromCurrencyID.encode('gb2312') + bytearray(4 - len(self.FromCurrencyID)) #str [4]
+        self.ToCurrencyID = self.ToCurrencyID.encode('gb2312') + bytearray(4 - len(self.ToCurrencyID)) #str [4]
 
 ###查询货币质押流水
 class pyThostFtdcQrySyncFundMortgageField:
@@ -2605,6 +2699,11 @@ class pyThostFtdcQryOptionInstrTradeCostField:
 	###标的价格,填0则用昨结算价
     UnderlyingPrice = 0 #double
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+
 
 ###期权手续费率查询
 class pyThostFtdcQryOptionInstrCommRateField:
@@ -2616,6 +2715,10 @@ class pyThostFtdcQryOptionInstrCommRateField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###股指现货指数
 class pyThostFtdcIndexPriceField:
@@ -2660,6 +2763,13 @@ class pyThostFtdcInputExecOrderField:
 	###期权行权后生成的头寸是否自动平仓
     CloseFlag = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExecOrderRef = self.ExecOrderRef.encode('gb2312') + bytearray(13 - len(self.ExecOrderRef)) #str [13]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.BusinessUnit = self.BusinessUnit.encode('gb2312') + bytearray(21 - len(self.BusinessUnit)) #str [21]
 
 ###输入执行宣告操作
 class pyThostFtdcInputExecOrderActionField:
@@ -2689,6 +2799,14 @@ class pyThostFtdcInputExecOrderActionField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ExecOrderRef = self.ExecOrderRef.encode('gb2312') + bytearray(13 - len(self.ExecOrderRef)) #str [13]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.ExecOrderSysID = self.ExecOrderSysID.encode('gb2312') + bytearray(21 - len(self.ExecOrderSysID)) #str [21]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###执行宣告
 class pyThostFtdcExecOrderField:
@@ -2842,6 +2960,14 @@ class pyThostFtdcQryExecOrderField:
 	###结束时间
     InsertTimeEnd = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.ExecOrderSysID = self.ExecOrderSysID.encode('gb2312') + bytearray(21 - len(self.ExecOrderSysID)) #str [21]
+        self.InsertTimeStart = self.InsertTimeStart.encode('gb2312') + bytearray(9 - len(self.InsertTimeStart)) #str [9]
+        self.InsertTimeEnd = self.InsertTimeEnd.encode('gb2312') + bytearray(9 - len(self.InsertTimeEnd)) #str [9]
 
 ###交易所执行宣告信息
 class pyThostFtdcExchangeExecOrderField:
@@ -3108,6 +3234,12 @@ class pyThostFtdcInputForQuoteField:
 	###用户代码
     UserID = '' #str [16]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ForQuoteRef = self.ForQuoteRef.encode('gb2312') + bytearray(13 - len(self.ForQuoteRef)) #str [13]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
 
 ###询价
 class pyThostFtdcForQuoteField:
@@ -3169,6 +3301,14 @@ class pyThostFtdcQryForQuoteField:
     InsertTimeStart = '' #str [9]
 	###结束时间
     InsertTimeEnd = '' #str [9]
+
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.InsertTimeStart = self.InsertTimeStart.encode('gb2312') + bytearray(9 - len(self.InsertTimeStart)) #str [9]
+        self.InsertTimeEnd = self.InsertTimeEnd.encode('gb2312') + bytearray(9 - len(self.InsertTimeEnd)) #str [9]
 
 
 ###交易所询价信息
@@ -3251,6 +3391,16 @@ class pyThostFtdcInputQuoteField:
 	###应价编号
     ForQuoteSysID = '' #str [21]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.QuoteRef = self.QuoteRef.encode('gb2312') + bytearray(13 - len(self.QuoteRef)) #str [13]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.BusinessUnit = self.BusinessUnit.encode('gb2312') + bytearray(21 - len(self.BusinessUnit)) #str [21]
+        self.AskOrderRef = self.AskOrderRef.encode('gb2312') + bytearray(13 - len(self.AskOrderRef)) #str [13]
+        self.BidOrderRef = self.BidOrderRef.encode('gb2312') + bytearray(13 - len(self.BidOrderRef)) #str [13]
+        self.ForQuoteSysID = self.ForQuoteSysID.encode('gb2312') + bytearray(21 - len(self.ForQuoteSysID)) #str [21]
 
 ###输入报价操作
 class pyThostFtdcInputQuoteActionField:
@@ -3280,6 +3430,14 @@ class pyThostFtdcInputQuoteActionField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.QuoteRef = self.QuoteRef.encode('gb2312') + bytearray(13 - len(self.QuoteRef)) #str [13]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.QuoteSysID = self.QuoteSysID.encode('gb2312') + bytearray(21 - len(self.QuoteSysID)) #str [21]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###报价
 class pyThostFtdcQuoteField:
@@ -3442,6 +3600,15 @@ class pyThostFtdcQryQuoteField:
     InsertTimeStart = '' #str [9]
 	###结束时间
     InsertTimeEnd = '' #str [9]
+
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.QuoteSysID = self.QuoteSysID.encode('gb2312') + bytearray(21 - len(self.QuoteSysID)) #str [21]
+        self.InsertTimeStart = self.InsertTimeStart.encode('gb2312') + bytearray(9 - len(self.InsertTimeStart)) #str [9]
+        self.InsertTimeEnd = self.InsertTimeEnd.encode('gb2312') + bytearray(9 - len(self.InsertTimeEnd)) #str [9]
 
 
 ###交易所报价信息
@@ -3660,6 +3827,9 @@ class pyThostFtdcQryCombInstrumentGuardField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###输入的申请组合
 class pyThostFtdcInputCombActionField:
@@ -3683,6 +3853,12 @@ class pyThostFtdcInputCombActionField:
 	###投机套保标志
     HedgeFlag = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.CombActionRef = self.CombActionRef.encode('gb2312') + bytearray(13 - len(self.CombActionRef)) #str [13]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
 
 ###申请组合
 class pyThostFtdcCombActionField:
@@ -3751,6 +3927,11 @@ class pyThostFtdcQryCombActionField:
 	###交易所代码
     ExchangeID = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
 
 ###交易所申请组合信息
 class pyThostFtdcExchangeCombActionField:
@@ -4093,6 +4274,9 @@ class pyThostFtdcQryTransferBankField:
 	###银行分中心代码
     BankBrchID = '' #str [5]
 
+    def encode(self):
+        self.BankID = self.BankID.encode('gb2312') + bytearray(4 - len(self.BankID)) #str [4]
+        self.BankBrchID = self.BankBrchID.encode('gb2312') + bytearray(5 - len(self.BankBrchID)) #str [5]
 
 ###转帐银行
 class pyThostFtdcTransferBankField:
@@ -4117,6 +4301,10 @@ class pyThostFtdcQryInvestorPositionDetailField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###投资者持仓明细
 class pyThostFtdcInvestorPositionDetailField:
@@ -4248,6 +4436,8 @@ class pyThostFtdcQryNoticeField:
 	###经纪公司代码
     BrokerID = '' #str [11]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
 
 ###客户通知
 class pyThostFtdcNoticeField:
@@ -4281,6 +4471,9 @@ class pyThostFtdcQrySettlementInfoConfirmField:
 	###投资者代码
     InvestorID = '' #str [13]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
 
 ###装载结算信息
 class pyThostFtdcLoadSettlementInfoField:
@@ -4341,6 +4534,12 @@ class pyThostFtdcTradingAccountPasswordUpdateField:
 	###币种代码
     CurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.AccountID = self.AccountID.encode('gb2312') + bytearray(13 - len(self.AccountID)) #str [13]
+        self.OldPassword = self.OldPassword.encode('gb2312') + bytearray(41 - len(self.OldPassword)) #str [41]
+        self.NewPassword = self.NewPassword.encode('gb2312') + bytearray(41 - len(self.NewPassword)) #str [41]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
 
 ###查询组合合约分腿
 class pyThostFtdcQryCombinationLegField:
@@ -4468,6 +4667,10 @@ class pyThostFtdcQryContractBankField:
 	###银行分中心代码
     BankBrchID = '' #str [5]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.BankID = self.BankID.encode('gb2312') + bytearray(4 - len(self.BankID)) #str [4]
+        self.BankBrchID = self.BankBrchID.encode('gb2312') + bytearray(5 - len(self.BankBrchID)) #str [5]
 
 ###查询签约银行响应
 class pyThostFtdcContractBankField:
@@ -4589,6 +4792,20 @@ class pyThostFtdcParkedOrderField:
 	###互换单标志
     IsSwapOrder = 0 #int
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.OrderRef = self.OrderRef.encode('gb2312') + bytearray(13 - len(self.OrderRef)) #str [13]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.CombOffsetFlag = self.CombOffsetFlag.encode('gb2312') + bytearray(5 - len(self.CombOffsetFlag)) #str [5]
+        self.CombHedgeFlag = self.CombHedgeFlag.encode('gb2312') + bytearray(5 - len(self.CombHedgeFlag)) #str [5]
+        self.GTDDate = self.GTDDate.encode('gb2312') + bytearray(9 - len(self.GTDDate)) #str [9]
+        self.BusinessUnit = self.BusinessUnit.encode('gb2312') + bytearray(21 - len(self.BusinessUnit)) #str [21]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.ParkedOrderID = self.ParkedOrderID.encode('gb2312') + bytearray(13 - len(self.ParkedOrderID)) #str [13]
+        self.ErrorMsg = self.ErrorMsg.encode('gb2312') + bytearray(81 - len(self.ErrorMsg)) #str [81]
+	
 
 ###输入预埋单操作
 class pyThostFtdcParkedOrderActionField:
@@ -4632,6 +4849,16 @@ class pyThostFtdcParkedOrderActionField:
 	###错误信息
     ErrorMsg = '' #str [81]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.OrderRef = self.OrderRef.encode('gb2312') + bytearray(13 - len(self.OrderRef)) #str [13]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.OrderSysID = self.OrderSysID.encode('gb2312') + bytearray(21 - len(self.OrderSysID)) #str [21]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ParkedOrderActionID = self.ParkedOrderActionID.encode('gb2312') + bytearray(13 - len(self.ParkedOrderActionID)) #str [13]
+        self.ErrorMsg = self.ErrorMsg.encode('gb2312') + bytearray(81 - len(self.ErrorMsg)) #str [81]
 
 ###查询预埋单
 class pyThostFtdcQryParkedOrderField:
@@ -4645,6 +4872,11 @@ class pyThostFtdcQryParkedOrderField:
 	###交易所代码
     ExchangeID = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
 
 ###查询预埋撤单
 class pyThostFtdcQryParkedOrderActionField:
@@ -4658,6 +4890,11 @@ class pyThostFtdcQryParkedOrderActionField:
 	###交易所代码
     ExchangeID = '' #str [9]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
 
 ###删除预埋单
 class pyThostFtdcRemoveParkedOrderField:
@@ -4669,6 +4906,10 @@ class pyThostFtdcRemoveParkedOrderField:
 	###预埋报单编号
     ParkedOrderID = '' #str [13]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ParkedOrderID = self.ParkedOrderID.encode('gb2312') + bytearray(13 - len(self.ParkedOrderID)) #str [13]
 
 ###删除预埋撤单
 class pyThostFtdcRemoveParkedOrderActionField:
@@ -4680,6 +4921,10 @@ class pyThostFtdcRemoveParkedOrderActionField:
 	###预埋撤单编号
     ParkedOrderActionID = '' #str [13]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ParkedOrderActionID = self.ParkedOrderActionID.encode('gb2312') + bytearray(13 - len(self.ParkedOrderActionID)) #str [13]
 
 ###经纪公司可提资金算法表
 class pyThostFtdcInvestorWithdrawAlgorithmField:
@@ -4708,6 +4953,10 @@ class pyThostFtdcQryInvestorPositionCombineDetailField:
 	###组合持仓合约编码
     CombInstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.CombInstrumentID = self.CombInstrumentID.encode('gb2312') + bytearray(31 - len(self.CombInstrumentID)) #str [31]
 
 ###成交均价
 class pyThostFtdcMarketDataAveragePriceField:
@@ -4788,6 +5037,9 @@ class pyThostFtdcQryTradingNoticeField:
 	###投资者代码
     InvestorID = '' #str [13]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
 
 ###查询错误报单
 class pyThostFtdcQryErrOrderField:
@@ -5093,6 +5345,10 @@ class pyThostFtdcQryBrokerTradingParamsField:
 	###币种代码
     CurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
 
 ###经纪公司交易参数
 class pyThostFtdcBrokerTradingParamsField:
@@ -5123,6 +5379,10 @@ class pyThostFtdcQryBrokerTradingAlgosField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
 
 ###经纪公司交易算法
 class pyThostFtdcBrokerTradingAlgosField:
@@ -5229,6 +5489,10 @@ class pyThostFtdcQryCFMMCTradingAccountKeyField:
     BrokerID = '' #str [11]
 	###投资者代码
     InvestorID = '' #str [13]
+
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
 
 
 ###用户动态令牌参数
@@ -5340,6 +5604,12 @@ class pyThostFtdcQryEWarrantOffsetField:
 	###合约代码
     InstrumentID = '' #str [31]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]
+
 
 ###查询投资者品种#跨品种保证金
 class pyThostFtdcQryInvestorProductGroupMarginField:
@@ -5353,6 +5623,10 @@ class pyThostFtdcQryInvestorProductGroupMarginField:
 	###投机套保标志
     HedgeFlag = None #bytes [1]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.ProductGroupID = self.ProductGroupID.encode('gb2312') + bytearray(31 - len(self.ProductGroupID)) #str [31]
 
 ###投资者品种#跨品种保证金
 class pyThostFtdcInvestorProductGroupMarginField:
@@ -5421,6 +5695,9 @@ class pyThostFtdcQueryCFMMCTradingAccountTokenField:
 	###投资者代码
     InvestorID = '' #str [13]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
 
 ###监控中心用户令牌
 class pyThostFtdcCFMMCTradingAccountTokenField:
@@ -5435,6 +5712,26 @@ class pyThostFtdcCFMMCTradingAccountTokenField:
     KeyID = 0 #int
 	###动态令牌
     Token = '' #str [21]
+
+###查询产品组
+class pyThostFtdcQryProductGroupField:
+    ###产品代码
+    ProductID = '' #str [31]
+    ###交易所代码
+    ExchangeID = '' #str [9]
+
+    def encode(self):
+        self.ProductID = self.ProductID.encode('gb2312') + bytearray(31 - len(self.ProductID)) #str [31]
+        self.ExchangeID = self.ExchangeID.encode('gb2312') + bytearray(9 - len(self.ExchangeID)) #str [9]
+
+###投资者品种/跨品种保证金产品组
+class pyThostFtdcProductGroupField:
+    ###产品代码
+    ProductID = '' #str [31]
+    ###交易所代码
+    ExchangeID = '' #str [9]
+    ###产品组代码
+    ProductGroupID = '' #str [31]
 
 
 ###转帐开户请求
@@ -5798,6 +6095,30 @@ class pyThostFtdcReqTransferField:
 	###转账交易状态
     TransferStatus = None #bytes [1]
 
+    def encode(self):
+        self.TradeCode = self.TradeCode.encode('gb2312') + bytearray(7 - len(self.TradeCode)) #str [7]
+        self.BankID = self.BankID.encode('gb2312') + bytearray(4 - len(self.BankID)) #str [4]
+        self.BankBranchID = self.BankBranchID.encode('gb2312') + bytearray(5 - len(self.BankBranchID)) #str [5]
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.BrokerBranchID = self.BrokerBranchID.encode('gb2312') + bytearray(31 - len(self.BrokerBranchID)) #str [31]
+        self.TradeDate = self.TradeDate.encode('gb2312') + bytearray(9 - len(self.TradeDate)) #str [9]
+        self.TradeTime = self.TradeTime.encode('gb2312') + bytearray(9 - len(self.TradeTime)) #str [9]
+        self.BankSerial = self.BankSerial.encode('gb2312') + bytearray(13 - len(self.BankSerial)) #str [13]
+        self.TradingDay = self.TradingDay.encode('gb2312') + bytearray(9 - len(self.TradingDay)) #str [9]
+        self.CustomerName = self.CustomerName.encode('gb2312') + bytearray(51 - len(self.CustomerName)) #str [51]
+        self.IdentifiedCardNo = self.IdentifiedCardNo.encode('gb2312') + bytearray(51 - len(self.IdentifiedCardNo)) #str [51]
+        self.BankAccount = self.BankAccount.encode('gb2312') + bytearray(41 - len(self.BankAccount)) #str [41]
+        self.BankPassWord = self.BankPassWord.encode('gb2312') + bytearray(41 - len(self.BankPassWord)) #str [41]
+        self.AccountID = self.AccountID.encode('gb2312') + bytearray(13 - len(self.AccountID)) #str [13]
+        self.Password = self.Password.encode('gb2312') + bytearray(41 - len(self.Password)) #str [41]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
+        self.Message = self.Message.encode('gb2312') + bytearray(129 - len(self.Message)) #str [129]
+        self.Digest = self.Digest.encode('gb2312') + bytearray(36 - len(self.Digest)) #str [36]
+        self.DeviceID = self.DeviceID.encode('gb2312') + bytearray(3 - len(self.DeviceID)) #str [3]
+        self.BrokerIDByBank = self.BrokerIDByBank.encode('gb2312') + bytearray(33 - len(self.BrokerIDByBank)) #str [33]
+        self.BankSecuAcc = self.BankSecuAcc.encode('gb2312') + bytearray(41 - len(self.BankSecuAcc)) #str [41]
+        self.OperNo = self.OperNo.encode('gb2312') + bytearray(17 - len(self.OperNo)) #str [17]
 
 ###银行发起银行资金转期货响应
 class pyThostFtdcRspTransferField:
@@ -6183,6 +6504,30 @@ class pyThostFtdcReqQueryAccountField:
     RequestID = 0 #int
 	###交易ID
     TID = 0 #int
+
+    def encode(self):
+        self.TradeCode = self.TradeCode.encode('gb2312') + bytearray(7 - len(self.TradeCode)) #str [7]
+        self.BankID = self.BankID.encode('gb2312') + bytearray(4 - len(self.BankID)) #str [4]
+        self.BankBranchID = self.BankBranchID.encode('gb2312') + bytearray(5 - len(self.BankBranchID)) #str [5]
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.BrokerBranchID = self.BrokerBranchID.encode('gb2312') + bytearray(31 - len(self.BrokerBranchID)) #str [31]
+        self.TradeDate = self.TradeDate.encode('gb2312') + bytearray(9 - len(self.TradeDate)) #str [9]
+        self.TradeTime = self.TradeTime.encode('gb2312') + bytearray(9 - len(self.TradeTime)) #str [9]
+        self.BankSerial = self.BankSerial.encode('gb2312') + bytearray(13 - len(self.BankSerial)) #str [13]
+        self.TradingDay = self.TradingDay.encode('gb2312') + bytearray(9 - len(self.TradingDay)) #str [9]
+        self.CustomerName = self.CustomerName.encode('gb2312') + bytearray(51 - len(self.CustomerName)) #str [51]
+        self.IdentifiedCardNo = self.IdentifiedCardNo.encode('gb2312') + bytearray(51 - len(self.IdentifiedCardNo)) #str [51]
+        self.BankAccount = self.BankAccount.encode('gb2312') + bytearray(41 - len(self.BankAccount)) #str [41]
+        self.BankPassWord = self.BankPassWord.encode('gb2312') + bytearray(41 - len(self.BankPassWord)) #str [41]
+        self.AccountID = self.AccountID.encode('gb2312') + bytearray(13 - len(self.AccountID)) #str [13]
+        self.Password = self.Password.encode('gb2312') + bytearray(41 - len(self.Password)) #str [41]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
+        self.Digest = self.Digest.encode('gb2312') + bytearray(36 - len(self.Digest)) #str [36]
+        self.DeviceID = self.DeviceID.encode('gb2312') + bytearray(3 - len(self.DeviceID)) #str [3]
+        self.BrokerIDByBank = self.BrokerIDByBank.encode('gb2312') + bytearray(33 - len(self.BrokerIDByBank)) #str [33]
+        self.BankSecuAcc = self.BankSecuAcc.encode('gb2312') + bytearray(41 - len(self.BankSecuAcc)) #str [41]
+        self.OperNo = self.OperNo.encode('gb2312') + bytearray(17 - len(self.OperNo)) #str [17]
 
 
 ###查询账户信息响应
@@ -6968,6 +7313,12 @@ class pyThostFtdcQryTransferSerialField:
 	###币种代码
     CurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.AccountID = self.AccountID.encode('gb2312') + bytearray(13 - len(self.AccountID)) #str [13]
+        self.BankID = self.BankID.encode('gb2312') + bytearray(4 - len(self.BankID)) #str [4]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
+
 
 ###期商签到通知
 class pyThostFtdcNotifyFutureSignInField:
@@ -7138,6 +7489,12 @@ class pyThostFtdcQryAccountregisterField:
 	###币种代码
     CurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.AccountID = self.AccountID.encode('gb2312') + bytearray(13 - len(self.AccountID)) #str [13]
+        self.BankID = self.BankID.encode('gb2312') + bytearray(4 - len(self.BankID)) #str [4]
+        self.BankBranchID = self.BankBranchID.encode('gb2312') + bytearray(5 - len(self.BankBranchID)) #str [5]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
 
 ###客户开销户信息表
 class pyThostFtdcAccountregisterField:
@@ -7488,6 +7845,11 @@ class pyThostFtdcQrySecAgentACIDMapField:
 	###币种
     CurrencyID = '' #str [4]
 
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
+        self.AccountID = self.AccountID.encode('gb2312') + bytearray(13 - len(self.AccountID)) #str [13]
+        self.CurrencyID = self.CurrencyID.encode('gb2312') + bytearray(4 - len(self.CurrencyID)) #str [4]
 
 ###灾备中心交易权限
 class pyThostFtdcUserRightsAssignField:
@@ -7533,6 +7895,10 @@ class pyThostFtdcFensUserInfoField:
     UserID = '' #str [16]
 	###登录模式
     LoginMode = None #bytes [1]
+
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.UserID = self.UserID.encode('gb2312') + bytearray(16 - len(self.UserID)) #str [16]
 
 
 ###当前银期所属交易中心
@@ -7583,3 +7949,33 @@ class pyThostFtdcTradingAccountReserveField:
 	###币种代码
     CurrencyID = '' #str [4]
 
+###当前报单手续费的详细内容
+class pyThostFtdcInstrumentOrderCommRateField:
+    ###合约代码
+    InstrumentID = '' #str [31]
+    ###投资者范围
+    InvestorRange = b'' #bytes
+    ###经纪公司代码
+    BrokerID = '' #str [11]
+    ###投资者代码
+    InvestorID = '' #str [13]
+    ###投机套保标志
+    HedgeFlag = b'' #bytes
+    ###报单手续费
+    OrderCommByVolume = 0 #double
+    ###撤单手续费
+    OrderActionCommByVolume = 0 #double
+
+###报单手续费率查询
+class pyThostFtdcQryInstrumentOrderCommRateField:
+    ###经纪公司代码
+    BrokerID = '' #str [11]
+    ###投资者代码
+    InvestorID = '' #str [13]
+    ###合约代码
+    InstrumentID = '' #str [31]
+
+    def encode(self):
+        self.BrokerID = self.BrokerID.encode('gb2312') + bytearray(11 - len(self.BrokerID)) #str [11]
+        self.InvestorID = self.InvestorID.encode('gb2312') + bytearray(13 - len(self.InvestorID)) #str [13]
+        self.InstrumentID = self.InstrumentID.encode('gb2312') + bytearray(31 - len(self.InstrumentID)) #str [31]

@@ -17,7 +17,7 @@ clsMdSpiResponse = None
 def attr_decode(clsv):
     for name, value in vars(clsv).items():
         if isinstance(getattr(clsv, name), bytes):
-            setattr(clsv, name, value.decode('gb2312').encode('utf-8').decode('utf-8'))
+            setattr(clsv, name, value.decode('gb2312'))
 
 # 当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 cdef extern void OnStaticFrontConnected():
@@ -64,48 +64,49 @@ cdef extern void OnStaticRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pyRspUserLogin = pyThostFtdcRspUserLoginField()
+    pyRspUserLogin = None
+    if pRspUserLogin:
+        pyRspUserLogin = pyThostFtdcRspUserLoginField()
 
-    ###交易日
-    pyRspUserLogin.TradingDay = pRspUserLogin.TradingDay #str [9]
-    ###登录成功时间
-    pyRspUserLogin.LoginTime = pRspUserLogin.LoginTime #str [9]
-    ###经纪公司代码
-    pyRspUserLogin.BrokerID = pRspUserLogin.BrokerID #str [11]
-    ###用户代码
-    pyRspUserLogin.UserID = pRspUserLogin.UserID #str [16]
-    ###交易系统名称
-    pyRspUserLogin.SystemName = pRspUserLogin.SystemName #str [41]
-    ###前置编号
-    pyRspUserLogin.FrontID = pRspUserLogin.FrontID #int
-    ###会话编号
-    pyRspUserLogin.SessionID = pRspUserLogin.SessionID #int
-    ###最大报单引用
-    pyRspUserLogin.MaxOrderRef = pRspUserLogin.MaxOrderRef #str [13]
-    ###上期所时间
-    pyRspUserLogin.SHFETime = pRspUserLogin.SHFETime #str [9]
-    ###大商所时间
-    pyRspUserLogin.DCETime = pRspUserLogin.DCETime #str [9]
-    ###郑商所时间
-    pyRspUserLogin.CZCETime = pRspUserLogin.CZCETime #str [9]
-    ###中金所时间
-    pyRspUserLogin.FFEXTime = pRspUserLogin.FFEXTime #str [9]
-    ###能源中心时间
-    pyRspUserLogin.INETime = pRspUserLogin.INETime #str [9]
+        ###交易日
+        pyRspUserLogin.TradingDay = pRspUserLogin.TradingDay #str [9]
+        ###登录成功时间
+        pyRspUserLogin.LoginTime = pRspUserLogin.LoginTime #str [9]
+        ###经纪公司代码
+        pyRspUserLogin.BrokerID = pRspUserLogin.BrokerID #str [11]
+        ###用户代码
+        pyRspUserLogin.UserID = pRspUserLogin.UserID #str [16]
+        ###交易系统名称
+        pyRspUserLogin.SystemName = pRspUserLogin.SystemName #str [41]
+        ###前置编号
+        pyRspUserLogin.FrontID = pRspUserLogin.FrontID #int
+        ###会话编号
+        pyRspUserLogin.SessionID = pRspUserLogin.SessionID #int
+        ###最大报单引用
+        pyRspUserLogin.MaxOrderRef = pRspUserLogin.MaxOrderRef #str [13]
+        ###上期所时间
+        pyRspUserLogin.SHFETime = pRspUserLogin.SHFETime #str [9]
+        ###大商所时间
+        pyRspUserLogin.DCETime = pRspUserLogin.DCETime #str [9]
+        ###郑商所时间
+        pyRspUserLogin.CZCETime = pRspUserLogin.CZCETime #str [9]
+        ###中金所时间
+        pyRspUserLogin.FFEXTime = pRspUserLogin.FFEXTime #str [9]
+        ###能源中心时间
+        pyRspUserLogin.INETime = pRspUserLogin.INETime #str [9]
 
-    attr_decode(pyRspUserLogin)
-    #for name, value in vars(pyRspUserLogin).items():
-    #    if isinstance(getattr(pyRspUserLogin, name), bytes):
-    #        setattr(pyRspUserLogin, name, value.decode('utf-8'))
+        attr_decode(pyRspUserLogin)
 
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspUserLogin(pyRspUserLogin, pyRspInfo, nRequestID, bIsLast)
 
@@ -117,23 +118,27 @@ cdef extern void OnStaticRspUserLogout(CThostFtdcUserLogoutField *pUserLogout, C
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pyUserLogout = pyThostFtdcUserLogoutField()
+    pyUserLogout = None
+    if pUserLogout:
+        pyUserLogout = pyThostFtdcUserLogoutField()
 
-    ###经纪公司代码
-    pyUserLogout.BrokerID = pUserLogout.BrokerID #str [11]
-	###用户代码
-    pyUserLogout.UserID = pUserLogout.UserID #str [16]
+        ###经纪公司代码
+        pyUserLogout.BrokerID = pUserLogout.BrokerID #str [11]
+        ###用户代码
+        pyUserLogout.UserID = pUserLogout.UserID #str [16]
 
-    attr_decode(pyUserLogout)
+        attr_decode(pyUserLogout)
 
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspUserLogout(pyUserLogout, pyRspInfo, nRequestID, bIsLast)
 
@@ -145,14 +150,16 @@ cdef extern void OnStaticRspError(CThostFtdcRspInfoField *pRspInfo, int nRequest
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspError(pyRspInfo, nRequestID, bIsLast)
 
@@ -164,21 +171,25 @@ cdef extern void OnStaticRspSubMarketData(CThostFtdcSpecificInstrumentField *pSp
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
+    pySpecificInstrument = None
+    if pSpecificInstrument:
+        pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
 
-    ###合约代码
-    pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
+        ###合约代码
+        pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
 
-    attr_decode(pySpecificInstrument)
+        attr_decode(pySpecificInstrument)
 
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspSubMarketData(pySpecificInstrument, pyRspInfo, nRequestID, bIsLast)
 
@@ -190,21 +201,25 @@ cdef extern void OnStaticRspUnSubMarketData(CThostFtdcSpecificInstrumentField *p
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
+    pySpecificInstrument = None
+    if pSpecificInstrument:
+        pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
 
-    ###合约代码
-    pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
+        ###合约代码
+        pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
 
-    attr_decode(pySpecificInstrument)
+        attr_decode(pySpecificInstrument)
     
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspUnSubMarketData(pySpecificInstrument, pyRspInfo, nRequestID, bIsLast)
 
@@ -216,21 +231,25 @@ cdef extern void OnStaticRspSubForQuoteRsp(CThostFtdcSpecificInstrumentField *pS
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
+    pySpecificInstrument = None
+    if pSpecificInstrument:
+        pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
 
-    ###合约代码
-    pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
+        ###合约代码
+        pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
 
-    attr_decode(pySpecificInstrument)
+        attr_decode(pySpecificInstrument)
 
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspSubForQuoteRsp(pySpecificInstrument, pyRspInfo, nRequestID, bIsLast)
 
@@ -242,21 +261,25 @@ cdef extern void OnStaticRspUnSubForQuoteRsp(CThostFtdcSpecificInstrumentField *
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
+    pySpecificInstrument = None
+    if pSpecificInstrument:
+        pySpecificInstrument = pyThostFtdcSpecificInstrumentField()
 
-    ###合约代码
-    pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
+        ###合约代码
+        pySpecificInstrument.InstrumentID = pSpecificInstrument.InstrumentID #str [31]
 
-    attr_decode(pySpecificInstrument)
+        attr_decode(pySpecificInstrument)
 
-    pyRspInfo = pyThostFtdcRspInfoField()
+    pyRspInfo = None
+    if pRspInfo:
+        pyRspInfo = pyThostFtdcRspInfoField()
 
-    ###错误代码
-    pyRspInfo.ErrorID = pRspInfo.ErrorID #int
-	###错误信息
-    pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
+        ###错误代码
+        pyRspInfo.ErrorID = pRspInfo.ErrorID #int
+        ###错误信息
+        pyRspInfo.ErrorMsg = pRspInfo.ErrorMsg #str [81]
 
-    attr_decode(pyRspInfo)
+        attr_decode(pyRspInfo)
 
     clsMdSpiResponse.OnRspUnSubForQuoteRsp(pySpecificInstrument, pyRspInfo, nRequestID, bIsLast)
 
@@ -268,141 +291,143 @@ cdef extern void OnStaticRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDep
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pyDepthMarketData = pyThostFtdcDepthMarketDataField()
+    pyDepthMarketData = None
+    if pDepthMarketData:
+        pyDepthMarketData = pyThostFtdcDepthMarketDataField()
 
-    ###交易日 DepthMarketData
-    pyDepthMarketData.TradingDay = pDepthMarketData.TradingDay #str [9]
+        ###交易日 DepthMarketData
+        pyDepthMarketData.TradingDay = pDepthMarketData.TradingDay #str [9]
 
-    ###合约代码
-    pyDepthMarketData.InstrumentID = pDepthMarketData.InstrumentID #str [31]
+        ###合约代码
+        pyDepthMarketData.InstrumentID = pDepthMarketData.InstrumentID #str [31]
 
-    ###交易所代码
-    pyDepthMarketData.ExchangeID = pDepthMarketData.ExchangeID #str [9]
+        ###交易所代码
+        pyDepthMarketData.ExchangeID = pDepthMarketData.ExchangeID #str [9]
 
-    ###合约在交易所的代码
-    pyDepthMarketData.ExchangeInstID = pDepthMarketData.ExchangeInstID #str [31]
+        ###合约在交易所的代码
+        pyDepthMarketData.ExchangeInstID = pDepthMarketData.ExchangeInstID #str [31]
 
-    ###最新价
-    pyDepthMarketData.LastPrice = pDepthMarketData.LastPrice #double
+        ###最新价
+        pyDepthMarketData.LastPrice = pDepthMarketData.LastPrice #double
 
-    ###上次结算价
-    pyDepthMarketData.PreSettlementPrice = pDepthMarketData.PreSettlementPrice #double
+        ###上次结算价
+        pyDepthMarketData.PreSettlementPrice = pDepthMarketData.PreSettlementPrice #double
 
-    ###昨收盘
-    pyDepthMarketData.PreClosePrice = pDepthMarketData.PreClosePrice #double
+        ###昨收盘
+        pyDepthMarketData.PreClosePrice = pDepthMarketData.PreClosePrice #double
 
-    ###昨持仓量
-    pyDepthMarketData.PreOpenInterest = pDepthMarketData.PreOpenInterest #double
+        ###昨持仓量
+        pyDepthMarketData.PreOpenInterest = pDepthMarketData.PreOpenInterest #double
 
-    ###今开盘
-    pyDepthMarketData.OpenPrice = pDepthMarketData.OpenPrice #double
+        ###今开盘
+        pyDepthMarketData.OpenPrice = pDepthMarketData.OpenPrice #double
 
-    ###最高价
-    pyDepthMarketData.HighestPrice = pDepthMarketData.HighestPrice #double
+        ###最高价
+        pyDepthMarketData.HighestPrice = pDepthMarketData.HighestPrice #double
 
-    ###最低价
-    pyDepthMarketData.LowestPrice = pDepthMarketData.LowestPrice #double
+        ###最低价
+        pyDepthMarketData.LowestPrice = pDepthMarketData.LowestPrice #double
 
-    ###数量
-    pyDepthMarketData.Volume = pDepthMarketData.Volume #int
+        ###数量
+        pyDepthMarketData.Volume = pDepthMarketData.Volume #int
 
-    ###成交金额
-    pyDepthMarketData.Turnover = pDepthMarketData.Turnover #double
+        ###成交金额
+        pyDepthMarketData.Turnover = pDepthMarketData.Turnover #double
 
-    ###持仓量
-    pyDepthMarketData.OpenInterest = pDepthMarketData.OpenInterest #double
+        ###持仓量
+        pyDepthMarketData.OpenInterest = pDepthMarketData.OpenInterest #double
 
-    ###今收盘
-    pyDepthMarketData.ClosePrice = pDepthMarketData.ClosePrice #double
+        ###今收盘
+        pyDepthMarketData.ClosePrice = pDepthMarketData.ClosePrice #double
 
-    ###本次结算价
-    pyDepthMarketData.SettlementPrice = pDepthMarketData.SettlementPrice #double
+        ###本次结算价
+        pyDepthMarketData.SettlementPrice = pDepthMarketData.SettlementPrice #double
 
-    ###涨停板价
-    pyDepthMarketData.UpperLimitPrice = pDepthMarketData.UpperLimitPrice #double
+        ###涨停板价
+        pyDepthMarketData.UpperLimitPrice = pDepthMarketData.UpperLimitPrice #double
 
-    ###跌停板价
-    pyDepthMarketData.LowerLimitPrice = pDepthMarketData.LowerLimitPrice #double
+        ###跌停板价
+        pyDepthMarketData.LowerLimitPrice = pDepthMarketData.LowerLimitPrice #double
 
-    ###昨虚实度
-    pyDepthMarketData.PreDelta = pDepthMarketData.PreDelta #double
+        ###昨虚实度
+        pyDepthMarketData.PreDelta = pDepthMarketData.PreDelta #double
 
-    ###今虚实度
-    pyDepthMarketData.CurrDelta = pDepthMarketData.CurrDelta #double
+        ###今虚实度
+        pyDepthMarketData.CurrDelta = pDepthMarketData.CurrDelta #double
 
-    ###最后修改时间
-    pyDepthMarketData.UpdateTime = pDepthMarketData.UpdateTime #str [9]
+        ###最后修改时间
+        pyDepthMarketData.UpdateTime = pDepthMarketData.UpdateTime #str [9]
 
-    ###最后修改毫秒
-    pyDepthMarketData.UpdateMillisec = pDepthMarketData.UpdateMillisec #int
+        ###最后修改毫秒
+        pyDepthMarketData.UpdateMillisec = pDepthMarketData.UpdateMillisec #int
 
-    ###申买价一
-    pyDepthMarketData.BidPrice1 = pDepthMarketData.BidPrice1 #double
+        ###申买价一
+        pyDepthMarketData.BidPrice1 = pDepthMarketData.BidPrice1 #double
 
-    ###申买量一
-    pyDepthMarketData.BidVolume1 = pDepthMarketData.BidVolume1 #int
+        ###申买量一
+        pyDepthMarketData.BidVolume1 = pDepthMarketData.BidVolume1 #int
 
-    ###申卖价一
-    pyDepthMarketData.AskPrice1 = pDepthMarketData.AskPrice1 #double
+        ###申卖价一
+        pyDepthMarketData.AskPrice1 = pDepthMarketData.AskPrice1 #double
 
-    ###申卖量一
-    pyDepthMarketData.AskVolume1 = pDepthMarketData.AskVolume1 #int
+        ###申卖量一
+        pyDepthMarketData.AskVolume1 = pDepthMarketData.AskVolume1 #int
 
-    ###申买价二
-    pyDepthMarketData.BidPrice2 = pDepthMarketData.BidPrice2 #double
+        ###申买价二
+        pyDepthMarketData.BidPrice2 = pDepthMarketData.BidPrice2 #double
 
-    ###申买量二
-    pyDepthMarketData.BidVolume2 = pDepthMarketData.BidVolume2 #int
+        ###申买量二
+        pyDepthMarketData.BidVolume2 = pDepthMarketData.BidVolume2 #int
 
-    ###申卖价二
-    pyDepthMarketData.AskPrice2 = pDepthMarketData.AskPrice2 #double
+        ###申卖价二
+        pyDepthMarketData.AskPrice2 = pDepthMarketData.AskPrice2 #double
 
-    ###申卖量二
-    pyDepthMarketData.AskVolume2 = pDepthMarketData.AskVolume2 #int
+        ###申卖量二
+        pyDepthMarketData.AskVolume2 = pDepthMarketData.AskVolume2 #int
 
-    ###申买价三
-    pyDepthMarketData.BidPrice3 = pDepthMarketData.BidPrice3 #double
+        ###申买价三
+        pyDepthMarketData.BidPrice3 = pDepthMarketData.BidPrice3 #double
 
-    ###申买量三
-    pyDepthMarketData.BidVolume3 = pDepthMarketData.BidVolume3 #int
+        ###申买量三
+        pyDepthMarketData.BidVolume3 = pDepthMarketData.BidVolume3 #int
 
-    ###申卖价三
-    pyDepthMarketData.AskPrice3 = pDepthMarketData.AskPrice3 #double
+        ###申卖价三
+        pyDepthMarketData.AskPrice3 = pDepthMarketData.AskPrice3 #double
 
-    ###申卖量三
-    pyDepthMarketData.AskVolume3 = pDepthMarketData.AskVolume3 #int
+        ###申卖量三
+        pyDepthMarketData.AskVolume3 = pDepthMarketData.AskVolume3 #int
 
-    ###申买价四
-    pyDepthMarketData.BidPrice4 = pDepthMarketData.BidPrice4 #double
+        ###申买价四
+        pyDepthMarketData.BidPrice4 = pDepthMarketData.BidPrice4 #double
 
-    ###申买量四
-    pyDepthMarketData.BidVolume4 = pDepthMarketData.BidVolume4 #int
+        ###申买量四
+        pyDepthMarketData.BidVolume4 = pDepthMarketData.BidVolume4 #int
 
-    ###申卖价四
-    pyDepthMarketData.AskPrice4 = pDepthMarketData.AskPrice4 #double
+        ###申卖价四
+        pyDepthMarketData.AskPrice4 = pDepthMarketData.AskPrice4 #double
 
-    ###申卖量四
-    pyDepthMarketData.AskVolume4 = pDepthMarketData.AskVolume4 #int
+        ###申卖量四
+        pyDepthMarketData.AskVolume4 = pDepthMarketData.AskVolume4 #int
 
-    ###申买价五
-    pyDepthMarketData.BidPrice5 = pDepthMarketData.BidPrice5 #double
+        ###申买价五
+        pyDepthMarketData.BidPrice5 = pDepthMarketData.BidPrice5 #double
 
-    ###申买量五
-    pyDepthMarketData.BidVolume5 = pDepthMarketData.BidVolume5 #int
+        ###申买量五
+        pyDepthMarketData.BidVolume5 = pDepthMarketData.BidVolume5 #int
 
-    ###申卖价五
-    pyDepthMarketData.AskPrice5 = pDepthMarketData.AskPrice5 #double
+        ###申卖价五
+        pyDepthMarketData.AskPrice5 = pDepthMarketData.AskPrice5 #double
 
-    ###申卖量五
-    pyDepthMarketData.AskVolume5 = pDepthMarketData.AskVolume5 #int
+        ###申卖量五
+        pyDepthMarketData.AskVolume5 = pDepthMarketData.AskVolume5 #int
 
-    ###当日均价
-    pyDepthMarketData.AveragePrice = pDepthMarketData.AveragePrice #double
+        ###当日均价
+        pyDepthMarketData.AveragePrice = pDepthMarketData.AveragePrice #double
 
-    ###业务日期
-    pyDepthMarketData.ActionDay = pDepthMarketData.ActionDay #str [9]
+        ###业务日期
+        pyDepthMarketData.ActionDay = pDepthMarketData.ActionDay #str [9]
 
-    attr_decode(pyDepthMarketData)
+        attr_decode(pyDepthMarketData)
 
     clsMdSpiResponse.OnRtnDepthMarketData(pyDepthMarketData)
 
@@ -414,27 +439,29 @@ cdef extern void OnStaticRtnForQuoteRsp(CThostFtdcForQuoteRspField *pForQuoteRsp
     if not isinstance(clsMdSpiResponse, MdSpiResponse):
         raise TypeError
 
-    pyForQuoteRsp = pyThostFtdcForQuoteRspField()
+    pyForQuoteRsp = None
+    if pForQuoteRsp:
+        pyForQuoteRsp = pyThostFtdcForQuoteRspField()
 
-    ###交易日
-    pyForQuoteRsp.TradingDay = pForQuoteRsp.TradingDay #str [9]
+        ###交易日
+        pyForQuoteRsp.TradingDay = pForQuoteRsp.TradingDay #str [9]
 
-    ###合约代码
-    pyForQuoteRsp.InstrumentID = pForQuoteRsp.InstrumentID #str [31]
+        ###合约代码
+        pyForQuoteRsp.InstrumentID = pForQuoteRsp.InstrumentID #str [31]
 
-    ###询价编号
-    pyForQuoteRsp.ForQuoteSysID = pForQuoteRsp.ForQuoteSysID #str [21]
+        ###询价编号
+        pyForQuoteRsp.ForQuoteSysID = pForQuoteRsp.ForQuoteSysID #str [21]
 
-    ###询价时间
-    pyForQuoteRsp.ForQuoteTime = pForQuoteRsp.ForQuoteTime #str [9]
+        ###询价时间
+        pyForQuoteRsp.ForQuoteTime = pForQuoteRsp.ForQuoteTime #str [9]
 
-    ###业务日期
-    pyForQuoteRsp.ActionDay = pForQuoteRsp.ActionDay #str [9]
+        ###业务日期
+        pyForQuoteRsp.ActionDay = pForQuoteRsp.ActionDay #str [9]
 
-    ###交易所代码
-    pyForQuoteRsp.ExchangeID = pForQuoteRsp.ExchangeID #str [9]
+        ###交易所代码
+        pyForQuoteRsp.ExchangeID = pForQuoteRsp.ExchangeID #str [9]
 
-    attr_decode(pyForQuoteRsp)
+        attr_decode(pyForQuoteRsp)
 
     clsMdSpiResponse.OnRtnForQuoteRsp(pyForQuoteRsp)
 
